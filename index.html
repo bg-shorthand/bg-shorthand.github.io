@@ -145,6 +145,181 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://bg-shorthand.github.io/2020/10/22/201022-html-css-practice-visual-login/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="bg-shorthand">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="bg-shorthand-blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/10/22/201022-html-css-practice-visual-login/" class="post-title-link" itemprop="url">201022 html css practice - visual, login</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2020-10-22 19:42:03 / Modified: 19:42:21" itemprop="dateCreated datePublished" datetime="2020-10-22T19:42:03+09:00">2020-10-22</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/html-css/" itemprop="url" rel="index"><span itemprop="name">html/css</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="HTML-CSS-PRACTICE"><a href="#HTML-CSS-PRACTICE" class="headerlink" title="HTML/CSS PRACTICE"></a>HTML/CSS PRACTICE</h1><ul>
+<li>어제에 이은 샘플 실습의 .visual, .login 부분</li>
+</ul>
+<hr>
+<h2 id="HTML-주요-주석"><a href="#HTML-주요-주석" class="headerlink" title="HTML 주요 주석"></a>HTML 주요 주석</h2><ol>
+<li>.visual 부분은 텍스트와 이미지로 구분해서 마크업.<ul>
+<li>텍스트라도 구조 상에 포함되지 않으므로, p 태그 사용.</li>
+<li>이미지 역시 의미가 없으므로 쓸 데 없는 태그를 다시 만들지 않는다.<ul>
+<li>가상 요소 선택자 ::before, ::after 를 사용하여 배경 삽입.<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class&#x3D;&quot;visual&quot;&gt;</span><br><span class="line">  &lt;div class&#x3D;&quot;visual&quot;&gt;</span><br><span class="line">    &lt;p class&#x3D;&quot;visual-text&quot;&gt;</span><br><span class="line">      Web Standards &amp; Accessibility</span><br><span class="line">    &lt;&#x2F;p&gt;</span><br><span class="line">  &lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;div&gt;</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>form 태그는 fieldset, legend 태그를 짝꿍으로 데리고 다닌다.<ul>
+<li>xhtml에서는 강요되는 부분.<h2 id="HTML-전체-내용"><a href="#HTML-전체-내용" class="headerlink" title="HTML 전체 내용"></a>HTML 전체 내용</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class&#x3D;&quot;visual&quot;&gt;</span><br><span class="line">    &lt;!-- 텍스트는 마크업 &#x2F; 나머지 이미지는 배경으로 연습.</span><br><span class="line">    꽃이 두 개 씩 둘. 배경이 둘 필요해. 태그를 또 만들면 의미 없는 태그를 또 만들어야 하니까(이미지 쓰는 거랑 같으니까), 가상요소 비포&#x2F;에프터 를 쓴다.visual영역은 의미는 없으니까 제목은 안 넣는다.--&gt;</span><br><span class="line">    &lt;div class&#x3D;&quot;visual&quot;&gt;</span><br><span class="line">      &lt;p class&#x3D;&quot;visual-text&quot;&gt;</span><br><span class="line">        Web Standards &amp; Accessibility</span><br><span class="line">      &lt;&#x2F;p&gt;</span><br><span class="line">    &lt;&#x2F;div&gt;</span><br><span class="line">  &lt;&#x2F;div&gt;</span><br><span class="line"></span><br><span class="line">  &lt;main class&#x3D;&quot;main clearfix&quot;&gt;</span><br><span class="line">    &lt;div class&#x3D;&quot;group group1&quot;&gt;</span><br><span class="line">      &lt;section class&#x3D;&quot;login&quot;&gt;</span><br><span class="line">        &lt;h2 class&#x3D;&quot;login-heading&quot;&gt;로그인&lt;&#x2F;h2&gt;</span><br><span class="line">        &lt;form class&#x3D;&quot;login-form&quot; method&#x3D;&quot;POST&quot; action&#x3D;&quot;https:&#x2F;&#x2F;formspree.io&#x2F;seulbinim@gmail.com&quot;&gt;</span><br><span class="line">          &lt;fieldset&gt;</span><br><span class="line">            &lt;legend&gt;회원 로그인 폼&lt;&#x2F;legend&gt;</span><br><span class="line">            &lt;!-- form은 fieldset과 legend가 짝꿍 --&gt;</span><br><span class="line">              &lt;div class&#x3D;&quot;user-email&quot;&gt;</span><br><span class="line">                &lt;label for&#x3D;&quot;userEmail&quot;&gt;아이디&lt;&#x2F;label&gt;</span><br><span class="line">                &lt;input type&#x3D;&quot;email&quot; id&#x3D;&quot;userEmail&quot; placeholder&#x3D;&quot;이메일주소&quot; name&#x3D;&quot;userEmail&quot; required&gt;</span><br><span class="line">              &lt;&#x2F;div&gt;</span><br><span class="line">              &lt;div class&#x3D;&quot;user-pw&quot;&gt;</span><br><span class="line">                &lt;label for&#x3D;&quot;userPw&quot;&gt;비밀번호&lt;&#x2F;label&gt;</span><br><span class="line">                &lt;input type&#x3D;&quot;password&quot; id&#x3D;&quot;userPw&quot; name&#x3D;&quot;userPw&quot; required placeholder&#x3D;&quot;8자리 이상&quot; minlength&#x3D;&quot;8&quot;&gt;</span><br><span class="line">              &lt;&#x2F;div&gt;</span><br><span class="line">              &lt;!-- &lt;label&gt;아이디&lt;input type&#x3D;&quot;email&quot;&quot; name&#x3D;&quot;id&quot; placeholder&#x3D;&quot;이메일 주소&quot;&gt;&lt;&#x2F;label&gt;</span><br><span class="line">              &lt;label&gt;비밀번호&lt;input type&#x3D;&quot;password&quot; name&#x3D;&quot;pwd&quot; placeholder&#x3D;&quot;8자리 이상&quot; minlength&#x3D;&quot;8&quot;&gt;&lt;&#x2F;label&gt; </span><br><span class="line">              -&gt;이건 내가 미리 했던 거. --&gt;</span><br><span class="line">              &lt;button class&#x3D;&quot;btn-login&quot; type&#x3D;&quot;submit&quot;&gt;로그인&lt;&#x2F;button&gt; </span><br><span class="line">          &lt;&#x2F;fieldset&gt;</span><br><span class="line">        &lt;&#x2F;form&gt;</span><br><span class="line">        &lt;ul class&#x3D;&quot;login-member&quot;&gt;</span><br><span class="line">          &lt;li class&#x3D;&quot;signup&quot;&gt;</span><br><span class="line">            &lt;span class&#x3D;&quot;icon-right-open&quot; aria-hidden&#x3D;&quot;true&quot;&gt;&lt;&#x2F;span&gt;</span><br><span class="line">            &lt;a href&#x3D;&quot;#&quot;&gt;회원가입&lt;&#x2F;a&gt;</span><br><span class="line">          &lt;&#x2F;li&gt;</span><br><span class="line">          &lt;li class&#x3D;&quot;findpw&quot;&gt;</span><br><span class="line">            &lt;span class&#x3D;&quot;icon-right-open&quot; aria-hidden&#x3D;&quot;true&quot;&gt;&lt;&#x2F;span&gt;</span><br><span class="line">            &lt;a href&#x3D;&quot;#&quot;&gt;아이디&#x2F;비밀번호 찾기&lt;&#x2F;a&gt;</span><br><span class="line">          &lt;&#x2F;li&gt;</span><br><span class="line">        &lt;&#x2F;ul&gt;</span><br><span class="line">        &lt;!-- &lt;a href&#x3D;&quot;#&quot;&gt;회원가입&lt;&#x2F;a&gt;</span><br><span class="line">        &lt;a href&#x3D;&quot;#&quot;&gt;아이디&#x2F;비밀번호 찾기&lt;&#x2F;a&gt; </span><br><span class="line">        -&gt; 내가 미리 했던 거--&gt;</span><br><span class="line">      &lt;&#x2F;section&gt;</span><br><span class="line">    &lt;&#x2F;div&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 id="CSS-주요-주석"><a href="#CSS-주요-주석" class="headerlink" title="CSS 주요 주석"></a>CSS 주요 주석</h2><ol>
+<li>.a11y-hidden의 숨김 처리 방법에서, clip-path는 구형 브라우저에서 인식되지 않을 수 있으므로,<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">.a11y-hidden, .legend&#123;</span><br><span class="line">  position: absolute;</span><br><span class="line">  width: 1px;</span><br><span class="line">  height: 1px;</span><br><span class="line">  overflow: hidden;</span><br><span class="line">  margin: 0;</span><br><span class="line">  clip-path: polygon(0 0, 0 0, 0 0);</span><br><span class="line">  clip: rect(0 0 0 0);</span><br><span class="line">  clip: rect(0,0,0,0);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>clip: rect(); 를 넣었는데, 그 중에서도 ,를 넣은 걸 인식 못할 수 있어서 ,뺀 것도 넣음</li>
+</ul>
+</li>
+<li>폰트의 투명도를 설정하는 두 가지 방법<ul>
+<li>opaciti: 1; : 텍스트 요소의 박스 전체가 투명해짐.</li>
+<li>color: rgba(0,0,0,0); : 글자만 투명해짐.</li>
+<li>어느 게 맞다가 아니라, 상황에 따라 달리 쓸 수 있다.</li>
+</ul>
+</li>
+<li>@keyframes : 애니메이션을 만드려면, 시나리오부터 짠다.</li>
+<li>애니메이션의 이동 효과를 줄 수 있는 방법들<ul>
+<li>translate : 성능이 가장 좋음(reflow 발생 안함.). 박스 전체가 움직여 스크롤이 생길 수 있음.</li>
+<li>margin : 마진 겹침, reflow</li>
+<li>padding : 배경이 안 보여도 되는 경우에만, reflow</li>
+<li>height : reflow</li>
+<li>position: relitive; : 전체 박스가 움직여 스크롤이 생길 수 있음.</li>
+<li>position: absolute;</li>
+<li>등. reflow, gpu가속(?) 등 성능 이슈로 translate를 쓰는 게 좋다.</li>
+</ul>
+</li>
+<li>css를 작성할 때, 공통된 부분은 조금이라도 묶어서 작성한다.<ul>
+<li>최적화. 티끌 모아 태산.</li>
+</ul>
+</li>
+<li>animation 단축 속성에 값으로 name, duration 값은 필수.<h2 id="CSS-전체-코드"><a href="#CSS-전체-코드" class="headerlink" title="CSS 전체 코드"></a>CSS 전체 코드</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;* 숨김 제목 및 숨김 콘텐츠 *&#x2F;</span><br><span class="line">.a11y-hidden, .legend&#123;</span><br><span class="line">    position: absolute;</span><br><span class="line">    width: 1px;</span><br><span class="line">    height: 1px;</span><br><span class="line">    overflow: hidden;</span><br><span class="line">    margin: 0;</span><br><span class="line">    clip-path: polygon(0 0, 0 0, 0 0);</span><br><span class="line">    clip: rect(0 0 0 0);</span><br><span class="line">    clip: rect(0,0,0,0);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  &#x2F;* 텍스트 및 배경 애니메이션 - 비주얼 영역 *&#x2F;</span><br><span class="line">  @keyframes textAni&#123;</span><br><span class="line">    0%&#123;</span><br><span class="line">      font-size: 12px;</span><br><span class="line">      color: rgba(0,0,0,0);</span><br><span class="line">      &#x2F;* 투명도는 opacity(상자 전체 흐림) &#x2F; color(글자만 흐림)로 조절 가능. *&#x2F;</span><br><span class="line">      transform: translate(0, 0);</span><br><span class="line">    &#125;</span><br><span class="line">    100%&#123;</span><br><span class="line">      font-size: 24px;</span><br><span class="line">      color: rgba(0,0,0,1);</span><br><span class="line">      transform: translate(400px, 75px);</span><br><span class="line">    &#125;</span><br><span class="line">    &#x2F;* 애니메이션을 만들려면 시나리오부터 짠다.</span><br><span class="line">      0. a-name : textAni</span><br><span class="line">      1. 이동 ( 0,0 -&gt; 400px, 750px)</span><br><span class="line">      2. 글자 크기 (12px -&gt;24px)</span><br><span class="line">      3. 투명도 (0 -&gt; 1) *&#x2F;</span><br><span class="line">      &#x2F;* 이동으로 쓸 수 있는 것 translate(스크롤 생김 &#x2F; 성능상 제일 좋음)&#x2F;margin(마진겹침)&#x2F;padding(배경이 안 보여도 되는 경우에만)&#x2F;position(rel:전체 크기가 같이 움직여서 스크롤 생김 &#x2F; absol)</span><br><span class="line">      -&gt; reflow를 발생 시키는 속성들(margin&#x2F;height 등)</span><br><span class="line">      -&gt; gpu가속? *&#x2F;</span><br><span class="line">  &#125;</span><br><span class="line">  @keyframes bgAni&#123;</span><br><span class="line">    0%&#123;</span><br><span class="line">      opacity: 1;</span><br><span class="line">    &#125;</span><br><span class="line">    100%&#123;</span><br><span class="line">      opacity: 0;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  &#x2F;* 비주얼 영역 *&#x2F;</span><br><span class="line">  .visual &#123;</span><br><span class="line">    height: 120px;</span><br><span class="line">    position: relative;</span><br><span class="line">  &#125;</span><br><span class="line">  .visual::before, .visual::after&#123;</span><br><span class="line">    &#x2F;* 적더라도 공통된 부분은 묶어서, 최적화를 고민하자 *&#x2F;</span><br><span class="line">    content:&quot;&quot;;</span><br><span class="line">    position: absolute;</span><br><span class="line">    top: 0;</span><br><span class="line">    left: 0;</span><br><span class="line">    width: 100%;</span><br><span class="line">    height: 100%;</span><br><span class="line">    background-repeat: no-repeat;</span><br><span class="line">    &#x2F;* animation-name: bgAni;</span><br><span class="line">    animation-duration: 2000ms;</span><br><span class="line">    animation-iteration-count: infinite;</span><br><span class="line">    animation-direction: alternate;</span><br><span class="line">    animation-timing-function: ease-in-out; *&#x2F;</span><br><span class="line">    animation: bgAni 2000ms infinite alternate ease-in-out;</span><br><span class="line">  &#125;</span><br><span class="line">  .visual::before&#123;</span><br><span class="line">    background-image: url(.&#x2F;images&#x2F;ani_flower_01.png) , url(.&#x2F;images&#x2F;ani_flower_02.png);</span><br><span class="line">    background-position: 0 -10px, 670px 0;</span><br><span class="line">  &#125;</span><br><span class="line">  .visual::after&#123;</span><br><span class="line">    background-image: url(.&#x2F;images&#x2F;ani_flower_03.png) , url(.&#x2F;images&#x2F;ani_flower_04.png);</span><br><span class="line">    background-position: 300px 0, 800px 0;</span><br><span class="line">    animation-delay: 1000ms;</span><br><span class="line">  &#125;</span><br><span class="line">  .visual-text&#123;</span><br><span class="line">    width: 500px;</span><br><span class="line">    &#x2F;* position: absolute; *&#x2F;</span><br><span class="line">    margin: 0;</span><br><span class="line">    &#x2F;* 마진 겹침 삭제 *&#x2F;</span><br><span class="line">    animation-name: textAni;</span><br><span class="line">    animation-duration: 3000ms;</span><br><span class="line">    &#x2F;* 애니메이션 이름과 실행시간은 필수 (나머지 값은 mdn에 []로 써있을 것. *&#x2F;</span><br><span class="line">    animation-fill-mode: forwards;</span><br><span class="line">    font-family: Georgia, &#39;Times New Roman&#39;, Times, serif;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<hr>
+<h2 id="기타"><a href="#기타" class="headerlink" title="기타"></a>기타</h2><ol>
+<li>::before, ::after : 태그를 만들지 않고 장식 요소를 배치하는 데 사용할 수 있다.<ul>
+<li>~::befor::befre 이런 식으로는 사용 불가.</li>
+</ul>
+</li>
+<li>계속 반복하지만, 렌더링만 생각하는 게 아니라, 기능/구조를 고려하여 마크업해야 한다.</li>
+<li>entity : xhtml과 같은 엄격한 언어에서는 강요한다. -&gt; html에서도 지향.</li>
+<li>마진 겹침<ul>
+<li>부모/자식 요소 사이의 위아래.</li>
+<li>형제 요소 사이의 위아래.</li>
+<li>마진은 마진끼리 겹친다.</li>
+<li>다른 여백이나 라인이 있으면 겹치지 않아.</li>
+<li>ex. border, padding이 있으면 그걸 기준으로 겹치지 않음.</li>
+</ul>
+</li>
+<li>(msdn -&gt;)mdn -&gt; reference</li>
+<li>git commit -am “~” 애드랑 커밋이랑 같이(처음 커밋은 x)</li>
+<li>form 안에 두 fieldset을 만들고, 각 fieldset이 다른 묶음을 표시할 수 있다.<ul>
+<li>ex. fieldset1은 필수 정보 / fieldset2는 선택 정보</li>
+<li>그렇게 표시해 브라우저에게 알려줄 뿐, 기능은 없다.</li>
+</ul>
+</li>
+<li>label의 연결 방식<ul>
+<li>명시적 연결 label for=”id” / input id=”id”</li>
+<li>암묵적 연결 label&gt;input</li>
+</ul>
+</li>
+<li>placeholder, title은 브라우저에게 참조일 뿐이다.<ul>
+<li>label의 역할을 할 수 없음.</li>
+<li>브라우저 역시 이해할 수 있게 마크업을 고려한다.</li>
+</ul>
+</li>
+<li>input 태그의 name 속성은 css의 속성 선택자로 사용되기도 한다.<ul>
+<li>#대신 사용. #은 선택자 점수가 너무 높아서 쓰기 위험하다.</li>
+</ul>
+</li>
+<li>required 속성 : 필수값 지정.</li>
+<li>JS는 마크업된 요소만 제어 가능하다. (CSS의 가상 요소 선택자 제어 불가)</li>
+<li>text-indent는 블럭 요소에서만 들여쓰기 가능.</li>
+<li>flex의 부모 자식 요소는 마진 겹침이 일어나지 않는다.</li>
+<li>form에는 css를 잘 입히지 않음.(디자인 어려워. div로 감싸서 꾸민다.)</li>
+</ol>
+<hr>
+<h2 id="TEST"><a href="#TEST" class="headerlink" title="TEST"></a>TEST</h2><ol>
+<li><p>CSS 단축 프로퍼티 animation에 다양한 프로퍼티의 값을 줄 수 있다. 다음 중 포함되지 않는 것을 모두 고르시오.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">1. name</span><br><span class="line">2. duration</span><br><span class="line">3. timing-function</span><br><span class="line">4. delay</span><br><span class="line">5. iteration-count</span><br><span class="line">6. direction</span><br><span class="line">7. fill-mode</span><br><span class="line">8. transition - 답</span><br><span class="line">9. opacity - 답</span><br></pre></td></tr></table></figure></li>
+<li><p>다음 코드와 동일하게 작동하도록 단축 표기법을 작성하세요.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">section.main-content&#123;</span><br><span class="line">  padding-top: 20px;</span><br><span class="line">  padding-right: 10px;</span><br><span class="line">  padding-bottom: 20px;</span><br><span class="line">  padding-left: 30px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>답 - padding: 20px 10px 20px 30px;</p>
+</li>
+<li><p>::before, ::after는 (  가상 요소 선택자  ) 이며, ( :hover, :action, :nth-of-type )등은 가상 클래스 선택자이다.</p>
+</li>
+<li><p>아래 보기 중 css position 프로퍼티에 대한 설명으로 옳은 것은?</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">1. position: absolute 로 선언하고 offset을 주지 않으면, 즉 위치를 지정하지 않으면 무시된다.</span><br><span class="line">2. position: absolute로 선언된 요소의 위치를 offset으로 설정할 때, offset값의 기준은 해당 요소의 가장 가까운 상위 요소 중 position 프로퍼티 값이 relative로 선언된 요소이다.</span><br><span class="line">3. position: absolute로 선언된 요소의 display 프로퍼티 값은 block이 된다. - 답</span><br><span class="line">4. position: relative로 선언된 요소는 offset으로 위치를 지정할 수 없다.</span><br><span class="line">5. position: fixed로 선언된 요소는 뷰포트 기준으로, 스크롤을 내리면 뷰포트를 벗어날 수 있다.</span><br></pre></td></tr></table></figure></li>
+<li><p>아래 요구에 맞는 깃 명령을 각각 작성하세요.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">1. 현재 위치한 디렉토리를 git으로 관리하기 시작, 초기화. - git init</span><br><span class="line">2. 변경 사항 추적 상태 및 stage상태 확인 - git status</span><br><span class="line">3. 현재 위치한 디렉토리의 새로운 파일 혹은 변경 사항 모두 추가 - git add .</span><br><span class="line">4. 현재 위치한 디렉토리를 원격 저장소의 브랜치에 연결 - git remote add origin main</span><br><span class="line">5. 현재 위치한 디렉토리의 모든 리소스를 4에서 연결한 원격 저장소에 업로드 - git push origin main</span><br></pre></td></tr></table></figure></li>
+</ol>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="http://bg-shorthand.github.io/2020/10/21/201021-html-css-practice-main-menu/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -857,7 +1032,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">4</span>
+          <span class="site-state-item-count">5</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
