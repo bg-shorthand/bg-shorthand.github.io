@@ -145,6 +145,150 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://bg-shorthand.github.io/2020/10/27/201027-html-css-practic-board-markup-style/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="bg-shorthand">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="bg-shorthand-blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/10/27/201027-html-css-practic-board-markup-style/" class="post-title-link" itemprop="url">201027 html css practic-board markup/style</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2020-10-27 20:26:45 / Modified: 20:27:22" itemprop="dateCreated datePublished" datetime="2020-10-27T20:26:45+09:00">2020-10-27</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/html-css/" itemprop="url" rel="index"><span itemprop="name">html/css</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="HTML-CSS-PRACTICE"><a href="#HTML-CSS-PRACTICE" class="headerlink" title="HTML/CSS PRACTICE"></a>HTML/CSS PRACTICE</h1><ul>
+<li>공지사항, 자료실 부분 마크업 및 디자인</li>
+</ul>
+<h2 id="HTML-주요-주석"><a href="#HTML-주요-주석" class="headerlink" title="HTML 주요 주석"></a>HTML 주요 주석</h2><ol>
+<li>heading(시맨틱 태그) 안에 button(또 다른 시맨틱 태그)을 넣는 건 부자연 스럽다.<ul>
+<li>대신 a태그를 씀.</li>
+<li>a 태그는 시맨틱 태그(의미 있는 태그)가 아님.</li>
+<li>대신 button의 역할을 해야 하므로, role=”button”<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;h2 class&#x3D;&quot;notice-heading tab&quot;&gt;&lt;a href&#x3D;&quot;#&quot; role&#x3D;&quot;button&quot; id&#x3D;&quot;noticeHeading&quot;&gt;공지사항&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li>title / aria-label / aria-labelledby<ul>
+<li>그냥 이름만 주는 title, aria-label과 달리, aria-labelledby는 id 값으로 연결된 요소를 명시적으로 표시한다.</li>
+<li>해당 id의 요소가 수정 되면 따라서 수정됨.</li>
+<li>aria-labelledby는 툴팁으로 노출 되지 않아, title을 같이 썼다.<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;notice-more icon-plus&quot; aria-labelledby&#x3D;&quot;noticeHeading&quot; title&#x3D;&quot;공지사항&quot;&gt;더보기&lt;&#x2F;a&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="html-전체-주석"><a href="#html-전체-주석" class="headerlink" title="html 전체 주석"></a>html 전체 주석</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class&#x3D;&quot;board&quot;&gt;</span><br><span class="line">      &lt;section class&#x3D;&quot;notice is-active&quot;&gt;</span><br><span class="line">        &lt;h2 class&#x3D;&quot;notice-heading tab&quot;&gt;&lt;a href&#x3D;&quot;#&quot; role&#x3D;&quot;button&quot; id&#x3D;&quot;noticeHeading&quot;&gt;공지사항&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;</span><br><span class="line">        &lt;!-- heading 안에 button이 있는 것보다 a가 자연스럽다.</span><br><span class="line">        button에 role 주는 건 역할을 바꾸는 거라 지양.</span><br><span class="line">        a는 시맨틱 요소가 아니므로 role을 줘도 무방 --&gt;</span><br><span class="line">        &lt;ul class&#x3D;&quot;notice-list&quot;&gt;</span><br><span class="line">          &lt;li&gt;&lt;a href&#x3D;&quot;#&quot;&gt;HTML의 모든 것을 알려주마 샘플 활용법&lt;&#x2F;a&gt;&lt;time datetime&#x3D;&quot;2020-10-27T14:38:56&quot;&gt;2020.10.27&lt;&#x2F;time&gt;&lt;&#x2F;li&gt;</span><br><span class="line">          &lt;!-- 게시날짜, 조회수 등 모두 목록에 해당. li에 포함 --&gt;</span><br><span class="line">          &lt;li&gt;&lt;a href&#x3D;&quot;#&quot;&gt;W3C 사이트 리뉴얼 및 공지사항&lt;&#x2F;a&gt;&lt;time datetime&#x3D;&quot;2020-10-27T14:38:56&quot;&gt;2020.10.27&lt;&#x2F;time&gt;&lt;&#x2F;li&gt;</span><br><span class="line">          &lt;li&gt;&lt;a href&#x3D;&quot;#&quot;&gt;KWCAG 2.1 소식&lt;&#x2F;a&gt;&lt;time datetime&#x3D;&quot;2020-10-27T14:38:56&quot;&gt;2020.10.27&lt;&#x2F;time&gt;&lt;&#x2F;li&gt;</span><br><span class="line">          &lt;li&gt;&lt;a href&#x3D;&quot;#&quot;&gt;서버 점검으로 인한 사이트 이용안내 입니다.&lt;&#x2F;a&gt;&lt;time datetime&#x3D;&quot;2020-10-27T14:38:56&quot;&gt;2020.10.27&lt;&#x2F;time&gt;&lt;&#x2F;li&gt;</span><br><span class="line">          &lt;li&gt;&lt;a href&#x3D;&quot;#&quot;&gt;여러분들이 생각하는 웹 접근성에 대해 이야기해 봅시다.&lt;&#x2F;a&gt;&lt;time datetime&#x3D;&quot;2020-10-27T14:38:56&quot;&gt;2020.10.27&lt;&#x2F;time&gt;&lt;&#x2F;li&gt;</span><br><span class="line">          &lt;li&gt;&lt;a href&#x3D;&quot;#&quot;&gt;서버 점검으로 인한 사이트 이용안내 입니다.&lt;&#x2F;a&gt;&lt;time datetime&#x3D;&quot;2020-10-27T14:38:56&quot;&gt;2020.10.27&lt;&#x2F;time&gt;&lt;&#x2F;li&gt;</span><br><span class="line">          &lt;li&gt;&lt;a href&#x3D;&quot;#&quot;&gt;여러분들이 생각하는 웹 접근성에 대해 이야기해 봅시다.&lt;&#x2F;a&gt;&lt;time datetime&#x3D;&quot;2020-10-27T14:38:56&quot;&gt;2020.10.27&lt;&#x2F;time&gt;&lt;&#x2F;li&gt;</span><br><span class="line">        &lt;&#x2F;ul&gt;</span><br><span class="line">        &lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;notice-more icon-plus&quot; aria-labelledby&#x3D;&quot;noticeHeading&quot; title&#x3D;&quot;공지사항&quot;&gt;더보기&lt;&#x2F;a&gt;</span><br><span class="line">        &lt;!-- 아래 더보기 a와 구별되지 않아. title, aira-label, aria-labelledby(id필요, 위 내용이 수정되면 여기도 수정)</span><br><span class="line">        -&gt;아리아 레이블드는 툴팁이 안 떠서 타이틀도 씀 --&gt;</span><br><span class="line">      &lt;&#x2F;section&gt;</span><br><span class="line">      &lt;section class&#x3D;&quot;pds&quot;&gt;</span><br><span class="line">        &lt;h2 class&#x3D;&quot;pds-heading tab&quot;&gt;&lt;a href&#x3D;&quot;#&quot; role&#x3D;&quot;button&quot; id&#x3D;&quot;pdsHeading&quot;&gt;자료실&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;</span><br><span class="line">        &lt;ul class&#x3D;&quot;pds-list&quot;&gt;</span><br><span class="line">          &lt;li&gt;&lt;a href&#x3D;&quot;#&quot;&gt;디자인 사이트 링크 모음&lt;&#x2F;a&gt;&lt;time datetime&#x3D;&quot;2020-10-28T14:38:56&quot;&gt;2020.10.28&lt;&#x2F;time&gt;&lt;&#x2F;li&gt;</span><br><span class="line">          &lt;li&gt;&lt;a href&#x3D;&quot;#&quot;&gt;웹 접근성 관련 자료 모음&lt;&#x2F;a&gt;&lt;time datetime&#x3D;&quot;2020-10-28T14:38:56&quot;&gt;2020.10.28&lt;&#x2F;time&gt;&lt;&#x2F;li&gt;</span><br><span class="line">          &lt;li&gt;&lt;a href&#x3D;&quot;#&quot;&gt;예제 샘플 응용해보기&lt;&#x2F;a&gt;&lt;time datetime&#x3D;&quot;2020-10-28T14:38:56&quot;&gt;2020.10.28&lt;&#x2F;time&gt;&lt;&#x2F;li&gt;</span><br><span class="line">          &lt;li&gt;&lt;a href&#x3D;&quot;#&quot;&gt;웹 접근성 향상을 위한 국가 표준 기술 가이드라인&lt;&#x2F;a&gt;&lt;time datetime&#x3D;&quot;2020-10-28T14:38:56&quot;&gt;2020.10.28&lt;&#x2F;time&gt;&lt;&#x2F;li&gt;</span><br><span class="line">          &lt;li&gt;&lt;a href&#x3D;&quot;#&quot;&gt;로얄티 프리 이미지 자료&lt;&#x2F;a&gt;&lt;time datetime&#x3D;&quot;2020-10-28T14:38:56&quot;&gt;2020.10.28&lt;&#x2F;time&gt;&lt;&#x2F;li&gt;</span><br><span class="line">        &lt;&#x2F;ul&gt;</span><br><span class="line">        &lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;pds-more icon-plus&quot; aria-labelledby&#x3D;&quot;pdsHeading&quot; title&#x3D;&quot;자료실&quot;&gt;더보기&lt;&#x2F;a&gt;</span><br><span class="line">      &lt;&#x2F;section&gt;</span><br><span class="line">    &lt;&#x2F;div&gt;</span><br><span class="line">    &lt;section class&#x3D;&quot;news&quot;&gt;</span><br><span class="line">      &lt;h2&gt;새소식&lt;&#x2F;h2&gt;</span><br><span class="line">    &lt;&#x2F;section&gt;</span><br><span class="line">  &lt;&#x2F;div&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 id="css-주요-주석"><a href="#css-주요-주석" class="headerlink" title="css 주요 주석"></a>css 주요 주석</h2><ol>
+<li>동적인 요소 스타일<ul>
+<li>일단 스타일은 신경쓰지 않고, 마크업부터 잘 하자.</li>
+<li>오늘 한 내용은 두 섹션이 겹쳐서 하나는 보이고 하나는 안 보이고.</li>
+<li>나중에 js로 제어할 테지만, 일단 차분하게 css<ol>
+<li>기본 형태와 제어된 형태를 나눈다.</li>
+<li>.is-active 클래스명이 들어간 것을 제어한다고 기획.</li>
+<li>차분하게 css</li>
+</ol>
+</li>
+</ul>
+</li>
+<li>전체 코드를 살펴보는 것 뿐만 아니라, 여러 번 연습해봐야 할 듯.<h2 id="css-전체-코드"><a href="#css-전체-코드" class="headerlink" title="css 전체 코드"></a>css 전체 코드</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;* 공지사항 및 자료실 *&#x2F;</span><br><span class="line">.board &#123;</span><br><span class="line">  position: relative;</span><br><span class="line">  margin-top: 20px;</span><br><span class="line">&#125;</span><br><span class="line">.notice-list,</span><br><span class="line">.pds-list,</span><br><span class="line">.notice-more,</span><br><span class="line">.pds-more &#123;</span><br><span class="line">  display: none;</span><br><span class="line">&#125;</span><br><span class="line">.is-active .notice-list,</span><br><span class="line">.is-active .pds-list,</span><br><span class="line">.is-active .notice-more,</span><br><span class="line">.is-active .pds-more &#123;</span><br><span class="line">  display: block;</span><br><span class="line">&#125;</span><br><span class="line">&#x2F;* .is-active 로 구분해서 논과 블럭만 설정하고 css *&#x2F;</span><br><span class="line">.tab &#123;</span><br><span class="line">  &#x2F;* float: left; *&#x2F;</span><br><span class="line">  margin: 0;</span><br><span class="line">  position: absolute;</span><br><span class="line">  top: 0;</span><br><span class="line">  left: 0;</span><br><span class="line">&#125;</span><br><span class="line">.is-active .tab &#123;</span><br><span class="line">  z-index: 5;</span><br><span class="line">&#125;</span><br><span class="line">.notice-heading &#123;</span><br><span class="line">  left: 0;</span><br><span class="line">&#125;</span><br><span class="line">.pds-heading &#123;</span><br><span class="line">  left: 83px;</span><br><span class="line">&#125;</span><br><span class="line">.tab a &#123;</span><br><span class="line">  display: block;</span><br><span class="line">  border-radius: 5px 5px 0 0;</span><br><span class="line">  border: 1px solid #aaa;</span><br><span class="line">  background: #ccc linear-gradient(#ccc, #eee);</span><br><span class="line">  color: #999;</span><br><span class="line">  font-size: 1.4rem;</span><br><span class="line">  font-weight: 400;</span><br><span class="line">  padding: 5px 15px;</span><br><span class="line">&#125;</span><br><span class="line">.is-active .tab a &#123;</span><br><span class="line">  color: #ed702d;</span><br><span class="line">  border-color: #ed702d #ed702d #fff #ed702d;</span><br><span class="line">  background: #fff;</span><br><span class="line">&#125;</span><br><span class="line">.notice-list,</span><br><span class="line">.pds-list &#123;</span><br><span class="line">  width: 100%;</span><br><span class="line">  list-style: none;</span><br><span class="line">  padding-left: 0;</span><br><span class="line">  margin: 0;</span><br><span class="line">  &#x2F;* background: skyblue; *&#x2F;</span><br><span class="line">  padding-top: 45px;</span><br><span class="line">  min-height: 170px;</span><br><span class="line">  &#x2F;* position: absolute;</span><br><span class="line">  left: 0;</span><br><span class="line">  top: 45px; *&#x2F;</span><br><span class="line">&#125;</span><br><span class="line">.notice-list li,</span><br><span class="line">.pds-list li &#123;</span><br><span class="line">  display: flex;</span><br><span class="line">  flex-flow: row nowrap;</span><br><span class="line">  margin-bottom: 10px;</span><br><span class="line">&#125;</span><br><span class="line">.notice-list a,</span><br><span class="line">.pds-list a &#123;</span><br><span class="line">  &#x2F;* flex-grow: 1; *&#x2F;</span><br><span class="line">  text-overflow: ellipsis;</span><br><span class="line">  white-space: nowrap;</span><br><span class="line">  overflow: hidden;</span><br><span class="line">  width: 280px;</span><br><span class="line">&#125;</span><br><span class="line">.notice-more,</span><br><span class="line">.pds-more &#123;</span><br><span class="line">  position: absolute;</span><br><span class="line">  top: -8px;</span><br><span class="line">  right: -8px;</span><br><span class="line">  padding: 8px;</span><br><span class="line">&#125;</span><br><span class="line">.notice-more::before,</span><br><span class="line">.pds-more::before &#123;</span><br><span class="line">  color: hsla(110, 50%, 30%, 1);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="기타"><a href="#기타" class="headerlink" title="기타"></a>기타</h2></li>
+<li>fallback disign : 대비책 디자인</li>
+<li>인터프리터 / 컴파일<ul>
+<li>라인별로 해석해 가며 실행.</li>
+<li>전체를 컴파일 한 후, 실행.</li>
+<li>더 찾아보기</li>
+</ul>
+</li>
+<li>다시 한 번 강조. 마크업의 순서<ol>
+<li>논리적 순서</li>
+<li>시맨틱 마크업</li>
+<li>네이밍</li>
+</ol>
+</li>
+<li>pds: public domain software</li>
+<li>role은 div와 같은 의미 없는 태그들(시맨틱 태그가 아닌 태그)에 쓰는 게 정석.<ul>
+<li>역할을 바꾸는 데도 쓸 수는 있다.</li>
+</ul>
+</li>
+<li>구조 - html / 표현 - css / 동작 - js</li>
+<li><time datetime="2020-10-27T14:30:27">2020년 10월 27일</time><ul>
+<li>우리가 읽는 방식으로 쓰면 기계는 몰라.</li>
+<li>기계가 알 수 있는 방식으로 표시</li>
+</ul>
+</li>
+<li>display: none 은 접근성 상 문제가 있을 수 있지만, 동적으로 바뀔 영역에는 일단 적용 가능.(필요할 땐 써야지.)</li>
+<li>a를 display: block 했을 때, padding 영역도 선택 영역.</li>
+<li>WCGA등급: a(기본) / aa(미들) / aaa(어려움)</li>
+<li>text-overflow(: ellipsis;) - MDN 볼 것.<ul>
+<li>한 줄일 때만 쓰이는 속성,</li>
+<li>white-space: nowrap; overflow: hidden; 과 함께 쓴다.</li>
+<li>가로 길이가 지정되어야 함.(늘어나는 박스는 안 됨.)</li>
+</ul>
+</li>
+<li>defer</li>
+</ol>
+<hr>
+<h2 id="TEST"><a href="#TEST" class="headerlink" title="TEST"></a>TEST</h2><ol>
+<li>겸손한 자바스크립트라는 용어는 웹의 구조/표현/동작의 분리를 지향하자는 의미를 갖고 있다. 사용되는 언어를 각 언어와 각 역할을 연결지어 열거하시오.<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">구조 - HTML &#x2F; 표현 - CSS &#x2F; 동작 - JAVASCRIPT</span><br></pre></td></tr></table></figure></li>
+<li>웹 카페 예제를 구현하기 위해 작성한 HTML과 CSS는 단순한 텍스트 파일이다. 이 파일들을 해석하여 결과물을 보여주는 프로그램은 무엇인가?<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">웹 브라우저 ( 웹 브라우저 환경 , 내장 렌더링 엔진 )</span><br></pre></td></tr></table></figure></li>
+<li>호기롭게 TIL을 시작했다. 코드를 설명하려고 ‘&amp;tlhead&amp;gt’ 태그 알아보기’를 표현하기 위해, &amp;ltp&amp;gt&amp;lthead&amp;gt 태그 알아보기&amp;lt/p&amp;gt라고 작성했다. 이렇게 작성했을 때 일어나는 문제와 해결 방법을 작성하세요.<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;head&gt; 라는 텍스트를 텍스트노드가 아닌 요소로 인식하여 그려지지 않는다.  &amp;lt, &amp;gt 로 감싸거나 &lt;pre&gt; 태그로 감싸는 방법 등으로 해결할 수 있다.</span><br></pre></td></tr></table></figure></li>
+<li>time 태그를 활용하여 ‘2020년 10월 27일’ 날짜 정보와 텍스트가 담긴 요소를 작성해주세요<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;time datetime&#x3D;&quot;2020-10-27&quot;&gt;2020sus 12dnjf 27dlf&lt;&#x2F;time&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="http://bg-shorthand.github.io/2020/10/26/201026-html-css-practice-search-form-markup-style/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1354,7 +1498,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">7</span>
+          <span class="site-state-item-count">8</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
