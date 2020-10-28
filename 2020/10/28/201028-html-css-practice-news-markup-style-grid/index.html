@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"bg-shorthand.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="HTML&#x2F;CSS PRACTICE 새소식 부분 마크업 및 스타일(grid)   html 주요 주석 article &#x2F; section 은 독립된 영역이므로 h1 태그가 새로 올 수 있다. h1으로 써도 기계는 알아서 맞는 뎁스로 읽음. 그래서 쓸 수는 있지만, 권장은 안 해. seo에서 h1이 점수가 높은데 그게 여러 개면 헷갈리니까, 맞는 뎁스로 넣어주는 게">
+<meta property="og:type" content="article">
+<meta property="og:title" content="201028 html css practice-news markup style(grid)">
+<meta property="og:url" content="http://bg-shorthand.github.io/2020/10/28/201028-html-css-practice-news-markup-style-grid/index.html">
+<meta property="og:site_name" content="bg-shorthand-blog">
+<meta property="og:description" content="HTML&#x2F;CSS PRACTICE 새소식 부분 마크업 및 스타일(grid)   html 주요 주석 article &#x2F; section 은 독립된 영역이므로 h1 태그가 새로 올 수 있다. h1으로 써도 기계는 알아서 맞는 뎁스로 읽음. 그래서 쓸 수는 있지만, 권장은 안 해. seo에서 h1이 점수가 높은데 그게 여러 개면 헷갈리니까, 맞는 뎁스로 넣어주는 게">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-10-28T10:51:48.000Z">
+<meta property="article:modified_time" content="2020-10-28T10:52:06.420Z">
+<meta property="article:author" content="bg-shorthand">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://bg-shorthand.github.io/2020/10/28/201028-html-css-practice-news-markup-style-grid/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>201028 html css practice-news markup style(grid) | bg-shorthand-blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">bg-shorthand-blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://bg-shorthand.github.io/2020/10/28/201028-html-css-practice-news-markup-style-grid/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="bg-shorthand">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="bg-shorthand-blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          201028 html css practice-news markup style(grid)
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2020-10-28 19:51:48 / Modified: 19:52:06" itemprop="dateCreated datePublished" datetime="2020-10-28T19:51:48+09:00">2020-10-28</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/html-css/" itemprop="url" rel="index"><span itemprop="name">html/css</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="HTML-CSS-PRACTICE"><a href="#HTML-CSS-PRACTICE" class="headerlink" title="HTML/CSS PRACTICE"></a>HTML/CSS PRACTICE</h1><ul>
+<li>새소식 부분 마크업 및 스타일(grid)</li>
+</ul>
+<hr>
+<h2 id="html-주요-주석"><a href="#html-주요-주석" class="headerlink" title="html 주요 주석"></a>html 주요 주석</h2><ol>
+<li>article / section 은 독립된 영역이므로 h1 태그가 새로 올 수 있다.<ul>
+<li>h1으로 써도 기계는 알아서 맞는 뎁스로 읽음.</li>
+<li>그래서 쓸 수는 있지만, 권장은 안 해.</li>
+<li>seo에서 h1이 점수가 높은데 그게 여러 개면 헷갈리니까,</li>
+<li>맞는 뎁스로 넣어주는 게 좋다.<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;section class&#x3D;&quot;news&quot;&gt;</span><br><span class="line">    &lt;h2 class&#x3D;&quot;news-heading&quot; id&#x3D;&quot;newsHeading&quot;&gt;새소식&lt;&#x2F;h2&gt;</span><br><span class="line">    &lt;article class&#x3D;&quot;news-article&quot;&gt;</span><br><span class="line">      &lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;news-article-link&quot;&gt;</span><br><span class="line">        &lt;h3 class&#x3D;&quot;news-article-subject&quot;&gt;W3C 사이트가 리뉴얼 되었습니다.&lt;&#x2F;h3&gt;</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li>img 태그에서, alt 속성은 aria-labelledby 로 대체 할 수 있다.<ul>
+<li>단, 없애서는 안 되고 null값으로 줘야 함.(alt=””)</li>
+</ul>
+</li>
+<li>a태그 안의 블록 요소 삽입<ul>
+<li>넣어서 a태그를 display: block</li>
+<li>할 수는 있지만 권장은 하지 않는다.</li>
+<li>접근성, 사용성 측면에서 너무 불편함.<h2 id="html-전체-코드"><a href="#html-전체-코드" class="headerlink" title="html 전체 코드"></a>html 전체 코드</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">&lt;section class&#x3D;&quot;news&quot;&gt;</span><br><span class="line">  &lt;h2 class&#x3D;&quot;news-heading&quot; id&#x3D;&quot;newsHeading&quot;&gt;새소식&lt;&#x2F;h2&gt;</span><br><span class="line">  &lt;article class&#x3D;&quot;news-article&quot;&gt;</span><br><span class="line">    &lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;news-article-link&quot;&gt;</span><br><span class="line">      &lt;h3 class&#x3D;&quot;news-article-subject&quot;&gt;W3C 사이트가 리뉴얼 되었습니다.&lt;&#x2F;h3&gt;</span><br><span class="line">      &lt;!-- 아티클 안에 독립된 영역 안에서 h1로 다시 시작할 수 있다.</span><br><span class="line">      기계는 h3으로 읽음</span><br><span class="line">      -&gt; seo 에서는 h1이 점수가 젤 높은데 이게 왜 이래 싶음.  -&gt; h3으로 하셈&lt;&#x2F;div&gt; --&gt;</span><br><span class="line">      &lt;time datetime&#x3D;&quot;2020-10-28T14:19:07&quot; class&#x3D;&quot;news-article-date&quot;&gt;2020.10.28.&lt;&#x2F;time&gt;</span><br><span class="line">      &lt;p class&#x3D;&quot;news-article-brief&quot;&gt;</span><br><span class="line">      디자인 및 다양한 view 환경을 고려하여 구성되어 있으며, 기존보다 최신 정보 및 개발자를 위한 기술 가이드도 찾기 쉽도록 구성되어 있습니다.</span><br><span class="line">      &lt;&#x2F;p&gt;</span><br><span class="line">      &lt;figure&gt;</span><br><span class="line">        &lt;img src&#x3D;&quot;.&#x2F;images&#x2F;news.gif&quot; class&#x3D;&quot;news-article-thumbnail&quot; alt&#x3D;&quot;&quot; aria-labelledby&#x3D;&quot;newsArticleThumbnail&quot;&gt;</span><br><span class="line">        &lt;figcaption id&#x3D;&quot;newsArticleThumbnail&quot;&gt;W3C 리뉴얼&lt;&#x2F;figcaption&gt;</span><br><span class="line">        &lt;!-- alt 내용이 figcaption과 같으므로, id, aria-labelledby --&gt;</span><br><span class="line">      &lt;&#x2F;figure&gt;</span><br><span class="line">    &lt;&#x2F;a&gt;</span><br><span class="line">  &lt;&#x2F;article&gt;</span><br><span class="line">  &lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;news-more icon-plus&quot; aria-labelledby&#x3D;&quot;newsHeading&quot; title&#x3D;&quot;새소식&quot;&gt;더보기&lt;&#x2F;a&gt;</span><br><span class="line">&lt;&#x2F;section&gt;  </span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 id="css-주요-주석"><a href="#css-주요-주석" class="headerlink" title="css 주요 주석"></a>css 주요 주석</h2><ol>
+<li>이 부분의 레이아웃은 position, inline-block, float, flex, 다 가능. gird로 실습. 나머지 다 해볼 것 (나는 플롯으로 함)<h2 id="css-전체-코드"><a href="#css-전체-코드" class="headerlink" title="css 전체 코드"></a>css 전체 코드</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;* .news *&#x2F;</span><br><span class="line">&#x2F;* position, inline-block, float, flex, 다 가능. gird로 실습. 나머지 다 해볼 것 (나는 플롯으로 함)*&#x2F;</span><br><span class="line">.news &#123;</span><br><span class="line">  margin-top: 20px;</span><br><span class="line">  position: relative;</span><br><span class="line">&#125;  </span><br><span class="line">.news::before &#123;</span><br><span class="line">  content: &quot;&quot;;</span><br><span class="line">  position: absolute;</span><br><span class="line">  top: 35px;</span><br><span class="line">  left: 0;</span><br><span class="line">  height: 1px;</span><br><span class="line">  width: 100%;</span><br><span class="line">  background: #ccc linear-gradient(to right, #ccc, #fff);</span><br><span class="line">&#125;</span><br><span class="line">.news-heading &#123;</span><br><span class="line">  font-size: 1.6rem;</span><br><span class="line">  font-weight: 700;</span><br><span class="line">  color: #ed702d;</span><br><span class="line">  margin: 0;</span><br><span class="line">&#125;</span><br><span class="line">.news-article &#123;</span><br><span class="line">  margin-top: 35px;</span><br><span class="line">&#125;</span><br><span class="line">.news-article-link &#123;</span><br><span class="line">  display: grid;</span><br><span class="line">  &#x2F;* a태그라 원래 block 줘야 하는데 그리드 됐으니까 안줌 *&#x2F;</span><br><span class="line">  &#x2F;* grid-template-columns: 130px 1fr;</span><br><span class="line">  grid-template-rows: auto; *&#x2F;</span><br><span class="line">  grid-template-areas:</span><br><span class="line">  &quot;thumbnail subject&quot;</span><br><span class="line">  &quot;thumbnail date&quot;</span><br><span class="line">  &quot;thumbnail brief&quot;;</span><br><span class="line">&#125;</span><br><span class="line">.news-article-subject &#123;</span><br><span class="line">  margin: 0 0 5px;</span><br><span class="line">  grid-area: subject;</span><br><span class="line">  font-size: 1.5rem;</span><br><span class="line">&#125;</span><br><span class="line">.news-article-date &#123;</span><br><span class="line">  grid-area: date;</span><br><span class="line">&#125;</span><br><span class="line">.news-article-brief &#123;</span><br><span class="line">  margin: 10px 0;</span><br><span class="line">  grid-area: brief;</span><br><span class="line">  line-height: 1.5;</span><br><span class="line">&#125;</span><br><span class="line">figure &#123;</span><br><span class="line">  margin: 0;</span><br><span class="line">  margin-right: 10px;</span><br><span class="line">  grid-area: thumbnail;</span><br><span class="line">  text-align: center;</span><br><span class="line">&#125;</span><br><span class="line">figure img &#123;</span><br><span class="line">  box-shadow: 0 15px 10px 0 #aaax;</span><br><span class="line">&#125;</span><br><span class="line">figure figcaption &#123;</span><br><span class="line">  margin-top: 15px;</span><br><span class="line">&#125;</span><br><span class="line">&#x2F;* .news-article-thumbnail &#123;</span><br><span class="line">  background-color: tomato;</span><br><span class="line">  margin: 0;</span><br><span class="line">  grid-area: thumbnail;</span><br><span class="line">&#125; *&#x2F;</span><br><span class="line">.news-more &#123;</span><br><span class="line">  position: absolute;</span><br><span class="line">  top: -8px;</span><br><span class="line">  right: -8px;</span><br><span class="line">  padding: 8px;</span><br><span class="line">&#125;</span><br><span class="line">.news-more::before &#123;</span><br><span class="line">  color: hsla(110, 50%, 30%, 1);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<hr>
+<h2 id="기타"><a href="#기타" class="headerlink" title="기타"></a>기타</h2><ol>
+<li>a 태그 안에 a, button은 주지 않는다. display: block 줘도 안 됨.</li>
+<li>border-image 검색해볼 것.</li>
+<li>normal flow: 요소의 레이아웃을 변경하지 않을 시 웹페이지 요소가 자기 자신을 배치하는 방법</li>
+<li>레이아웃 변천사<ol>
+<li>테이블 - 테이블 안의 테이블을 만드는 등, 관리가 어렵고 복잡. 느림.</li>
+<li>프레임 - 프레임 셋을 하나로 묶어 표시하는 방식. 다른 프레임을 갖다 넣는 방식이라 보안상의 이슈가 있을 수 있다.</li>
+<li>css레이아웃(float, position) - 유연하지가 않다.</li>
+<li>flex box 레이아웃 - 같은 행/열로만 관리할 수 있음</li>
+<li>gird - 끝판왕</li>
+</ol>
+</li>
+<li>IE에서 지원하지 않는 grid 속성: span, gutter 등.</li>
+</ol>
+<hr>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/10/27/201027-html-css-practic-board-markup-style/" rel="prev" title="201027 html css practic-board markup/style">
+      <i class="fa fa-chevron-left"></i> 201027 html css practic-board markup/style
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#HTML-CSS-PRACTICE"><span class="nav-number">1.</span> <span class="nav-text">HTML&#x2F;CSS PRACTICE</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#html-%EC%A3%BC%EC%9A%94-%EC%A3%BC%EC%84%9D"><span class="nav-number">1.1.</span> <span class="nav-text">html 주요 주석</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#html-%EC%A0%84%EC%B2%B4-%EC%BD%94%EB%93%9C"><span class="nav-number">1.2.</span> <span class="nav-text">html 전체 코드</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#css-%EC%A3%BC%EC%9A%94-%EC%A3%BC%EC%84%9D"><span class="nav-number">1.3.</span> <span class="nav-text">css 주요 주석</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#css-%EC%A0%84%EC%B2%B4-%EC%BD%94%EB%93%9C"><span class="nav-number">1.4.</span> <span class="nav-text">css 전체 코드</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%EA%B8%B0%ED%83%80"><span class="nav-number">1.5.</span> <span class="nav-text">기타</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">bg-shorthand</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">9</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">categories</span>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">bg-shorthand</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
