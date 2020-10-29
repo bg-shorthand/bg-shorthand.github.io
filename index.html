@@ -145,6 +145,144 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://bg-shorthand.github.io/2020/10/29/201029-html-css-practice-event-related-parts-markup-style/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="bg-shorthand">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="bg-shorthand-blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/10/29/201029-html-css-practice-event-related-parts-markup-style/" class="post-title-link" itemprop="url">201029 html css practice-event, related parts markup/style</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2020-10-29 19:51:24 / Modified: 19:51:36" itemprop="dateCreated datePublished" datetime="2020-10-29T19:51:24+09:00">2020-10-29</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/html-css/" itemprop="url" rel="index"><span itemprop="name">html/css</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="HTML-CSS-PRACTICE"><a href="#HTML-CSS-PRACTICE" class="headerlink" title="HTML/CSS PRACTICE"></a>HTML/CSS PRACTICE</h1><ul>
+<li>신규 이벤트, 관련 사이트 부분 마크업 및 디자인</li>
+</ul>
+<hr>
+<h2 id="HTML-주요-주석"><a href="#HTML-주요-주석" class="headerlink" title="HTML 주요 주석"></a>HTML 주요 주석</h2><ol>
+<li>이미지 아래 있다고 다 figcaption 아님. 분리된 내용인지 생각하고 마크업.(img, p 따로)</li>
+<li>꾸미는 용도로 사용되는 div, span<ul>
+<li>공통적으로 디자인되는 요소들을 같은 클래스명으로 설정해 묶어놓는다.</li>
+<li>css에서 한꺼번에 제어.</li>
+<li>모듈화</li>
+</ul>
+</li>
+<li>디자인상 필요한 묶음은 의미없는 태그인 div<h2 id="HTML-전체-코드"><a href="#HTML-전체-코드" class="headerlink" title="HTML 전체 코드"></a>HTML 전체 코드</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class&#x3D;&quot;gradient-box&quot;&gt;</span><br><span class="line">  &lt;section class&#x3D;&quot;event&quot;&gt;</span><br><span class="line">    &lt;h2 class&#x3D;&quot;event-heading&quot;&gt;신규 &lt;span class&#x3D;&quot;point-color&quot;&gt;이벤트&lt;&#x2F;span&gt;&lt;&#x2F;h2&gt;</span><br><span class="line">    &lt;div id&#x3D;&quot;eventDetail&quot;&gt;</span><br><span class="line">      &lt;p class&#x3D;&quot;event-thumbnail&quot;&gt;&lt;img src&#x3D;&quot;.&#x2F;images&#x2F;free_gift.gif&quot; alt&#x3D;&quot;이벤트 경품: 웹표준 핵심 가이드북 2 도서 증정&quot;&gt;&lt;&#x2F;p&gt;</span><br><span class="line">      &lt;p class&#x3D;&quot;event-brief&quot;&gt;&lt;em&gt;웹표준 핵심 가이드북 2 출시!&lt;&#x2F;em&gt; 선착순 500명 한정으로 증정.&lt;&#x2F;p&gt;</span><br><span class="line">    &lt;&#x2F;div&gt;</span><br><span class="line">    &lt;!-- &lt;figure&gt;</span><br><span class="line">      &lt;img src&#x3D;&quot;.&#x2F;images&#x2F;free_gift.gif&quot; alt&#x3D;&quot;&quot; aria-labelledby&#x3D;&quot;guideBook&quot;&gt;</span><br><span class="line">      &lt;figcaption id&#x3D;&quot;guideBook&quot;&gt;웹표준 핵심 가이드북 2 출시! 선착순 500명 한정으로 증정.&lt;&#x2F;figcaption&gt;</span><br><span class="line">    &lt;&#x2F;figure&gt;</span><br><span class="line">    -&gt; 내가 한 거. 근데 내용이 이미지의 설명이 아님. --&gt;</span><br><span class="line">    &lt;div class&#x3D;&quot;btn-event&quot;&gt;</span><br><span class="line">      &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;btn-prev&quot; aria-label&#x3D;&quot;이전 이벤트 보기&quot;&gt;&lt;&#x2F;button&gt;</span><br><span class="line">      &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;btn-next&quot; aria-label&#x3D;&quot;다음 이벤트 보기&quot;&gt;&lt;&#x2F;button&gt;</span><br><span class="line">  &lt;&#x2F;div&gt;</span><br><span class="line">  &lt;&#x2F;section&gt;</span><br><span class="line">  &lt;section class&#x3D;&quot;related&quot;&gt;</span><br><span class="line">    &lt;h2 class&#x3D;&quot;related-heading&quot;&gt;관련 &lt;span class&#x3D;&quot;point-color&quot;&gt;사이트&lt;&#x2F;span&gt;&lt;&#x2F;h2&gt;</span><br><span class="line">    &lt;ul class&#x3D;&quot;related-list&quot;&gt;</span><br><span class="line">      &lt;li&gt;</span><br><span class="line">        &lt;a href&#x3D;&quot;#&quot;&gt;패스트 캠퍼스&lt;&#x2F;a&gt;</span><br><span class="line">      &lt;&#x2F;li&gt;</span><br><span class="line">      &lt;li&gt;</span><br><span class="line">        &lt;a href&#x3D;&quot;#&quot;&gt;W3C&lt;&#x2F;a&gt;</span><br><span class="line">      &lt;&#x2F;li&gt;</span><br><span class="line">      &lt;li&gt;</span><br><span class="line">        &lt;a href&#x3D;&quot;#&quot;&gt;CSS ZenGarden&lt;&#x2F;a&gt;</span><br><span class="line">      &lt;&#x2F;li&gt;</span><br><span class="line">      &lt;li&gt;</span><br><span class="line">        &lt;a href&#x3D;&quot;#&quot;&gt;웹접근성 연구소&lt;&#x2F;a&gt;</span><br><span class="line">      &lt;&#x2F;li&gt;</span><br><span class="line">      &lt;li&gt;</span><br><span class="line">        &lt;a href&#x3D;&quot;#&quot;&gt;MDN&lt;&#x2F;a&gt;</span><br><span class="line">      &lt;&#x2F;li&gt;</span><br><span class="line">    &lt;&#x2F;ul&gt;</span><br><span class="line">  &lt;&#x2F;section&gt;</span><br><span class="line">  &lt;section class&#x3D;&quot;favorite&quot;&gt;</span><br><span class="line">    &lt;h2&gt;인기 사이트&lt;&#x2F;h2&gt;</span><br><span class="line">    &lt;ol&gt;</span><br><span class="line">      &lt;li&gt;&lt;a href&#x3D;&quot;#&quot;&gt;W3C&lt;&#x2F;a&gt;&lt;i&gt;순위 상승&lt;&#x2F;i&gt;&lt;&#x2F;li&gt;</span><br><span class="line">      &lt;li&gt;&lt;a href&#x3D;&quot;#&quot;&gt;CSS Zen Garden&lt;&#x2F;a&gt;&lt;i&gt;순위 하락&lt;&#x2F;i&gt;&lt;&#x2F;li&gt;</span><br><span class="line">      &lt;li&gt;&lt;a href&#x3D;&quot;#&quot;&gt;MDN&lt;&#x2F;a&gt;&lt;i&gt;순위 유지&lt;&#x2F;i&gt;&lt;&#x2F;li&gt;</span><br><span class="line">      &lt;li&gt;&lt;a href&#x3D;&quot;#&quot;&gt;Web Standards&lt;&#x2F;a&gt;&lt;i&gt;순위 상승&lt;&#x2F;i&gt;&lt;&#x2F;li&gt;</span><br><span class="line">    &lt;&#x2F;ol&gt;</span><br><span class="line">    &lt;a href&#x3D;&quot;&quot;&gt;&lt;&#x2F;a&gt;</span><br><span class="line">  &lt;&#x2F;section&gt;</span><br><span class="line">&lt;&#x2F;div&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<hr>
+<h2 id="CSS-주요-코드"><a href="#CSS-주요-코드" class="headerlink" title="CSS 주요 코드"></a>CSS 주요 코드</h2><ol>
+<li>IR기법 (a11y-hidden은 요소 전체를 숨김. 요소는 두면서 그 안의 요소만 숨기는 방법. 그 요소를 div, span으로 또 묶을 수 있지만, 의미 없는 태그를 또 만들어야 해.)<ul>
+<li>font-size: 0 -&gt; 스크린리더가 읽지 않음.</li>
+<li>visibility: hidden -&gt; 스크린리더가 읽지 않음.</li>
+<li>color: transprent -&gt; 얘도 초점이 안 갈 수 있음.</li>
+<li>아래 두 트릭을 생각할 수 있다.<ol>
+<li>text-indent, white-space: nowrap, overflow: hidden<ul>
+<li>들여쓰기를 9999와 같이 많이 주면 스크린리더가 읽다가 의도하지 않은 방향을 가리키게 됨.</li>
+<li>요소의 크기를 벗어날 만큼 조금만 주는 방법.</li>
+</ul>
+</li>
+<li>padding, overflow: hidden<ul>
+<li>들여쓰기와 마찬가지로 밖으로 뺀 다음 숨김</li>
+</ul>
+</li>
+</ol>
+</li>
+<li>위와 같은 트릭이 있지만, 가장 좋은 건</li>
+<li>aria-label</li>
+<li>ㅇㅇ</li>
+</ul>
+</li>
+<li>css 선택자 -&gt; 많이 중첩될 수록 유지보수가 어렵다.<ul>
+<li>class 네이밍을 많이 해야겠네.</li>
+</ul>
+</li>
+<li>animation, transition에서 auto값, %값<ul>
+<li>auto 값을 주면 -&gt; animation, transition: ‘아, 그게 몇인지 어떻게 알아. 안 해.’ 하고 안 해버림.</li>
+<li>% 값은 지원하지 않음.</li>
+<li>방법을 우회하여 사용할 수도 있지만, 성능이 저하.</li>
+<li>명확한 단위를 써서 알려줘야 해.<h2 id="css-전체-코드"><a href="#css-전체-코드" class="headerlink" title="css 전체 코드"></a>css 전체 코드</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;* 신규 이벤트 및 관련 사이트 *&#x2F;</span><br><span class="line">.gradient-box &#123;</span><br><span class="line">  background: silver linear-gradient(#ccc, #eee);</span><br><span class="line">  border: 1px solid #aaa;</span><br><span class="line">  border-radius: 5px;</span><br><span class="line">  padding: 10px;</span><br><span class="line">&#125;</span><br><span class="line">.point-color &#123;</span><br><span class="line">  color: #ed702d;</span><br><span class="line">&#125;</span><br><span class="line">.event &#123;</span><br><span class="line">  position: relative;</span><br><span class="line">  border-bottom: 1px solid #aaa;</span><br><span class="line">&#125;</span><br><span class="line">.event-heading, .related-heading &#123;</span><br><span class="line">  margin: 0;</span><br><span class="line">  font-size: 1.6rem;</span><br><span class="line">  font-weight: 700;</span><br><span class="line">&#125;</span><br><span class="line">.event-thumbnail img &#123;</span><br><span class="line">  border: 1px solid #aaa;</span><br><span class="line">  box-shadow: 5px 5px 0 0 #aaa;</span><br><span class="line">&#125;</span><br><span class="line">.event-brief &#123;</span><br><span class="line">  line-height: 1.5;</span><br><span class="line">  font-size: 1.4rem;</span><br><span class="line">&#125;</span><br><span class="line">.event-brief em &#123;</span><br><span class="line">  font-style: normal;</span><br><span class="line">&#125;</span><br><span class="line">.btn-event &#123;</span><br><span class="line">  position: absolute;</span><br><span class="line">  top: 0;</span><br><span class="line">  right: 0px;</span><br><span class="line">&#125;</span><br><span class="line">.btn-event button &#123;</span><br><span class="line">  width: 19px;</span><br><span class="line">  height: 18px;</span><br><span class="line">  overflow: hidden;</span><br><span class="line">  &#x2F;* text-indent: -9999px; *&#x2F;</span><br><span class="line">  border: none;</span><br><span class="line">  padding: 18px 0 0 0;</span><br><span class="line">&#125;</span><br><span class="line">.btn-prev &#123;</span><br><span class="line">  background: transparent url(.&#x2F;images&#x2F;back_forward.png) no-repeat;</span><br><span class="line">&#125;</span><br><span class="line">.btn-next &#123;</span><br><span class="line">  background: transparent url(.&#x2F;images&#x2F;back_forward.png) 100% 0 no-repeat;</span><br><span class="line">&#125;</span><br><span class="line">.related &#123;</span><br><span class="line">  padding-top: 10px;</span><br><span class="line">&#125;</span><br><span class="line">.related-list &#123;</span><br><span class="line">  list-style: none;</span><br><span class="line">  padding-left: 0;</span><br><span class="line">  margin: 10px 0 0 0;</span><br><span class="line">  border-radius: 5px;</span><br><span class="line">  border: 1px solid #aaa;</span><br><span class="line">  background-color: #fff;</span><br><span class="line">  height: 27px;</span><br><span class="line">  overflow: hidden;</span><br><span class="line">  transition: 400ms;</span><br><span class="line">  &#x2F;* animation: 1s linear; *&#x2F;</span><br><span class="line">&#125;</span><br><span class="line">@keyframes height &#123;</span><br><span class="line">  0% &#123;</span><br><span class="line">    height: 33px;</span><br><span class="line">  &#125;</span><br><span class="line">  100% &#123;</span><br><span class="line">    height: auto;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">.related-list:hover &#123;</span><br><span class="line">  &#x2F;* animation: height 1s linear forwards; *&#x2F;</span><br><span class="line">  height: 147px;</span><br><span class="line">  padding: 10px 0;</span><br><span class="line">&#125;</span><br><span class="line">.rlated-list li &#123;</span><br><span class="line">  padding: 3px 5px 2px 5px;</span><br><span class="line">&#125;</span><br><span class="line">.related-list a &#123;</span><br><span class="line">  display: block;</span><br><span class="line">  line-height: 1.5;</span><br><span class="line">  padding-left: 20px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ol>
+<ul>
+<li>하다보니까 배치가 조금 꼬였음. 다시 한 번 봐야지.</li>
+</ul>
+<hr>
+<h2 id="기타"><a href="#기타" class="headerlink" title="기타"></a>기타</h2><ol>
+<li>git stash: 워킹 디렉토리의 add되지 않은 파일들을 백업.<ul>
+<li>git pull할 때, 워킹 디렉토리에서 수정된 파일들과 부딪히지 않음.</li>
+</ul>
+</li>
+<li>접근성의 관점에서, 마우스로 접근할 수 있는 건 키보드로도 접근이 가능해야 해.<ul>
+<li>UI는 달라도 상관 없다.</li>
+</ul>
+</li>
+<li>modal, dim</li>
+<li>anime.js -&gt; 이듬.run/anime</li>
+</ol>
+<hr>
+<h2 id="TEST"><a href="#TEST" class="headerlink" title="TEST"></a>TEST</h2><ol start="4">
+<li>다음 요소 중 자식 요소에게 상속되지 않는 속성을 고르시오.<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">1. opacity</span><br><span class="line">2. line-height</span><br><span class="line">3. box-sizing - 답</span><br><span class="line">4. font-size</span><br><span class="line">5. font-family</span><br><span class="line">6. text-align</span><br></pre></td></tr></table></figure></li>
+<li>다음 box 모델 중 text-indent를 사용할 수 없는 모델은?<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1. inline - 답</span><br><span class="line">2. inline-block</span><br><span class="line">3. table-cell</span><br><span class="line">4. block</span><br></pre></td></tr></table></figure></li>
+</ol>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="http://bg-shorthand.github.io/2020/10/28/201028-html-css-practice-news-markup-style-grid/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1610,7 +1748,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">9</span>
+          <span class="site-state-item-count">10</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
