@@ -145,6 +145,226 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://bg-shorthand.github.io/2020/11/22/201123-%EA%B0%9D%EC%B2%B4-%EB%A6%AC%ED%84%B0%EB%9F%B4-%EC%9B%90%EC%8B%9C%EA%B0%92%EA%B3%BC-%EA%B0%9D%EC%B2%B4%EC%9D%98-%EB%B9%84%EA%B5%90/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="bg-shorthand">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="bg-shorthand-blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/11/22/201123-%EA%B0%9D%EC%B2%B4-%EB%A6%AC%ED%84%B0%EB%9F%B4-%EC%9B%90%EC%8B%9C%EA%B0%92%EA%B3%BC-%EA%B0%9D%EC%B2%B4%EC%9D%98-%EB%B9%84%EA%B5%90/" class="post-title-link" itemprop="url">201123 객체 리터럴, 원시값과 객체의 비교</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2020-11-22 19:10:43 / Modified: 19:11:10" itemprop="dateCreated datePublished" datetime="2020-11-22T19:10:43+09:00">2020-11-22</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/javascript/" itemprop="url" rel="index"><span itemprop="name">javascript</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="객체-리터럴"><a href="#객체-리터럴" class="headerlink" title="객체 리터럴"></a>객체 리터럴</h1><hr>
+<h1 id="객체란"><a href="#객체란" class="headerlink" title="객체란?"></a>객체란?</h1><ul>
+<li>원시값을 제외한 나머지 값들.</li>
+<li>자바스크립트는 객체 기반의 프로그래밍 언어이며, 자바스크립트를 구성하는 거의 모든 것이 객체다.</li>
+<li>원시값과 달리, 객체는 변경 가능한 값이다.</li>
+<li>객체는 0개 이상의 프로퍼티로 구성된 집합이며, 프로퍼티는 키와 값으로 구성된다.</li>
+<li>모든 값은 프로퍼티 값이 될 수 있다.</li>
+<li>함수 역시 값으로 취급할 수 있으므로 프로퍼티 값이 될 수 있고,</li>
+<li>프로퍼티 값이 함수일 때, 일반 함수와 구분하기 위해 메서드(method)라 부른다.</li>
+<li>프로퍼티는 객체의 ‘상태’를 나타내는 값이고,</li>
+<li>메서드는 프로퍼티를 참조하고 조작할 수 있는 ‘동작’이므로</li>
+<li>객체는 상태와 동작을 하나의 단위로 구조화할 수 있어 유용하다.</li>
+<li>객체와 함수는 분리할 수 없는 개념이다.</li>
+<li>함수로 객체를 생성하기도 하며, 함수 자체가 객체이기도 하다.</li>
+<li>프로그래밍 언어 자체에는 순서가 없고 서로 물고 물리는 순환 구조가 있어서 잘 이해되지 않는 개념이 나오면 멈추지 말고 일단은 다음으로 넘어가는 것도 한 가지 방법이다.<h1 id="자바스크립트의-객체-생성-방법"><a href="#자바스크립트의-객체-생성-방법" class="headerlink" title="자바스크립트의 객체 생성 방법"></a>자바스크립트의 객체 생성 방법</h1></li>
+</ul>
+<ol>
+<li>객체 리터럴</li>
+<li>Object 생성자 함수</li>
+<li>생성자 함수</li>
+<li>Object.create 메서드</li>
+<li>클래스 (ES6)</li>
+</ol>
+<ul>
+<li>다양한 생성 방법을 지원하지만, 객체 리터럴 외의 생성 방식은 모두 함수를 사용해 객체를 생성한다.</li>
+<li>이러한 방법은 함수를 배우고 나서 알아본다.<h1 id="객체-리터럴에-의한-객체-생성"><a href="#객체-리터럴에-의한-객체-생성" class="headerlink" title="객체 리터럴에 의한 객체 생성"></a>객체 리터럴에 의한 객체 생성</h1></li>
+<li>가장 일반적이고 간단한 방법</li>
+<li>중괄호{} 내에 0개 이상의 프로퍼티를 정의한다.</li>
+<li>할당이 이루어지는 시점에 객체 리터럴을 해석해 객체를 생성한다.</li>
+<li>중괄호 내에 프로퍼티가 없으면 빈 객체.</li>
+<li>중괄호는 코드 블록이 아니고, 값으로 표현되는 표현식. -&gt; 중괄호 뒤에 세미콜론을 붙인다.</li>
+<li>객체 리터럴은 자바스크립트의 유연함과 강력함을 대표하는 객체 생성 방식이다.</li>
+<li>객체 생성과 동시에 프로퍼티를 만들 수 있고,</li>
+<li>객체를 생성한 이후에 프로퍼티를 동적으로 추가할 수도 있다.<h1 id="프로퍼티"><a href="#프로퍼티" class="headerlink" title="프로퍼티"></a>프로퍼티</h1></li>
+<li>객체를 구성하는 단위. 프로퍼티는 키와 값으로 구성된다. 프로퍼티의 나열은 쉼표,를 사용한다.</li>
+<li>프로퍼티 키: 빈 문자열을 포함하는 모든 문자열 또는 심벌 값.<ul>
+<li>프로퍼티 값에 접근할 수 있는 이름으로 식별자 역할을 하지만, 반드시 식별자 네이밍 규칙을 따라야 하는 것은 아님.</li>
+<li>기본적으로 문자열을 사용하므로, ‘’ 로 묶어서 표시하지만,</li>
+<li>식별자 네이밍 규칙을 따르는 이름은 따옴표 생략 가능.</li>
+<li>문자열로 평가될 수 있는 표현식을 사용해 만들 경우, 표현식을 대괄호[]로 묶어야 한다.</li>
+<li>빈 문자열을 사용해도 되지만 권장 안함.</li>
+<li>문자열이나 심벌 값 외에 값을 사용하면 암묵적 타입 변환.</li>
+<li>예약어도 사용 가능하지만 권장 안함.</li>
+<li>이미 존재하는 프로퍼티 키를 중복 선언하면 이전의 값을 덮어씀.(갱신)</li>
+<li>존재하지 않는 프로퍼티에 값을 할당하면 프로퍼티가 동적으로 생성, 프로퍼티 값 할당.</li>
+<li>delete 연산자로 프로퍼티 삭제 가능.<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">delete person.age;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>존재하지 않는 프로퍼티를 삭제하면 에러 없이 무시.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>프로퍼티 값: 자바스크립트에서 사용할 수 있는 모든 값.<h1 id="메서드"><a href="#메서드" class="headerlink" title="메서드"></a>메서드</h1></li>
+<li>자바스크립트의 함수는 객체(일급 객체)다.</li>
+<li>값으로 취급할 수 있고, 프로퍼티 값으로도 사용 가능.</li>
+<li>프로퍼티 값이 함수일 때, 일반 함수와 구분하기 위해 메서드(method)라 부른다.<h1 id="프로퍼티-접근"><a href="#프로퍼티-접근" class="headerlink" title="프로퍼티 접근"></a>프로퍼티 접근</h1></li>
+</ul>
+<ol>
+<li>마침표 표기법: 마침표 프로퍼티 접근 연산자(.)를 사용.</li>
+<li>대괄호 표기법: 대괄호 프로퍼티 접근 연산자([])를 사용.</li>
+</ol>
+<ul>
+<li>프로퍼티 키가 식별자 네이밍 규칙을 준수하면 둘 다 사용 가능.</li>
+<li>대괄호 표기법에서는 반드시 따옴표로 감싼 문자열로 표시.<ul>
+<li>문자열을 다 읽을 수 있는 거니까, 네이밍 규칙을 준수 안한 프로퍼티 키는 대괄호 표기법으로 접근 가능.</li>
+</ul>
+</li>
+<li>아니면 식별자로 해석해 식별자를 찾음.</li>
+<li>객체에 존재하지 않는 프로퍼티에 접근하면 undefined.<h1 id="ES6에-추가된-객체-리터럴의-확장-기능"><a href="#ES6에-추가된-객체-리터럴의-확장-기능" class="headerlink" title="ES6에 추가된 객체 리터럴의 확장 기능"></a>ES6에 추가된 객체 리터럴의 확장 기능</h1></li>
+</ul>
+<ol>
+<li>프로퍼티 축약 표현<ul>
+<li>프로퍼티 값이 변수이고, 변수 이름을 프로퍼터 키로 사용할 때, 프로퍼티 키를 생략할 수 있다. -&gt; 프로퍼티 키는 변수 이름으로 자동 생성.</li>
+</ul>
+</li>
+<li>계산된 프로퍼티 이름<ul>
+<li>문자열 또는 문자열로 평가되는 표현식을 대괄호로 묶어 프로퍼티 키를 생성할 수 있다.<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">obj[prefix + &#39;-&#39; + ++i] &#x3D; i;</span><br><span class="line">const obj &#x3D; &#123;</span><br><span class="line">  [&#96;$&#123;prefix&#125;-$&#123;++i&#125;&#96;]: i,</span><br><span class="line">  [&#96;$&#123;prefix&#125;-$&#123;++i&#125;&#96;]: i,</span><br><span class="line">  [&#96;$&#123;prefix&#125;-$&#123;++i&#125;&#96;]: i</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li>메서드 축약 표현<ul>
+<li>funktion 키워드를 축약할 수 있다.</li>
+<li>메서드 축약 표현으로 정의한 메서드는 일반 메서드와 다르게 동작하는데,</li>
+<li>이건 다음에 계속.</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h1 id="원시값과-객체의-비교"><a href="#원시값과-객체의-비교" class="headerlink" title="원시값과 객체의 비교"></a>원시값과 객체의 비교</h1><ol>
+<li>원시값은 변경 불가능한 값. 객체는 변경 가능한 값.</li>
+<li>원시값을 할당한 변수(확보된 메모리 공간)에는 실제 값이 저장, 객체를 할당한 변수(확보된 메모리 공간)에는 참조값이 저장.</li>
+<li>원시값을 갖는 변수를 다른 변수에 할당하면 원본의 원시값이 복사되어 전달(값에 의한 전달), 객체를 가리키는 변수를 다른 변수에 할당하면 원본의 참조값이 복사되어 전달(참조에 의한 전달).<h1 id="원시값"><a href="#원시값" class="headerlink" title="원시값"></a>원시값</h1></li>
+<li>변경 불가능한 값: 불변성<ul>
+<li>값 자체를 변경할 수는 없지만, 변수 값은 변경할 수 있다. -&gt; 재할당</li>
+<li>상수는 재할당이 금지된 변수. 상수와 변경 불가능한 값이 같은 게 아님.</li>
+<li>재할당 외에는 변수 값을 변경할 수 있는 방법이 없다.</li>
+</ul>
+</li>
+<li>문자열과 불변성<ul>
+<li>문자열은 유사 배체 객체면서, 이터러블이므로 배열과 유사하게 각 문자에 접근할 수 있다. 단 변경은 할 수 없다.</li>
+</ul>
+</li>
+<li>값에 의한 전달<ul>
+<li>변수에 원시값을 갖는 변수를 할당하면 할당받는 변수(copy)에는 할당되는 변수(score)의 원시값이 복사되어 전달된다. 이를 값에 의한 전달(Pass by value)이라 한다.</li>
+<li>엄격하게 표현하면 변수에는 값이 전달되는 것이 아니라 메모리 주소가 전달된다. 이는 변수와 같은 식별자는 값이 아니라 메모리 주소를 기억하고 있기 때문이다.</li>
+<li>값에 의한 전달을 생각할 수 있는 두 가지 방법<ol>
+<li>새로운 80을 생성(복사)해서 메모리 주소를 전달하는 방식. 이 방식은 할당 시점에 두 변수가 기억하는 메모리 주소가 다르다.</li>
+<li>score의 변수값 80의 메모리 주소를 그대로 전달하는 방식. 이 방식은 할당 시점에 두 변수가 기억하는 메모리 주소가 같다.</li>
+</ol>
+<ul>
+<li>어떤 방식이든 간에,</li>
+<li>결국은 두 변수의 원시값은 서로 다른 메모리 공간에 저장된 별개의 값이 되어 어느 한쪽에서 재할당을 통해 값을 변경하더라도 서로 간섭할 수 없다.<h1 id="객체"><a href="#객체" class="headerlink" title="객체"></a>객체</h1></li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<ul>
+<li>객체는 프로퍼티의 개수가 정해져 있지 않으며, 동적으로 추가되고 삭제할 수 있다.</li>
+<li>프로퍼티의 값에도 제약이 없다. -&gt; 원시값과 같이 확보해야 할 메모리 공간의 크기를 사전에 정해 둘 수 없다.</li>
+<li>원시값은 상대적으로 적은 메모리를 소비하지만 객체는 경우에 따라 크기가 매우 클 수도 있다. 객체를 생성하고 프로퍼티에 접근하는 것도 원시값과 비교할 때 비용이 많이 드는 일이다. -&gt; 객체는 원시값과는 다른 방식으로 동작하도록 설계되어 있다.</li>
+</ul>
+<ol>
+<li>변경 가능한 값<ul>
+<li>객체를 할당한 변수에는 생성된 객체가 실제로 저장된 메모리 공간의 주소가 저장된다. 변수는 이 참조값을 통해 객체에 접근할 수 있다. -&gt;  “변수는 객체를 참조하고 있다” 또는 “변수는 객체를 가리키고(point) 있다”라고 표현한다.</li>
+<li>객체의 값을 변경하면, 참조값은 그대로 두고 참조값이 참조하는 값을 변경.</li>
+<li>객체를 생성하고 관리하는 방식은 매우 복잡하며 비용이 많이 드는 일이다. -&gt; 원시값처럼 이전 값을 복사해서 새롭게 생성한다면 명확하고 신뢰성이 확보되겠지만 객체는 크기가 매우 클 수도 있고, 원시값처럼 크기가 일정하지도 않으며, 프로퍼티 값이 객체일 수도 있어서 복사(deep copy)해서 생성하는 비용이 많이 든다. -&gt; 메모리를 효율적으로 사용하기 위해, 그리고 객체를 복사해 생성하는 비용을 절약하여 성능을 향상시키기 위해 객체는 변경 가능한 값으로 설계되어 있다. -&gt; 이러한 구조적 단점에 따른 부작용, 여러 개의 식별자가 하나의 객체를 공유할 수 있다.<ul>
+<li>얕은 복사와 깊은 복사<ol>
+<li>얕은 복사: 참조값만 복사해 새로운 메모리에 저장하여 쓰고, 객체는 복사없이 사용.</li>
+<li>깊은 복사: 객체까지 모두 복사해 참조값과 복사 모두 새로운 메모리를 만듦. -&gt; 완전한 복사본을 만듦.<ul>
+<li>둘 다 원본과 참조값은 다름.</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>참조에 의한 전달<ul>
+<li>객체를 가리키는 변수(원본, person)를 다른 변수(사본, copy)에 할당하면 원본의 참조값이 복사되어 전달. 이를 ‘참조에 의한 전달’이라 한다.</li>
+<li>얕은 복사.(동일)</li>
+<li>따라서 원본 또는 사본 중 어느 한쪽에서 객체를 변경(변수에 새로운 객체를 재할당하는 것이 아니라 객체의 프로퍼티 값을 변경하거나 프로퍼티를 추가, 삭제)하면 서로 영향을 주고받는다.<h1 id="값에-의한-전달-참조에-의한-전달"><a href="#값에-의한-전달-참조에-의한-전달" class="headerlink" title="값에 의한 전달, 참조에 의한 전달"></a>값에 의한 전달, 참조에 의한 전달</h1></li>
+</ul>
+</li>
+</ol>
+<ul>
+<li>사실 ‘값에 의한 전달’과 ‘참조에 의한 전달’은 둘 다 식별자가 기억하는 메모리 공간에 저장되어 있는 값을 복사해서 전달한다는 면에서 동일하다.</li>
+<li>다만 식별자가 기억하는 메모리 공간, 즉 변수에 저장되어 있는 값이 원시값이냐 참조값이냐의 차이만 있을 뿐.</li>
+<li>엄격히 말하면, 자바스크립트에는 “참조에 의한 전달”은 존재하지 않고 “값에 의한 전달”만이 존재한다고 말할 수 있다.</li>
+<li>‘공유에 의한 전달’이라는 표현도 있지만, 이 또한 에크마스크립트 사양에 정의된 공식 용어는 아니며, 자바스크립트의 동작 방식을 정확히 설명하지는 못한다.</li>
+<li>다만, 전달되는 값의 종류에 원시값인지 참조값인지 구별해서 강조하는 의미에서 “값에 의한 전달”과 “참조에 의한 전달”로 구분하여 부르기로 한다.</li>
+<li>자바스크립트에는 포인터(pointer)가 존재하지 않기 때문에 포인터가 존재하는 다른 프로그래밍 언어의 “참조에 의한 전달”과 의미가 정확히 일치하지 않다는 점에 주의.</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="http://bg-shorthand.github.io/2020/11/19/201119-%EC%97%B0%EC%82%B0%EC%9E%90-%EC%A0%9C%EC%96%B4%EB%AC%B8-%ED%83%80%EC%9E%85-%EB%B3%80%ED%99%98-%EB%8B%A8%EC%B6%95-%ED%8F%89%EA%B0%80/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1760,150 +1980,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://bg-shorthand.github.io/2020/10/27/201027-html-css-practic-board-markup-style/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="bg-shorthand">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="bg-shorthand-blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/10/27/201027-html-css-practic-board-markup-style/" class="post-title-link" itemprop="url">201027 html css practic-board markup/style</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2020-10-27 20:26:45 / Modified: 20:27:22" itemprop="dateCreated datePublished" datetime="2020-10-27T20:26:45+09:00">2020-10-27</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/html-css/" itemprop="url" rel="index"><span itemprop="name">html/css</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="HTML-CSS-PRACTICE"><a href="#HTML-CSS-PRACTICE" class="headerlink" title="HTML/CSS PRACTICE"></a>HTML/CSS PRACTICE</h1><ul>
-<li>공지사항, 자료실 부분 마크업 및 디자인</li>
-</ul>
-<h2 id="HTML-주요-주석"><a href="#HTML-주요-주석" class="headerlink" title="HTML 주요 주석"></a>HTML 주요 주석</h2><ol>
-<li>heading(시맨틱 태그) 안에 button(또 다른 시맨틱 태그)을 넣는 건 부자연 스럽다.<ul>
-<li>대신 a태그를 씀.</li>
-<li>a 태그는 시맨틱 태그(의미 있는 태그)가 아님.</li>
-<li>대신 button의 역할을 해야 하므로, role=”button”<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;h2 class&#x3D;&quot;notice-heading tab&quot;&gt;&lt;a href&#x3D;&quot;#&quot; role&#x3D;&quot;button&quot; id&#x3D;&quot;noticeHeading&quot;&gt;공지사항&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;</span><br></pre></td></tr></table></figure></li>
-</ul>
-</li>
-<li>title / aria-label / aria-labelledby<ul>
-<li>그냥 이름만 주는 title, aria-label과 달리, aria-labelledby는 id 값으로 연결된 요소를 명시적으로 표시한다.</li>
-<li>해당 id의 요소가 수정 되면 따라서 수정됨.</li>
-<li>aria-labelledby는 툴팁으로 노출 되지 않아, title을 같이 썼다.<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;notice-more icon-plus&quot; aria-labelledby&#x3D;&quot;noticeHeading&quot; title&#x3D;&quot;공지사항&quot;&gt;더보기&lt;&#x2F;a&gt;</span><br></pre></td></tr></table></figure>
-<h2 id="html-전체-주석"><a href="#html-전체-주석" class="headerlink" title="html 전체 주석"></a>html 전체 주석</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class&#x3D;&quot;board&quot;&gt;</span><br><span class="line">      &lt;section class&#x3D;&quot;notice is-active&quot;&gt;</span><br><span class="line">        &lt;h2 class&#x3D;&quot;notice-heading tab&quot;&gt;&lt;a href&#x3D;&quot;#&quot; role&#x3D;&quot;button&quot; id&#x3D;&quot;noticeHeading&quot;&gt;공지사항&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;</span><br><span class="line">        &lt;!-- heading 안에 button이 있는 것보다 a가 자연스럽다.</span><br><span class="line">        button에 role 주는 건 역할을 바꾸는 거라 지양.</span><br><span class="line">        a는 시맨틱 요소가 아니므로 role을 줘도 무방 --&gt;</span><br><span class="line">        &lt;ul class&#x3D;&quot;notice-list&quot;&gt;</span><br><span class="line">          &lt;li&gt;&lt;a href&#x3D;&quot;#&quot;&gt;HTML의 모든 것을 알려주마 샘플 활용법&lt;&#x2F;a&gt;&lt;time datetime&#x3D;&quot;2020-10-27T14:38:56&quot;&gt;2020.10.27&lt;&#x2F;time&gt;&lt;&#x2F;li&gt;</span><br><span class="line">          &lt;!-- 게시날짜, 조회수 등 모두 목록에 해당. li에 포함 --&gt;</span><br><span class="line">          &lt;li&gt;&lt;a href&#x3D;&quot;#&quot;&gt;W3C 사이트 리뉴얼 및 공지사항&lt;&#x2F;a&gt;&lt;time datetime&#x3D;&quot;2020-10-27T14:38:56&quot;&gt;2020.10.27&lt;&#x2F;time&gt;&lt;&#x2F;li&gt;</span><br><span class="line">          &lt;li&gt;&lt;a href&#x3D;&quot;#&quot;&gt;KWCAG 2.1 소식&lt;&#x2F;a&gt;&lt;time datetime&#x3D;&quot;2020-10-27T14:38:56&quot;&gt;2020.10.27&lt;&#x2F;time&gt;&lt;&#x2F;li&gt;</span><br><span class="line">          &lt;li&gt;&lt;a href&#x3D;&quot;#&quot;&gt;서버 점검으로 인한 사이트 이용안내 입니다.&lt;&#x2F;a&gt;&lt;time datetime&#x3D;&quot;2020-10-27T14:38:56&quot;&gt;2020.10.27&lt;&#x2F;time&gt;&lt;&#x2F;li&gt;</span><br><span class="line">          &lt;li&gt;&lt;a href&#x3D;&quot;#&quot;&gt;여러분들이 생각하는 웹 접근성에 대해 이야기해 봅시다.&lt;&#x2F;a&gt;&lt;time datetime&#x3D;&quot;2020-10-27T14:38:56&quot;&gt;2020.10.27&lt;&#x2F;time&gt;&lt;&#x2F;li&gt;</span><br><span class="line">          &lt;li&gt;&lt;a href&#x3D;&quot;#&quot;&gt;서버 점검으로 인한 사이트 이용안내 입니다.&lt;&#x2F;a&gt;&lt;time datetime&#x3D;&quot;2020-10-27T14:38:56&quot;&gt;2020.10.27&lt;&#x2F;time&gt;&lt;&#x2F;li&gt;</span><br><span class="line">          &lt;li&gt;&lt;a href&#x3D;&quot;#&quot;&gt;여러분들이 생각하는 웹 접근성에 대해 이야기해 봅시다.&lt;&#x2F;a&gt;&lt;time datetime&#x3D;&quot;2020-10-27T14:38:56&quot;&gt;2020.10.27&lt;&#x2F;time&gt;&lt;&#x2F;li&gt;</span><br><span class="line">        &lt;&#x2F;ul&gt;</span><br><span class="line">        &lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;notice-more icon-plus&quot; aria-labelledby&#x3D;&quot;noticeHeading&quot; title&#x3D;&quot;공지사항&quot;&gt;더보기&lt;&#x2F;a&gt;</span><br><span class="line">        &lt;!-- 아래 더보기 a와 구별되지 않아. title, aira-label, aria-labelledby(id필요, 위 내용이 수정되면 여기도 수정)</span><br><span class="line">        -&gt;아리아 레이블드는 툴팁이 안 떠서 타이틀도 씀 --&gt;</span><br><span class="line">      &lt;&#x2F;section&gt;</span><br><span class="line">      &lt;section class&#x3D;&quot;pds&quot;&gt;</span><br><span class="line">        &lt;h2 class&#x3D;&quot;pds-heading tab&quot;&gt;&lt;a href&#x3D;&quot;#&quot; role&#x3D;&quot;button&quot; id&#x3D;&quot;pdsHeading&quot;&gt;자료실&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;</span><br><span class="line">        &lt;ul class&#x3D;&quot;pds-list&quot;&gt;</span><br><span class="line">          &lt;li&gt;&lt;a href&#x3D;&quot;#&quot;&gt;디자인 사이트 링크 모음&lt;&#x2F;a&gt;&lt;time datetime&#x3D;&quot;2020-10-28T14:38:56&quot;&gt;2020.10.28&lt;&#x2F;time&gt;&lt;&#x2F;li&gt;</span><br><span class="line">          &lt;li&gt;&lt;a href&#x3D;&quot;#&quot;&gt;웹 접근성 관련 자료 모음&lt;&#x2F;a&gt;&lt;time datetime&#x3D;&quot;2020-10-28T14:38:56&quot;&gt;2020.10.28&lt;&#x2F;time&gt;&lt;&#x2F;li&gt;</span><br><span class="line">          &lt;li&gt;&lt;a href&#x3D;&quot;#&quot;&gt;예제 샘플 응용해보기&lt;&#x2F;a&gt;&lt;time datetime&#x3D;&quot;2020-10-28T14:38:56&quot;&gt;2020.10.28&lt;&#x2F;time&gt;&lt;&#x2F;li&gt;</span><br><span class="line">          &lt;li&gt;&lt;a href&#x3D;&quot;#&quot;&gt;웹 접근성 향상을 위한 국가 표준 기술 가이드라인&lt;&#x2F;a&gt;&lt;time datetime&#x3D;&quot;2020-10-28T14:38:56&quot;&gt;2020.10.28&lt;&#x2F;time&gt;&lt;&#x2F;li&gt;</span><br><span class="line">          &lt;li&gt;&lt;a href&#x3D;&quot;#&quot;&gt;로얄티 프리 이미지 자료&lt;&#x2F;a&gt;&lt;time datetime&#x3D;&quot;2020-10-28T14:38:56&quot;&gt;2020.10.28&lt;&#x2F;time&gt;&lt;&#x2F;li&gt;</span><br><span class="line">        &lt;&#x2F;ul&gt;</span><br><span class="line">        &lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;pds-more icon-plus&quot; aria-labelledby&#x3D;&quot;pdsHeading&quot; title&#x3D;&quot;자료실&quot;&gt;더보기&lt;&#x2F;a&gt;</span><br><span class="line">      &lt;&#x2F;section&gt;</span><br><span class="line">    &lt;&#x2F;div&gt;</span><br><span class="line">    &lt;section class&#x3D;&quot;news&quot;&gt;</span><br><span class="line">      &lt;h2&gt;새소식&lt;&#x2F;h2&gt;</span><br><span class="line">    &lt;&#x2F;section&gt;</span><br><span class="line">  &lt;&#x2F;div&gt;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-</ol>
-<hr>
-<h2 id="css-주요-주석"><a href="#css-주요-주석" class="headerlink" title="css 주요 주석"></a>css 주요 주석</h2><ol>
-<li>동적인 요소 스타일<ul>
-<li>일단 스타일은 신경쓰지 않고, 마크업부터 잘 하자.</li>
-<li>오늘 한 내용은 두 섹션이 겹쳐서 하나는 보이고 하나는 안 보이고.</li>
-<li>나중에 js로 제어할 테지만, 일단 차분하게 css<ol>
-<li>기본 형태와 제어된 형태를 나눈다.</li>
-<li>.is-active 클래스명이 들어간 것을 제어한다고 기획.</li>
-<li>차분하게 css</li>
-</ol>
-</li>
-</ul>
-</li>
-<li>전체 코드를 살펴보는 것 뿐만 아니라, 여러 번 연습해봐야 할 듯.<h2 id="css-전체-코드"><a href="#css-전체-코드" class="headerlink" title="css 전체 코드"></a>css 전체 코드</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;* 공지사항 및 자료실 *&#x2F;</span><br><span class="line">.board &#123;</span><br><span class="line">  position: relative;</span><br><span class="line">  margin-top: 20px;</span><br><span class="line">&#125;</span><br><span class="line">.notice-list,</span><br><span class="line">.pds-list,</span><br><span class="line">.notice-more,</span><br><span class="line">.pds-more &#123;</span><br><span class="line">  display: none;</span><br><span class="line">&#125;</span><br><span class="line">.is-active .notice-list,</span><br><span class="line">.is-active .pds-list,</span><br><span class="line">.is-active .notice-more,</span><br><span class="line">.is-active .pds-more &#123;</span><br><span class="line">  display: block;</span><br><span class="line">&#125;</span><br><span class="line">&#x2F;* .is-active 로 구분해서 논과 블럭만 설정하고 css *&#x2F;</span><br><span class="line">.tab &#123;</span><br><span class="line">  &#x2F;* float: left; *&#x2F;</span><br><span class="line">  margin: 0;</span><br><span class="line">  position: absolute;</span><br><span class="line">  top: 0;</span><br><span class="line">  left: 0;</span><br><span class="line">&#125;</span><br><span class="line">.is-active .tab &#123;</span><br><span class="line">  z-index: 5;</span><br><span class="line">&#125;</span><br><span class="line">.notice-heading &#123;</span><br><span class="line">  left: 0;</span><br><span class="line">&#125;</span><br><span class="line">.pds-heading &#123;</span><br><span class="line">  left: 83px;</span><br><span class="line">&#125;</span><br><span class="line">.tab a &#123;</span><br><span class="line">  display: block;</span><br><span class="line">  border-radius: 5px 5px 0 0;</span><br><span class="line">  border: 1px solid #aaa;</span><br><span class="line">  background: #ccc linear-gradient(#ccc, #eee);</span><br><span class="line">  color: #999;</span><br><span class="line">  font-size: 1.4rem;</span><br><span class="line">  font-weight: 400;</span><br><span class="line">  padding: 5px 15px;</span><br><span class="line">&#125;</span><br><span class="line">.is-active .tab a &#123;</span><br><span class="line">  color: #ed702d;</span><br><span class="line">  border-color: #ed702d #ed702d #fff #ed702d;</span><br><span class="line">  background: #fff;</span><br><span class="line">&#125;</span><br><span class="line">.notice-list,</span><br><span class="line">.pds-list &#123;</span><br><span class="line">  width: 100%;</span><br><span class="line">  list-style: none;</span><br><span class="line">  padding-left: 0;</span><br><span class="line">  margin: 0;</span><br><span class="line">  &#x2F;* background: skyblue; *&#x2F;</span><br><span class="line">  padding-top: 45px;</span><br><span class="line">  min-height: 170px;</span><br><span class="line">  &#x2F;* position: absolute;</span><br><span class="line">  left: 0;</span><br><span class="line">  top: 45px; *&#x2F;</span><br><span class="line">&#125;</span><br><span class="line">.notice-list li,</span><br><span class="line">.pds-list li &#123;</span><br><span class="line">  display: flex;</span><br><span class="line">  flex-flow: row nowrap;</span><br><span class="line">  margin-bottom: 10px;</span><br><span class="line">&#125;</span><br><span class="line">.notice-list a,</span><br><span class="line">.pds-list a &#123;</span><br><span class="line">  &#x2F;* flex-grow: 1; *&#x2F;</span><br><span class="line">  text-overflow: ellipsis;</span><br><span class="line">  white-space: nowrap;</span><br><span class="line">  overflow: hidden;</span><br><span class="line">  width: 280px;</span><br><span class="line">&#125;</span><br><span class="line">.notice-more,</span><br><span class="line">.pds-more &#123;</span><br><span class="line">  position: absolute;</span><br><span class="line">  top: -8px;</span><br><span class="line">  right: -8px;</span><br><span class="line">  padding: 8px;</span><br><span class="line">&#125;</span><br><span class="line">.notice-more::before,</span><br><span class="line">.pds-more::before &#123;</span><br><span class="line">  color: hsla(110, 50%, 30%, 1);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="기타"><a href="#기타" class="headerlink" title="기타"></a>기타</h2></li>
-<li>fallback disign : 대비책 디자인</li>
-<li>인터프리터 / 컴파일<ul>
-<li>라인별로 해석해 가며 실행.</li>
-<li>전체를 컴파일 한 후, 실행.</li>
-<li>더 찾아보기</li>
-</ul>
-</li>
-<li>다시 한 번 강조. 마크업의 순서<ol>
-<li>논리적 순서</li>
-<li>시맨틱 마크업</li>
-<li>네이밍</li>
-</ol>
-</li>
-<li>pds: public domain software</li>
-<li>role은 div와 같은 의미 없는 태그들(시맨틱 태그가 아닌 태그)에 쓰는 게 정석.<ul>
-<li>역할을 바꾸는 데도 쓸 수는 있다.</li>
-</ul>
-</li>
-<li>구조 - html / 표현 - css / 동작 - js</li>
-<li><time datetime="2020-10-27T14:30:27">2020년 10월 27일</time><ul>
-<li>우리가 읽는 방식으로 쓰면 기계는 몰라.</li>
-<li>기계가 알 수 있는 방식으로 표시</li>
-</ul>
-</li>
-<li>display: none 은 접근성 상 문제가 있을 수 있지만, 동적으로 바뀔 영역에는 일단 적용 가능.(필요할 땐 써야지.)</li>
-<li>a를 display: block 했을 때, padding 영역도 선택 영역.</li>
-<li>WCGA등급: a(기본) / aa(미들) / aaa(어려움)</li>
-<li>text-overflow(: ellipsis;) - MDN 볼 것.<ul>
-<li>한 줄일 때만 쓰이는 속성,</li>
-<li>white-space: nowrap; overflow: hidden; 과 함께 쓴다.</li>
-<li>가로 길이가 지정되어야 함.(늘어나는 박스는 안 됨.)</li>
-</ul>
-</li>
-<li>defer</li>
-</ol>
-<hr>
-<h2 id="TEST"><a href="#TEST" class="headerlink" title="TEST"></a>TEST</h2><ol>
-<li>겸손한 자바스크립트라는 용어는 웹의 구조/표현/동작의 분리를 지향하자는 의미를 갖고 있다. 사용되는 언어를 각 언어와 각 역할을 연결지어 열거하시오.<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">구조 - HTML &#x2F; 표현 - CSS &#x2F; 동작 - JAVASCRIPT</span><br></pre></td></tr></table></figure></li>
-<li>웹 카페 예제를 구현하기 위해 작성한 HTML과 CSS는 단순한 텍스트 파일이다. 이 파일들을 해석하여 결과물을 보여주는 프로그램은 무엇인가?<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">웹 브라우저 ( 웹 브라우저 환경 , 내장 렌더링 엔진 )</span><br></pre></td></tr></table></figure></li>
-<li>호기롭게 TIL을 시작했다. 코드를 설명하려고 ‘&amp;tlhead&amp;gt’ 태그 알아보기’를 표현하기 위해, &amp;ltp&amp;gt&amp;lthead&amp;gt 태그 알아보기&amp;lt/p&amp;gt라고 작성했다. 이렇게 작성했을 때 일어나는 문제와 해결 방법을 작성하세요.<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;head&gt; 라는 텍스트를 텍스트노드가 아닌 요소로 인식하여 그려지지 않는다.  &amp;lt, &amp;gt 로 감싸거나 &lt;pre&gt; 태그로 감싸는 방법 등으로 해결할 수 있다.</span><br></pre></td></tr></table></figure></li>
-<li>time 태그를 활용하여 ‘2020년 10월 27일’ 날짜 정보와 텍스트가 담긴 요소를 작성해주세요<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;time datetime&#x3D;&quot;2020-10-27&quot;&gt;2020sus 12dnjf 27dlf&lt;&#x2F;time&gt;</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1973,7 +2049,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">17</span>
+          <span class="site-state-item-count">18</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
