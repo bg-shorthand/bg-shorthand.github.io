@@ -145,6 +145,139 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://bg-shorthand.github.io/2020/10/19/201019-What-is-HTML/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="bg-shorthand">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="bg-shorthand-blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/10/19/201019-What-is-HTML/" class="post-title-link" itemprop="url">201019-What is HTML?</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2020-10-19 20:18:15 / Modified: 20:19:37" itemprop="dateCreated datePublished" datetime="2020-10-19T20:18:15+09:00">2020-10-19</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/html-css/" itemprop="url" rel="index"><span itemprop="name">html/css</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="HTML5-MARKUP"><a href="#HTML5-MARKUP" class="headerlink" title="HTML5 MARKUP"></a>HTML5 MARKUP</h1><ol>
+<li>MAKRUP<ul>
+<li>마크한다는 의미.</li>
+<li>문서에 태그를 추가하여 정보를 입력</li>
+</ul>
+</li>
+<li>HTML5<ul>
+<li>MARKUP + API</li>
+<li>마크업 언어면서, API가 추가된 최신의 HTML.<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">응용 프로그램에서 사용할 수 있도록,</span><br><span class="line">운영 체제나 프로그래밍 언어가 제공하는 기능을</span><br><span class="line">제어할 수 있게 만든 인터페이스를 뜻한다.</span><br><span class="line">-&gt; JAVASCRIPT의 함수 덩어리</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li>HTML4.0, XHTML1.0, HTML5<ul>
+<li>세 가지 모두 표준으로 채택된 상태.<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">W3C에서 HTML2.0을 만들고 있었어.</span><br><span class="line">그걸 브라우저 벤더(제작사)들이 보니까 걱정이 돼.</span><br><span class="line">&quot;아니, 저렇게 바꾸면 예전 문서들 다 어떡함?&quot;</span><br><span class="line">그래서 제작사들이 지들끼리 모임을 만들어.</span><br><span class="line">&#39;WHATWG&#39;</span><br><span class="line">HTML 및 관련 기술로 어플리케이션도 개발할 수 있게.</span><br><span class="line">상황이 얼헥 되니까 W3C가 두손 들어.</span><br><span class="line">&quot;HTML2.0 드랍. 나도 껴주셈.&quot;</span><br><span class="line">그 이후로 표준화 된 HTML5.</span><br><span class="line">밴더들이 제안한 것들이, W3C에서 표준으로 인정.</span><br></pre></td></tr></table></figure></li>
+<li>HTML은 기본적으로 룰셋이 느슨하다.<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">ex)</span><br><span class="line">&lt;p&gt;blah blah&lt;&#x2F;p&gt;</span><br><span class="line">&lt;p&gt;blah blah</span><br><span class="line">&lt;P&gt;blah blah&lt;&#x2F;p&gt;</span><br><span class="line">위 세개가 다 돼.</span><br><span class="line">-&gt; 배우기는 쉽지만, 개발에는 어려움이 있음.</span><br></pre></td></tr></table></figure></li>
+<li>룰셋이 훨씬 엄격한 xml. 그렇게 만들어진 XHTML.</li>
+</ul>
+</li>
+<li>HTML5 이해하기<ol>
+<li>콘텐츠 모델<ul>
+<li>시멘틱 태그들을 일정 콘텐츠(-카테고리)로 연관지을 수 있음.</li>
+<li>가령, 섹션이나 인터렉티브.</li>
+<li>태그들을 구분하여 사용.</li>
+</ul>
+</li>
+<li>아웃라인 알고리즘<ul>
+<li>HTML5 이전에는 암묵적인 아웃라인이 있었다.</li>
+<li>HTML5부터 명시적인 아웃라인 선언.</li>
+<li>HTML 문서가 목차 형태의 구조를 갖게 됨.<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">이로 인해 HTML5는,</span><br><span class="line">단순히 정보를 나열하고, 렌더링하는 게 아니라,</span><br><span class="line">문서로서의 가치를 높임.</span><br><span class="line">문서의 구조를 고민하고, 정보로서의 가치를 높일 수 있도록 고민.</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ol>
+</li>
+<li>HTML5는 구조를 만드는 것이다.<ul>
+<li>웹페이지에 보이는 구조와 별개로, 구조적인 관점에서 생각해야 함.</li>
+<li>논리적인 순서를 고민해서 기획/설계.</li>
+<li>시멘틱 마크업을 통해 의미를 분명하게 넣는다.</li>
+<li>ex) h1&gt;a&gt;img{logo}  -&gt;  이 로고는 이 문서의 h1(대제목)에 해당함을 의미.</li>
+<li>클래스 등의 네이밍 또한 의미를 생각하여 만들어야 한다.<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">CSS 방법론 : CSS를 작성하기 위해 네이밍을 할 때, 협업을 위한 규칙&#x2F;약속.</span><br><span class="line">ex) smacss</span><br><span class="line">    oocss</span><br><span class="line">    bem (ex. .header__menu-item--active) 등.</span><br></pre></td></tr></table></figure></li>
+<li>단순히 웹사이트를 렌더링하기 전에, 설계가 선행되어야 한다!</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 id="기타"><a href="#기타" class="headerlink" title="기타"></a>기타</h2><ul>
+<li>git log –oneline : git log를 한 줄로 정리해서 보여줘</li>
+<li>!(<a target="_blank" rel="noopener" href="https://www.youtube.com/%EC%9D%B4%EB%93%AC">https://www.youtube.com/%EC%9D%B4%EB%93%AC</a>) : git 버전 관리 유튜브</li>
+<li>github pages : github에서 페이지 연동하기.(관련 내용 찾아보기)</li>
+<li>css 방법론 네이밍 방법<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">P.C. -&gt; MenuItem</span><br><span class="line">K.C. -&gt; menu-item</span><br><span class="line">C.C. -&gt; menuItem</span><br><span class="line">S.C. -&gt; menu_item</span><br><span class="line">이름을 만드는 다양한 방법.</span><br><span class="line">골라서 쓰면 되는데.</span><br><span class="line">지금까지 html&#x2F;css에서는 K.C.를 썼고,</span><br><span class="line">javascript에서는 C.C.를 썼다.</span><br></pre></td></tr></table></figure></li>
+<li>WAI-ARIA : RIA(외부기술, 플래시 등)을 HTML안에서 구현할 수 있도록 만듦.</li>
+<li>ko-KR, en-UK, en-US</li>
+<li>CLI -&gt; GUI -&gt; NUI</li>
+<li>개별 버전 / 배포 버전<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">개발의 용이성 등의 이유로 CSS 등을 여럿 쪼개서 관리할 수 있으나,</span><br><span class="line">실사용되는 배포에서는 꼭 하나로 &#39;번들링&#39;하여 배포.</span><br><span class="line">성능의 문제.</span><br></pre></td></tr></table></figure></li>
+<li>font-familly : serif(삐침, 궁서) / sans-serif(고딕)</li>
+<li>개발자도구 - 네트워크 - status - 200/404/500</li>
+<li>글꼴 크로스 브라우징.</li>
+<li>user agent stylesheet : 브라우저가 기본적으로 가지고 있는 스타일.<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">CSS reset과 normalize.</span><br><span class="line">- 노멀라이즈는 각종 브라우저의 규격을 노멀화.</span><br><span class="line">- 리셋은 모든 css 효과를 삭제.(내가 작성하는 태그가 가진 기본 css도 삭제.)</span><br><span class="line">-&gt; 리셋을 할 거면, 뭐가 바뀌는지 확인은 하고 쓰자.</span><br></pre></td></tr></table></figure></li>
+<li>git commit -am “커밋제목” : 애드랑 커밋이랑 같이. 한번 커밋한 다음부터 사용 가능.</li>
+</ul>
+<hr>
+<h2 id="TEST"><a href="#TEST" class="headerlink" title="TEST"></a>TEST</h2><ol>
+<li>“마크업 언어”는 태그 등을 이용하여 문서나 데이터의 구조를 명기하는 언어를 통칭한다. 마크업 언어/포맷이 아닌 것은?<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">a. json</span><br><span class="line">b. HTML</span><br><span class="line">c. XML</span><br><span class="line">d. SGML</span><br><span class="line">e. yaml</span><br><span class="line">F. AJAX - 답</span><br></pre></td></tr></table></figure></li>
+<li>HTML5의 API가 아닌 것은?<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">a. Web Socket</span><br><span class="line">b. Web Storage</span><br><span class="line">c. Geolocation</span><br><span class="line">d. File API</span><br><span class="line">e. Drag&amp;Drop</span><br><span class="line">f. Slider - 답</span><br></pre></td></tr></table></figure></li>
+<li>다음 중 CSS파일에서 외부 파일을 로드하기 위한 @규칙(At-Rules)은?<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">a. @include</span><br><span class="line">b. @mixin</span><br><span class="line">c. @export</span><br><span class="line">d. @import - 답</span><br><span class="line">e. @media</span><br><span class="line">f. @screen</span><br></pre></td></tr></table></figure></li>
+<li>다음 중 HTML5와 관련한 설명으로 틀린 것은?<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">a. 하위 호환성을 위해 HTML4.01, XHTML1.0 문법을 모두 허용한다.</span><br><span class="line">b. 본래 SGML과는 별도로 설계되었지만, 나중에 SGML기반으로 재정의 되었다.</span><br><span class="line">c. WHATWG와 W3C가 발표하는 HTML의 최신 버전으로, 2014년 10월 28일 완전히 표준화 되었다.</span><br><span class="line">d. 이전에는 플래시, 실버리아티 등의 외부 플러그인을 통해서만 지원할 수 있던 클라이언트 사이드에서의 사용자 인터페이스 기능들의 상당수를 브라우저 자체의 기능을 이용해 구현할 수 있게 되었다.</span><br><span class="line">e. HTML5에 도입된 API들은 HTML요소와 어트리뷰트만으로 활용할 수 있다. - 답</span><br></pre></td></tr></table></figure></li>
+<li>vs code에서 emmet 문법으로 다음과 같이 입력했다. 결과를 작성해라.<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">footer.footer&gt;.footer-wrapper&#123;FOOTER&#125;</span><br></pre></td></tr></table></figure></li>
+</ol>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="http://bg-shorthand.github.io/2020/10/18/201016-How-to-git/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -372,7 +505,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">21</span>
+          <span class="site-state-item-count">22</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>

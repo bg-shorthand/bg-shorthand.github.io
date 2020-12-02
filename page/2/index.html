@@ -145,6 +145,197 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://bg-shorthand.github.io/2020/11/02/201101-html-css-practice-responsive-web-page/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="bg-shorthand">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="bg-shorthand-blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/11/02/201101-html-css-practice-responsive-web-page/" class="post-title-link" itemprop="url">201101-html css practice-responsive web page</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2020-11-02 20:14:09 / Modified: 20:14:38" itemprop="dateCreated datePublished" datetime="2020-11-02T20:14:09+09:00">2020-11-02</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/html-css/" itemprop="url" rel="index"><span itemprop="name">html/css</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="HTML-CSS-PRACTICE-반응형-페이지"><a href="#HTML-CSS-PRACTICE-반응형-페이지" class="headerlink" title="HTML/CSS PRACTICE 반응형 페이지"></a>HTML/CSS PRACTICE 반응형 페이지</h1><ul>
+<li>반응형 페이지 이디야 샘플 헤더 부분</li>
+</ul>
+<hr>
+<h2 id="반응형-페이지에-대해"><a href="#반응형-페이지에-대해" class="headerlink" title="반응형 페이지에 대해"></a>반응형 페이지에 대해</h2><ol>
+<li>모바일 디바이스의 등장으로 다양한 크기의 화면에 대응할 필요성<ul>
+<li>초기에는 모바일용 웹페이지를 따로 제작했지만,</li>
+<li>이후에는 한 화면이 크기에 맞춰 재구성될 수 있도록.</li>
+<li>One Source Multi Use</li>
+</ul>
+</li>
+<li>Flexible / Adaptive<ul>
+<li>화면에 맞추어 늘어나거나 줄어드는 구성인지(Flexible)</li>
+<li>일정 크기 안에서는 고정된 구성인지(Adaptive)</li>
+<li>샘플 및 실습은 고정형(Adaptive)로.</li>
+<li>어느 게 맞다 틀리다는 아님. 컨텐츠에 따라 다를 수 있다.</li>
+<li>상황에 따라 마크업을 따로 해야하는 경우도 있음.</li>
+</ul>
+</li>
+<li>반응형 페이지의 기획<ul>
+<li>큰 화면에서 작은 화면으로, 혹은 작은 화면에서 큰 화면으로.</li>
+<li>경우에 따라 둘 다 사용할 수 있지만,</li>
+<li>일반적으로 작은 화면에서 큰 화면으로 기획하는 것이 용이하다.</li>
+</ul>
+</li>
+<li>반응형 페이지의 레이아웃<ul>
+<li>Flexible 페이지일 때,</li>
+<li>px 등의 단위로 레이아웃을 고정하지 않고,</li>
+<li>%, vw, vh 등으로 레이아웃을 지정한다.</li>
+<li>백분율 계산 = target/context</li>
+</ul>
+</li>
+<li>@media all and (~)</li>
+<li>img {max-width: 100%} -&gt; 크기가 변하는 이미지에서, 원본 사이즈보다는 커지지 않게.(이미지 깨짐 방지)</li>
+<li>반응형 페이지에서 고려할 점<ol>
+<li>성능/속도 및 대역폭<ul>
+<li>적절한 크기의 이미지 등으로 성능이 저하되지 않도록 한다.</li>
+</ul>
+</li>
+<li>고해상도 디스플레이<ul>
+<li>최신의 모바일 기기에서, 스크린 크기와 상관없는 배율을 고려해, 고해상도의 이미지를 사용해야 한다.</li>
+<li>그렇다고 다 고화질로 쓰면 또 성능 저하.</li>
+</ul>
+</li>
+<li>아트 디렉션 처리<ul>
+<li>크게 볼 때는 의미 전달이 잘 되던 이미지가,</li>
+<li>작게 보면 어떤 의미인지 알 수 없을 때.</li>
+<li>적당한 내용을 잘라내어(cropped) 보여줄 필요가 있다.</li>
+<li>기획이 필요.</li>
+</ul>
+</li>
+<li>모든 화면에서 이미지가 깨지지 않도록, svg 포맷을 고려.</li>
+<li>해결 방안.<ol>
+<li>img -&gt; srcset</li>
+<li>picture tag</li>
+<li>divece-pixel-ratio</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<hr>
+<h2 id="html-주요-주석"><a href="#html-주요-주석" class="headerlink" title="html 주요 주석"></a>html 주요 주석</h2><ol>
+<li>viewport meta<ul>
+<li>width=device-width 디바이스 크기에 맞춘다는 의미</li>
+<li>initial-scale=1.0 배율<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;meta name&#x3D;&quot;viewport&quot; content&#x3D;&quot;width&#x3D;device-width, initial-scale&#x3D;1.0&quot; &#x2F;&gt;</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li>여러가지 css를 링크<ul>
+<li>기본적으로 들어가는 css(노멀라이즈, 리셋 등)</li>
+<li>크기에 맞춰 적용할 css(데스크탑 대응, 모바일 대응 등)</li>
+</ul>
+</li>
+<li>닫기 버튼의 x는 알파벳 x 아니고 특문.<ul>
+<li>크기도 다르고, 배치도 다르다.</li>
+</ul>
+</li>
+<li>svg 포멧을 코드로 넣을 때,<ul>
+<li>img 태그와 달리 alt를 넣지 않음.</li>
+<li>title을 넣어준다.<h2 id="html-전체-코드"><a href="#html-전체-코드" class="headerlink" title="html 전체 코드"></a>html 전체 코드</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line">&lt;head&gt;</span><br><span class="line">  &lt;meta charset&#x3D;&quot;UTF-8&quot; &#x2F;&gt;</span><br><span class="line">  &lt;meta name&#x3D;&quot;viewport&quot; content&#x3D;&quot;width&#x3D;device-width, initial-scale&#x3D;1.0&quot; &#x2F;&gt;</span><br><span class="line">  &lt;title&gt;이디야 커피(Ediya Coffee)&lt;&#x2F;title&gt;</span><br><span class="line">  &lt;meta name&#x3D;&quot;description&quot; content&#x3D;&quot;이디야 커피 브랜드 사이트 (학습용) 홈페이지입니다.&quot; &#x2F;&gt;</span><br><span class="line">  &lt;meta name&#x3D;&quot;keywords&quot; content&#x3D;&quot;이디야, 커피, 브랜드, 사이트, 학습용, 홈페이지, 이듬, 블렌디드 러닝&quot; &#x2F;&gt;</span><br><span class="line">  &lt;meta name&#x3D;&quot;author&quot; content&#x3D;&quot;이듬(E.UID)&quot; &#x2F;&gt;</span><br><span class="line"></span><br><span class="line">  &lt;link rel&#x3D;&quot;preload&quot; as&#x3D;&quot;style&quot; href&#x3D;&quot;&#x2F;&#x2F;spoqa.github.io&#x2F;spoqa-han-sans&#x2F;css&#x2F;SpoqaHanSans-kr.css&quot; &#x2F;&gt;</span><br><span class="line">  &lt;link rel&#x3D;&quot;preload&quot; as&#x3D;&quot;style&quot; href&#x3D;&quot;&#x2F;&#x2F;cdnjs.cloudflare.com&#x2F;ajax&#x2F;libs&#x2F;normalize&#x2F;8.0.1&#x2F;normalize.min.css&quot; &#x2F;&gt;</span><br><span class="line">  &lt;link rel&#x3D;&quot;preload&quot; as&#x3D;&quot;style&quot; href&#x3D;&quot;.&#x2F;style&#x2F;style.css&quot; &#x2F;&gt;</span><br><span class="line"></span><br><span class="line">  &lt;!-- 스타일링 --&gt;</span><br><span class="line">  &lt;link rel&#x3D;&quot;stylesheet&quot; href&#x3D;&quot;.&#x2F;style&#x2F;style.css&quot; &#x2F;&gt;</span><br><span class="line">  &lt;link rel&#x3D;&quot;shortcut icon&quot; href&#x3D;&quot;.&#x2F;images&#x2F;favicon.png&quot; type&#x3D;&quot;image&#x2F;x-icon&quot; &#x2F;&gt;</span><br><span class="line">&lt;&#x2F;head&gt;</span><br><span class="line"></span><br><span class="line">&lt;body&gt;</span><br><span class="line">  &lt;div class&#x3D;&quot;app-header-container&quot;&gt;</span><br><span class="line">    &lt;header class&#x3D;&quot;app-header&quot;&gt;</span><br><span class="line">      &lt;h1 class&#x3D;&quot;brand&quot;&gt;</span><br><span class="line">        &lt;a href&#x3D;&quot;.&#x2F;index.html&quot;&gt;&lt;img src&#x3D;&quot;.&#x2F;images&#x2F;brand.svg&quot; alt&#x3D;&quot;Ediya Coffee&quot; class&#x3D;&quot;respons&quot; &#x2F;&gt;&lt;&#x2F;a&gt;</span><br><span class="line">      &lt;&#x2F;h1&gt;</span><br><span class="line">      &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;button is-open-menu&quot; aria-label&#x3D;&quot;메뉴 열기&quot; title&#x3D;&quot;메뉴 열기&quot;&gt;</span><br><span class="line">        &lt;span class&#x3D;&quot;ir&quot;&gt;&lt;&#x2F;span&gt;</span><br><span class="line">      &lt;&#x2F;button&gt;</span><br><span class="line">      &lt;nav class&#x3D;&quot;app-navigation&quot;&gt;</span><br><span class="line">        &lt;h2 class&#x3D;&quot;a11y-hidden&quot;&gt;메인 메뉴&lt;&#x2F;h2&gt;</span><br><span class="line"></span><br><span class="line">        &lt;ul class&#x3D;&quot;reset-list&quot;&gt;</span><br><span class="line">          &lt;li&gt;&lt;a href&#x3D;&quot;.&#x2F;views&#x2F;login-fds.html&quot;&gt;로그인&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;</span><br><span class="line">          &lt;li&gt;&lt;a href&#x3D;&quot;.&#x2F;views&#x2F;signup-fds.html&quot;&gt;회원 가입&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;</span><br><span class="line">          &lt;li&gt;&lt;a href&#x3D;&quot;.&#x2F;views&#x2F;ui-design.html&quot;&gt;이디야 디자인&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;</span><br><span class="line">          &lt;li&gt;&lt;a href&#x3D;&quot;.&#x2F;views&#x2F;beverage-fds.html&quot;&gt;이디야 음료&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;</span><br><span class="line">          &lt;li&gt;&lt;a href&#x3D;&quot;.&#x2F;views&#x2F;news-fds.html&quot;&gt;이디야 뉴스&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;</span><br><span class="line">          &lt;li&gt;&lt;a href&#x3D;&quot;.&#x2F;views&#x2F;store-fds.html&quot;&gt;매장 찾기&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;</span><br><span class="line">        &lt;&#x2F;ul&gt;</span><br><span class="line"></span><br><span class="line">        &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;button is-close-menu&quot; title&#x3D;&quot;메뉴 닫기&quot; aria-label&#x3D;&quot;메뉴 닫기&quot;&gt;</span><br><span class="line">          &lt;span class&#x3D;&quot;close&quot; aria-hidden&#x3D;&quot;true&quot;&gt;×&lt;&#x2F;span&gt;</span><br><span class="line">        &lt;&#x2F;button&gt;</span><br><span class="line">      &lt;&#x2F;nav&gt;</span><br><span class="line">    &lt;&#x2F;header&gt;</span><br><span class="line">  &lt;&#x2F;div&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 id="css-주요-주석"><a href="#css-주요-주석" class="headerlink" title="css 주요 주석"></a>css 주요 주석</h2><ol>
+<li>공통으로 적용할 부분과 모바일, 데스크탑에서 따로 적용할 부분을 구분.</li>
+<li>작성 내용을 주석으로 잘 적어 두어야 나중에 쉽게 찾을 수 있다.(유지보수 용이)</li>
+<li>width: 100%;<ul>
+<li>position: fixed, left: 0, right: 0, 하는 방법도 있음.</li>
+<li>단 브라우저 호환이 안 될 수도 있음.</li>
+</ul>
+</li>
+<li>backdrop-filter</li>
+<li>명도 차이가 분명하지 않아 접근성 기준에 맞지 않을 때,<ul>
+<li>텍스트를 이미지로 넣는 편법도 있다.</li>
+</ul>
+</li>
+<li>margin: -1;<ul>
+<li>네거티브 마진 검색해 볼 것.<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;* 숨김 제목 및 콘텐츠 *&#x2F;</span><br><span class="line">.a11y-hidden,</span><br><span class="line">legend &#123;</span><br><span class="line">  overflow: hidden;</span><br><span class="line">  position: absolute !important;</span><br><span class="line">  clip: rect(0, 0, 0, 0);</span><br><span class="line">  clip-path: polygon(0 0, 0 0, 0 0);</span><br><span class="line">  width: 1px;</span><br><span class="line">  height: 1px;</span><br><span class="line">  margin: -1px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="기타"><a href="#기타" class="headerlink" title="기타"></a>기타</h2></li>
+</ul>
+</li>
+<li>모든 웹페이지에게 반응형이 필요한 건 아니다.<ul>
+<li>너무 복잡한 ui의 페이지는, 모바일에 맞는 콘텐츠만 가져다 따로 다시 만들 수 있다.</li>
+</ul>
+</li>
+<li>읽지 말아야 하는 이미지(아이콘 등)을 마크업해야 하는 경우<ul>
+<li>alt 값을 null 준다. (alt=””)</li>
+<li>alt를 넣었기 때문에 정량적으로는 접근성에 충족. 하지만 값은 없음.</li>
+</ul>
+</li>
+<li>rwd breakpoints 2020 검색<ul>
+<li>2020년 일반적인 디바이스 크기 확인.</li>
+<li>breakpoints 반응형 페이지가 구성을 확인할 구간.</li>
+</ul>
+</li>
+<li><a target="_blank" rel="noopener" href="http://troy.labs.daum.net/">http://troy.labs.daum.net/</a></li>
+<li>프로젝트를 할 때 고려해야 할 것<ul>
+<li>퍼포먼스, 접근성, 검색최적화.</li>
+<li>어떤 것을 고려하여 제작했는지 문서화도 중요.(md 파일 정리.)</li>
+</ul>
+</li>
+</ol>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="http://bg-shorthand.github.io/2020/10/31/201030-html-css-practice-slogan-footer-parts-markup-style-sample-page-complete/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1491,139 +1682,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://bg-shorthand.github.io/2020/10/19/201019-What-is-HTML/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="bg-shorthand">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="bg-shorthand-blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/10/19/201019-What-is-HTML/" class="post-title-link" itemprop="url">201019-What is HTML?</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2020-10-19 20:18:15 / Modified: 20:19:37" itemprop="dateCreated datePublished" datetime="2020-10-19T20:18:15+09:00">2020-10-19</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/html-css/" itemprop="url" rel="index"><span itemprop="name">html/css</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="HTML5-MARKUP"><a href="#HTML5-MARKUP" class="headerlink" title="HTML5 MARKUP"></a>HTML5 MARKUP</h1><ol>
-<li>MAKRUP<ul>
-<li>마크한다는 의미.</li>
-<li>문서에 태그를 추가하여 정보를 입력</li>
-</ul>
-</li>
-<li>HTML5<ul>
-<li>MARKUP + API</li>
-<li>마크업 언어면서, API가 추가된 최신의 HTML.<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">응용 프로그램에서 사용할 수 있도록,</span><br><span class="line">운영 체제나 프로그래밍 언어가 제공하는 기능을</span><br><span class="line">제어할 수 있게 만든 인터페이스를 뜻한다.</span><br><span class="line">-&gt; JAVASCRIPT의 함수 덩어리</span><br></pre></td></tr></table></figure></li>
-</ul>
-</li>
-<li>HTML4.0, XHTML1.0, HTML5<ul>
-<li>세 가지 모두 표준으로 채택된 상태.<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">W3C에서 HTML2.0을 만들고 있었어.</span><br><span class="line">그걸 브라우저 벤더(제작사)들이 보니까 걱정이 돼.</span><br><span class="line">&quot;아니, 저렇게 바꾸면 예전 문서들 다 어떡함?&quot;</span><br><span class="line">그래서 제작사들이 지들끼리 모임을 만들어.</span><br><span class="line">&#39;WHATWG&#39;</span><br><span class="line">HTML 및 관련 기술로 어플리케이션도 개발할 수 있게.</span><br><span class="line">상황이 얼헥 되니까 W3C가 두손 들어.</span><br><span class="line">&quot;HTML2.0 드랍. 나도 껴주셈.&quot;</span><br><span class="line">그 이후로 표준화 된 HTML5.</span><br><span class="line">밴더들이 제안한 것들이, W3C에서 표준으로 인정.</span><br></pre></td></tr></table></figure></li>
-<li>HTML은 기본적으로 룰셋이 느슨하다.<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">ex)</span><br><span class="line">&lt;p&gt;blah blah&lt;&#x2F;p&gt;</span><br><span class="line">&lt;p&gt;blah blah</span><br><span class="line">&lt;P&gt;blah blah&lt;&#x2F;p&gt;</span><br><span class="line">위 세개가 다 돼.</span><br><span class="line">-&gt; 배우기는 쉽지만, 개발에는 어려움이 있음.</span><br></pre></td></tr></table></figure></li>
-<li>룰셋이 훨씬 엄격한 xml. 그렇게 만들어진 XHTML.</li>
-</ul>
-</li>
-<li>HTML5 이해하기<ol>
-<li>콘텐츠 모델<ul>
-<li>시멘틱 태그들을 일정 콘텐츠(-카테고리)로 연관지을 수 있음.</li>
-<li>가령, 섹션이나 인터렉티브.</li>
-<li>태그들을 구분하여 사용.</li>
-</ul>
-</li>
-<li>아웃라인 알고리즘<ul>
-<li>HTML5 이전에는 암묵적인 아웃라인이 있었다.</li>
-<li>HTML5부터 명시적인 아웃라인 선언.</li>
-<li>HTML 문서가 목차 형태의 구조를 갖게 됨.<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">이로 인해 HTML5는,</span><br><span class="line">단순히 정보를 나열하고, 렌더링하는 게 아니라,</span><br><span class="line">문서로서의 가치를 높임.</span><br><span class="line">문서의 구조를 고민하고, 정보로서의 가치를 높일 수 있도록 고민.</span><br></pre></td></tr></table></figure></li>
-</ul>
-</li>
-</ol>
-</li>
-<li>HTML5는 구조를 만드는 것이다.<ul>
-<li>웹페이지에 보이는 구조와 별개로, 구조적인 관점에서 생각해야 함.</li>
-<li>논리적인 순서를 고민해서 기획/설계.</li>
-<li>시멘틱 마크업을 통해 의미를 분명하게 넣는다.</li>
-<li>ex) h1&gt;a&gt;img{logo}  -&gt;  이 로고는 이 문서의 h1(대제목)에 해당함을 의미.</li>
-<li>클래스 등의 네이밍 또한 의미를 생각하여 만들어야 한다.<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">CSS 방법론 : CSS를 작성하기 위해 네이밍을 할 때, 협업을 위한 규칙&#x2F;약속.</span><br><span class="line">ex) smacss</span><br><span class="line">    oocss</span><br><span class="line">    bem (ex. .header__menu-item--active) 등.</span><br></pre></td></tr></table></figure></li>
-<li>단순히 웹사이트를 렌더링하기 전에, 설계가 선행되어야 한다!</li>
-</ul>
-</li>
-</ol>
-<hr>
-<h2 id="기타"><a href="#기타" class="headerlink" title="기타"></a>기타</h2><ul>
-<li>git log –oneline : git log를 한 줄로 정리해서 보여줘</li>
-<li>!(<a target="_blank" rel="noopener" href="https://www.youtube.com/%EC%9D%B4%EB%93%AC">https://www.youtube.com/%EC%9D%B4%EB%93%AC</a>) : git 버전 관리 유튜브</li>
-<li>github pages : github에서 페이지 연동하기.(관련 내용 찾아보기)</li>
-<li>css 방법론 네이밍 방법<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">P.C. -&gt; MenuItem</span><br><span class="line">K.C. -&gt; menu-item</span><br><span class="line">C.C. -&gt; menuItem</span><br><span class="line">S.C. -&gt; menu_item</span><br><span class="line">이름을 만드는 다양한 방법.</span><br><span class="line">골라서 쓰면 되는데.</span><br><span class="line">지금까지 html&#x2F;css에서는 K.C.를 썼고,</span><br><span class="line">javascript에서는 C.C.를 썼다.</span><br></pre></td></tr></table></figure></li>
-<li>WAI-ARIA : RIA(외부기술, 플래시 등)을 HTML안에서 구현할 수 있도록 만듦.</li>
-<li>ko-KR, en-UK, en-US</li>
-<li>CLI -&gt; GUI -&gt; NUI</li>
-<li>개별 버전 / 배포 버전<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">개발의 용이성 등의 이유로 CSS 등을 여럿 쪼개서 관리할 수 있으나,</span><br><span class="line">실사용되는 배포에서는 꼭 하나로 &#39;번들링&#39;하여 배포.</span><br><span class="line">성능의 문제.</span><br></pre></td></tr></table></figure></li>
-<li>font-familly : serif(삐침, 궁서) / sans-serif(고딕)</li>
-<li>개발자도구 - 네트워크 - status - 200/404/500</li>
-<li>글꼴 크로스 브라우징.</li>
-<li>user agent stylesheet : 브라우저가 기본적으로 가지고 있는 스타일.<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">CSS reset과 normalize.</span><br><span class="line">- 노멀라이즈는 각종 브라우저의 규격을 노멀화.</span><br><span class="line">- 리셋은 모든 css 효과를 삭제.(내가 작성하는 태그가 가진 기본 css도 삭제.)</span><br><span class="line">-&gt; 리셋을 할 거면, 뭐가 바뀌는지 확인은 하고 쓰자.</span><br></pre></td></tr></table></figure></li>
-<li>git commit -am “커밋제목” : 애드랑 커밋이랑 같이. 한번 커밋한 다음부터 사용 가능.</li>
-</ul>
-<hr>
-<h2 id="TEST"><a href="#TEST" class="headerlink" title="TEST"></a>TEST</h2><ol>
-<li>“마크업 언어”는 태그 등을 이용하여 문서나 데이터의 구조를 명기하는 언어를 통칭한다. 마크업 언어/포맷이 아닌 것은?<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">a. json</span><br><span class="line">b. HTML</span><br><span class="line">c. XML</span><br><span class="line">d. SGML</span><br><span class="line">e. yaml</span><br><span class="line">F. AJAX - 답</span><br></pre></td></tr></table></figure></li>
-<li>HTML5의 API가 아닌 것은?<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">a. Web Socket</span><br><span class="line">b. Web Storage</span><br><span class="line">c. Geolocation</span><br><span class="line">d. File API</span><br><span class="line">e. Drag&amp;Drop</span><br><span class="line">f. Slider - 답</span><br></pre></td></tr></table></figure></li>
-<li>다음 중 CSS파일에서 외부 파일을 로드하기 위한 @규칙(At-Rules)은?<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">a. @include</span><br><span class="line">b. @mixin</span><br><span class="line">c. @export</span><br><span class="line">d. @import - 답</span><br><span class="line">e. @media</span><br><span class="line">f. @screen</span><br></pre></td></tr></table></figure></li>
-<li>다음 중 HTML5와 관련한 설명으로 틀린 것은?<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">a. 하위 호환성을 위해 HTML4.01, XHTML1.0 문법을 모두 허용한다.</span><br><span class="line">b. 본래 SGML과는 별도로 설계되었지만, 나중에 SGML기반으로 재정의 되었다.</span><br><span class="line">c. WHATWG와 W3C가 발표하는 HTML의 최신 버전으로, 2014년 10월 28일 완전히 표준화 되었다.</span><br><span class="line">d. 이전에는 플래시, 실버리아티 등의 외부 플러그인을 통해서만 지원할 수 있던 클라이언트 사이드에서의 사용자 인터페이스 기능들의 상당수를 브라우저 자체의 기능을 이용해 구현할 수 있게 되었다.</span><br><span class="line">e. HTML5에 도입된 API들은 HTML요소와 어트리뷰트만으로 활용할 수 있다. - 답</span><br></pre></td></tr></table></figure></li>
-<li>vs code에서 emmet 문법으로 다음과 같이 입력했다. 결과를 작성해라.<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">footer.footer&gt;.footer-wrapper&#123;FOOTER&#125;</span><br></pre></td></tr></table></figure></li>
-</ol>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1693,7 +1751,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">21</span>
+          <span class="site-state-item-count">22</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
