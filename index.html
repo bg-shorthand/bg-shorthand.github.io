@@ -145,6 +145,348 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://bg-shorthand.github.io/2020/12/03/201204-%ED%95%A8%EC%88%98%EC%99%80-%EC%9D%BC%EA%B8%89-%EA%B0%9D%EC%B2%B4-%ED%94%84%EB%A1%9C%ED%86%A0%ED%83%80%EC%9E%85-%EB%B9%8C%ED%8A%B8%EC%9D%B8-%EA%B0%9D%EC%B2%B4/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="bg-shorthand">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="bg-shorthand-blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/12/03/201204-%ED%95%A8%EC%88%98%EC%99%80-%EC%9D%BC%EA%B8%89-%EA%B0%9D%EC%B2%B4-%ED%94%84%EB%A1%9C%ED%86%A0%ED%83%80%EC%9E%85-%EB%B9%8C%ED%8A%B8%EC%9D%B8-%EA%B0%9D%EC%B2%B4/" class="post-title-link" itemprop="url">201204- 함수와 일급 객체, 프로토타입, 빌트인 객체</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2020-12-03 20:36:23 / Modified: 20:36:35" itemprop="dateCreated datePublished" datetime="2020-12-03T20:36:23+09:00">2020-12-03</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/javascript/" itemprop="url" rel="index"><span itemprop="name">javascript</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="함수와-일급-객체"><a href="#함수와-일급-객체" class="headerlink" title="함수와 일급 객체"></a>함수와 일급 객체</h1><h1 id="일급-객체"><a href="#일급-객체" class="headerlink" title="일급 객체"></a>일급 객체</h1><ul>
+<li>일급 객체의 조건<ol>
+<li>무명의 리터럴로 생성할 수 있다. 즉, 런타임에 생성이 가능하다.</li>
+<li>변수나 자료구조(객체, 배열 등)에 저장할 수 있다.</li>
+<li>함수의 매개변수에게 전달할 수 있다.</li>
+<li>함수의 반환값으로 사용할 수 있다.</li>
+</ol>
+</li>
+<li>자바스크립트의 함수는 위의 조건을 모두 만족하므로, 일급 객체다.</li>
+<li>객체왈 동일하게 사용할 수 있단 의미이고,</li>
+<li>값과 동일하게 취급,</li>
+<li>값을 사용하는 곳이라면 어디든지 리터럴로 정의 가능,</li>
+<li>런타임에 함수 객체로 평가.</li>
+<li>객체와 같지만, 일반 객체에는 없는 함수 고유의 프로퍼티를 갖는다.<h1 id="함수-객체의-프로퍼티"><a href="#함수-객체의-프로퍼티" class="headerlink" title="함수 객체의 프로퍼티"></a>함수 객체의 프로퍼티</h1></li>
+<li>arguments, caller, length, name, propotype.</li>
+<li>특히, __proto__는 접근자 프로퍼티로, Object.prototype 객체의 프로퍼티를 상속 받은 것.</li>
+<li>Object.prototype의 프로퍼티로 모든 객체가 사용할 수 있다.(프로토타입)</li>
+</ul>
+<ol>
+<li>arguments: 함수 호출 시 전달된 인수들의 정보를 담고 있는 순회 가능한(이터러블iterable) 유사 배열 객체. 인수를 프로퍼티 값으로 가지며, 프로퍼티 키는 인수의 순서. length프로퍼티는 인수의 개수, callee 프로퍼티는 arguments 객체를 생성한 함수, 즉 자기 자신. 가변 인자 함수를 구현할 때 유용하다.</li>
+<li>caller: 함수 자신을 호출한 함수. 사양에 포함되지 않은 비표준 프로퍼티이며, 앞으로 표준화 예정도 없다.</li>
+<li>length: 함수를 정의할 때 선언한 매개변수의 개수.</li>
+<li>name: 함수 이름. 익명 함수 표현식의 경우, ES5에서는 빈 문자열. ES6에서는 함수 객체를 가리키는 식별자를 값으로 갖는다.</li>
+<li><strong>proto</strong>: [[Prototype]] 내부 슬롯이 가리키는 프로토타입 객체에 접근하기 위해 사용하는 ‘접근자 프로퍼티’. </li>
+<li>ptrototype: constructor 함수만 갖는 프로퍼티로, 함수가 객체를 생성하는 생성자 함수로 호출될 때, 생성자 함수가 생성할 인스턴스의 프로토타입 객체를 가리킨다.</li>
+</ol>
+<hr>
+<h1 id="프로토타입"><a href="#프로토타입" class="headerlink" title="프로토타입"></a>프로토타입</h1><ul>
+<li>자바스크립트는 프로토타입 기반의 객체지향 프로그래밍 언어.</li>
+<li>ES6부터 도입된 클래스. 새로운 객체 생성 메커니즘이다.<h1 id="객체-지향-프로그래밍"><a href="#객체-지향-프로그래밍" class="headerlink" title="객체 지향 프로그래밍"></a>객체 지향 프로그래밍</h1></li>
+<li>실세계의 실체를 인식하는 철학적 사고를 프로그래밍에 접목하려는 시도.</li>
+<li>실체는 특징이나 성질을 나타내는 속성(attribute/property)을 가지고 있고, 이를 통해 실체를 인식, 구분.</li>
+<li>이러한 방식으로, 다양한 속성 중 프로그램에 필요한 속성만 간추려 표현하는 것이 추상화.</li>
+<li>이 추상화를 통해 객체를 다른 객체와 구별할 수 있다.</li>
+<li>즉, 객체는 여러 개의 값(속성)을 하나의 단위로 구성한 복합적인 자료구조.</li>
+<li>객체지향 프로그래밍은 독립적인 객체의 집합으로 프로그램을 표현하려는 프로그래밍 패러다임.</li>
+<li>이 때,</li>
+<li>객체의 속성은 상태(프로퍼티), 동작(메서드)로 구분할 수 있다.</li>
+<li>이 상태와 동작을 하나의 논리적인 단위로 묶은 게 함수고, 객체는 다른 객체와 메시지를 주고 받거나 데이터를 처리하거나,</li>
+<li>다른 객체의 상태 데이터나 동작을 상속받아 사용하기도 한다.(상속)<h1 id="상속과-프로토타입"><a href="#상속과-프로토타입" class="headerlink" title="상속과 프로토타입"></a>상속과 프로토타입</h1></li>
+<li>상속은 객체지향 프로그래밍의 핵심 개념(코드의 재사용으로 개발 비용을 줄일 수 있는 잠재력이 있다)으로, 자바스크립트는 프로토타입을 기반으로 상속을 구현한다.</li>
+<li>가령, Circle 생성자 함수가 생성한 모든 인스턴스는 자신의 프로토타입, Cicle.prototype의 모든 프로퍼티와 메서드를 상속받는다.</li>
+<li>인스턴스에서 공통적으로 사용될 프로퍼티나 메서드를 Circle.prototype에 구현해두면?</li>
+<li>모든 인스턴스가 상속받아 사용할 수 있는 거지.<h1 id="프로토타입-객체"><a href="#프로토타입-객체" class="headerlink" title="프로토타입 객체"></a>프로토타입 객체</h1></li>
+<li>상속을 구현(목적)으로 사용.</li>
+<li>모든 객체는 [[Prototype]]이라는 내부 슬롯을 가지며, 이 내부 슬롯의 값이 프로토타입의 참조.(null인 경우도 있다.)</li>
+<li>동시에 프로토타입은 생성자 함수와 연결되어 있다.</li>
+<li>생성자 함수 &lt;-&gt; 프로토타입 &lt;- 객체</li>
+<li>객체는 <strong>proto</strong> 접근자 프로퍼티를 통해 자신의 프로토타입에 간접적으로 접근할 수 있으며,</li>
+<li>프로토타입은 자신의 constructor프로퍼티를 통해 생성자 함수에 접근할 수 있고,</li>
+<li>생성자 함수는 prototype프로퍼티를 통해 프로토타입에 접근할 수 있다.<h1 id="prototype-접근자-프로퍼티"><a href="#prototype-접근자-프로퍼티" class="headerlink" title="prototype 접근자 프로퍼티"></a><strong>prototype</strong> 접근자 프로퍼티</h1></li>
+</ul>
+<ol>
+<li><strong>proto</strong> 는 접근자 프로퍼티다.<ul>
+<li>getter/setter 함수를 통해 프로토타입을 취득하거나 할당.</li>
+<li>프로토타입을 부르거나, 교체할 수 있다.</li>
+</ul>
+</li>
+<li><strong>proto</strong> 접근자 프로퍼티는 상속을 통해 사용된다.<ul>
+<li>기본적으로 __proto__는 Object.prototype의 프로퍼티.</li>
+<li>모든 객체의 프로토타입 체인상 끝에는 Object.prototype이 있으므로,</li>
+<li>__proto__를 상속받아 사용할 수 있다.</li>
+</ul>
+</li>
+<li><strong>proto</strong> 접근자 프로퍼티를 통해 프로토타입에 접근하는 이유.<ul>
+<li>__proto__은 순환참조를 막도록 구현되어 있다.</li>
+<li>단방향 리크드 리스트로 프로토타입 체인을 구현할 수 있다.</li>
+</ul>
+</li>
+<li><strong>proto</strong> 접근자 프로퍼티를 코드 내에서 직접 사용하는 것은 권장하지 않는다.<ul>
+<li>직접 상속을 통해 Object.prototype을 상속받지 않는 객체를 만들 수 있다.</li>
+<li>이 경우 __proto__를 사용할 수 없으므로,</li>
+<li>Object.getPrototypeOf, Object.setPrototypeOf 메서드를 사용한다.<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; obj 객체의 프로토타입을 취득</span><br><span class="line">Object.getPrototypeOf(obj); &#x2F;&#x2F; obj.__proto__;</span><br><span class="line">&#x2F;&#x2F; obj 객체의 프로토타입을 교체</span><br><span class="line">Object.setPrototypeOf(obj, parent); &#x2F;&#x2F; obj.__proto__ &#x3D; parent;</span><br></pre></td></tr></table></figure>
+<h1 id="함수-객체의-prototype-프로퍼티"><a href="#함수-객체의-prototype-프로퍼티" class="headerlink" title="함수 객체의 prototype 프로퍼티"></a>함수 객체의 prototype 프로퍼티</h1></li>
+</ul>
+</li>
+</ol>
+<ul>
+<li>생성자 함수가 생성할 인스턴스의 프로토타입을 가리킨다.</li>
+<li>화살표 함수와 메서드 축약 표현으로 정의한 메서드는 non-constructor 함수로, prototype 프로퍼티를 가질 이유가 없지.</li>
+<li>생성자 함수를 목적으로 만들지 않은 함수도 prototype 프로퍼티를 가지고는 있다. 의미는 없지만.<h1 id="프로토타입의-constructor-프로퍼티와-생성자-함수"><a href="#프로토타입의-constructor-프로퍼티와-생성자-함수" class="headerlink" title="프로토타입의 constructor 프로퍼티와 생성자 함수"></a>프로토타입의 constructor 프로퍼티와 생성자 함수</h1></li>
+<li>prototype 프로퍼티로 자신을 참조하고 있는 생성자 함수를 가리킨다.</li>
+<li>프로토타입 체인 상 자식 역할의 객체도 상속받아 사용할 수 있다.<h1 id="리터럴-표기법에-의해-생성된-객체의-생성자-함수와-프로토타입"><a href="#리터럴-표기법에-의해-생성된-객체의-생성자-함수와-프로토타입" class="headerlink" title="리터럴 표기법에 의해 생성된 객체의 생성자 함수와 프로토타입"></a>리터럴 표기법에 의해 생성된 객체의 생성자 함수와 프로토타입</h1></li>
+<li>일단 결론은, Object.prototype을 프로토타입으로 갖는다.</li>
+<li>리터럴이 평가 될 때는 추상연산 OrdinaryObjectCreate가 호출되어 객체 등을 만드는데,</li>
+<li>프로퍼티 추가 처리 등의 세부 내용은 다르지만,</li>
+<li>추상연산을 호출한다는 점에서 Object() 함수를 이용한 방법과 동일하다.</li>
+<li>즉, 리터럴로 만든 객체, 함수, 배열, 정규 표현식은 각각 Object, Function, Array, RegExp 생성자 함수로 만든 각각과 같은 프로토타입을 갖는다.<h1 id="프로토타입의-생성-시점"><a href="#프로토타입의-생성-시점" class="headerlink" title="프로토타입의 생성 시점"></a>프로토타입의 생성 시점</h1></li>
+<li>생성자 함수가 생성되는 시점과 같다.</li>
+<li>즉 생성자 함수가 생성되면 동시에 프로토타입도 준비하는 건데,</li>
+<li>생성자 함수는 사용자 정의 생성자 함수와 빌트인 생성자 함수로 구분할 수 있다.</li>
+</ul>
+<ol>
+<li>사용자 정의 생성자 함수와 프로토타입 생성 시점<ul>
+<li>함수 정의가 평가 되어 함수 객체를 생성하는 시점에 프로토타입도 생성.</li>
+<li>그게 언제야?</li>
+<li>함수 선언문으로 정의된 생성자 함수는 런타임 이전에 평가.</li>
+<li>그때 만드는 거지, 뭐.</li>
+<li>이렇게 만들어진 프로토타입의 프로토타입은? Object.prototype.</li>
+</ul>
+</li>
+<li>빌트인 생성자 함수와 프로토타입 생성 시점<ul>
+<li>모든 빌트인 생성자 함수는 전역 객체가 생성되는 시점에 생성.</li>
+<li>이 때 같이 만들어지지.</li>
+</ul>
+</li>
+</ol>
+<ul>
+<li>즉, 프로토타입은 이미 만들어져 준비되어 있는 거다!<h1 id="객체-생성-방식과-프로토타입의-결정"><a href="#객체-생성-방식과-프로토타입의-결정" class="headerlink" title="객체 생성 방식과 프로토타입의 결정"></a>객체 생성 방식과 프로토타입의 결정</h1></li>
+<li>어떤 방식이든 추상연산 OrdinaryObjectCreate를 호출하는 건 동일,</li>
+<li>이 때 인수로 주어지는 프로토타입이 다른 거야.<h1 id="프로토타입-체인"><a href="#프로토타입-체인" class="headerlink" title="프로토타입 체인"></a>프로토타입 체인</h1></li>
+<li>사용자 정의 생성자 함수로 만들어진 프로토타입은 Object.prototype을 프로토타입으로 갖고,</li>
+<li>그 생성자 함수로 만든 객체는 그 함수.prototype을 프로토타입으로 가져,</li>
+<li>셋은 연결된다.</li>
+<li>이게 프로토타입 체인.</li>
+<li>객체의 프로퍼티나 메서드에 접근하려고 할 때, 해당 객체에 그 프로퍼티가 없으면 상위 프로토타입을 따라 가며 찾는다.</li>
+<li>Object.prototype은 프로토타입 체인의 종점인데,</li>
+<li>여기까지 가서도 찾는 프로퍼티가 없으면 undefined.</li>
+<li>프로토타입 체인은 상속과 프로퍼티 검색을 위한 메커니즘이다.</li>
+<li>앞서 다뤘던 스코프 체인과 비슷하게 움직이는데,</li>
+<li>둘은 서로 협력하여 식별자와 프로퍼티를 검색하는데 사용한다.<h1 id="오버라이딩과-프로퍼티-섀도잉"><a href="#오버라이딩과-프로퍼티-섀도잉" class="headerlink" title="오버라이딩과 프로퍼티 섀도잉"></a>오버라이딩과 프로퍼티 섀도잉</h1></li>
+<li>상속받아 사용하던 프로퍼티와 같은 이름의 프로퍼티를 인스턴스에 추가했을 때,</li>
+<li>프로토타입 프로퍼티에 덮어쓰는 게 아니라, 인스턴스 프로퍼티로 추가.</li>
+<li>사용되어지는 것도 인스턴스 프로퍼티.</li>
+<li>삭제하면 없어지는 것도 인스턴스 프로퍼티.</li>
+<li>이 때, 인스턴스 프로퍼티가 프로토타입 메서드를 ‘오버라이딩’ 했고, 이렇게 가려지는 현상을 ‘프로퍼티 섀도잉’ 이라고 한다.<h1 id="프로토타입의-교체"><a href="#프로토타입의-교체" class="headerlink" title="프로토타입의 교체"></a>프로토타입의 교체</h1></li>
+</ul>
+<ol>
+<li>생성자 함수에 의한 프로토타입의 교체<ul>
+<li>프로토타입으로 쓸 객체를 재할당 하면 되지.</li>
+<li>이때 교체한 프로토타입에는 constructor 프로퍼티가 없지.</li>
+<li>따라서 인스턴스의 생성자 함수를 찾으면 상위의 Object가 나올 거야.</li>
+<li>동적 추가로 새 프로토타입에 constructor 프로퍼티를 만들 수 있다.</li>
+</ul>
+</li>
+<li>인스턴스에 의한 프로토타입의 교체<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Object.setPrototypeOf(me, parent);</span><br><span class="line">&#x2F;&#x2F; 위 코드는 아래의 코드와 동일하게 동작한다.</span><br><span class="line">&#x2F;&#x2F; me.__proto__ &#x3D; parent;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>이 경우도 새 프로토타입이 constructor가 없지</li>
+<li>그건 위와 같지만,</li>
+<li>차이는 생성자 함수의 prototype 프로퍼티가 새 프로토타입을 가리키냐 아니냐.</li>
+<li>이것도 재설정 할수 있다.(재할당)</li>
+</ul>
+</li>
+</ol>
+<ul>
+<li>이처럼 프로토타입 교체를 통해 상속 관계를 변경하는 것은 번거롭다.</li>
+<li>직접 상속이나 클래스가 편함.<h1 id="instanceof-연산자"><a href="#instanceof-연산자" class="headerlink" title="instanceof 연산자"></a>instanceof 연산자</h1></li>
+<li>좌항에 위차한 객체의 프로토타입 체인에, 우변의 생성자 함수가 있으면 트루, 아니먼 펄스.</li>
+<li>프로토타입인지를 확인하는 게 아니라, 프로토타입 체인에 존재하는지를 확인한다.<h1 id="직접-상속"><a href="#직접-상속" class="headerlink" title="직접 상속"></a>직접 상속</h1></li>
+</ul>
+<ol>
+<li>Object.create에 의한 직접 상속<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">obj &#x3D; Object.create(Object.prototype);</span><br></pre></td></tr></table></figure>
+<ul>
+<li>new 연산자 없이도 객체를 생성할 수 있다.</li>
+<li>프로토타입을 지정하면서 객체를 생성할 수 있다.</li>
+<li>객체 리터럴에 의해 생성된 객체도 상속받을 수 있다.</li>
+<li>그런데,</li>
+<li>const obj = Object.create(null); 처럼 프로토타입 체인의 종점에 해당하는 객체를 만들 수도 있다.</li>
+<li>이때 Object.prototype 빌트인 메서드를 사용할 수 없으므로, 빌트인 메서드는 간접적으로 호출해서 써야 하는데,</li>
+<li>이 방법은 나중에.</li>
+</ul>
+</li>
+<li>객체 리터럴 내부에서 <strong>proto</strong> 에 의한 직접 상속<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">const obj &#x3D; &#123;</span><br><span class="line">  y: 20,</span><br><span class="line">  &#x2F;&#x2F; 객체를 직접 상속받는다.</span><br><span class="line">  &#x2F;&#x2F; obj → myProto → Object.prototype → null</span><br><span class="line">  __proto__: myProto</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h1 id="정적-프로퍼티-메서드"><a href="#정적-프로퍼티-메서드" class="headerlink" title="정적 프로퍼티/메서드"></a>정적 프로퍼티/메서드</h1></li>
+</ol>
+<ul>
+<li>생성자 함수가 가지고 있는 프로퍼티/메서드.</li>
+<li>프로토타입에 있는 프로퍼티/메서드가 아니므로, 인스턴스가 참조/호출할 수 없지만,</li>
+<li>직접 호출할 수는 있다.</li>
+<li>참고로 프로토타입 프로퍼티/메서드를 표기할 때 prototype을 #으로 표기(예를 들어, Object.prototype.isPrototypeOf를 Object#isPrototypeOf으로 표기)하는 경우도 있으니 알아두도록 하자.<h1 id="프로퍼티-존재-확인"><a href="#프로퍼티-존재-확인" class="headerlink" title="프로퍼티 존재 확인"></a>프로퍼티 존재 확인</h1></li>
+</ul>
+<ol>
+<li>in 연산자<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">const person &#x3D; &#123;</span><br><span class="line">  name: &#39;Lee&#39;,</span><br><span class="line">  address: &#39;Seoul&#39;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; person 객체에 name 프로퍼티가 존재한다.</span><br><span class="line">console.log(&#39;name&#39; in person);    &#x2F;&#x2F; true</span><br></pre></td></tr></table></figure>
+<ul>
+<li>객체 내 프로퍼티가 존재하는지 여부 확인.</li>
+<li>상속받은 모든 프로퍼티를 확인한다.</li>
+<li>같은 동작으로<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Reflect.has(person, &#39;name&#39;)</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li>Object.prototype.hasOwnProperty 메서드<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">person.hasOwnProperty(&#39;name&#39;)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>상속받은 프로퍼티는 빼고, 객체 고유의 프로퍼티인 경우에만 트루.<h1 id="프로퍼티-열거"><a href="#프로퍼티-열거" class="headerlink" title="프로퍼티 열거"></a>프로퍼티 열거</h1></li>
+</ul>
+</li>
+<li>for…in 문<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">const person &#x3D; &#123;</span><br><span class="line">  name: &#39;Lee&#39;,</span><br><span class="line">  address: &#39;Seoul&#39;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; for...in 문의 변수 prop에 person 객체의 프로퍼티 키가 할당된다.</span><br><span class="line">for (const key in person) &#123;</span><br><span class="line">  console.log(key + &#39;: &#39; + person[key]);</span><br><span class="line">&#125;</span><br><span class="line">&#x2F;&#x2F; name: Lee</span><br><span class="line">&#x2F;&#x2F; address: Seoul</span><br></pre></td></tr></table></figure>
+<ul>
+<li>in 연산자처럼 상속받은 프로퍼티까지 열거.</li>
+<li>단 프로퍼티 어트리뷰트 [[Enumerable]]의 값이 false인 경우는 열거 안함.</li>
+<li>상속받은 프로퍼티는 제외하고 객체 자신의 프로퍼티 만을 열거하려면 Object.prototype.hasOwnProperty 메서드를 사용해서 방어코드 작성.<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">const person &#x3D; &#123;</span><br><span class="line">  name: &#39;Lee&#39;,</span><br><span class="line">  address: &#39;Seoul&#39;,</span><br><span class="line">  __proto__: &#123; age: 20 &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">for (const key in person) &#123;</span><br><span class="line">  &#x2F;&#x2F; 객체 자신의 프로퍼티인지 확인한다.</span><br><span class="line">  if (!person.hasOwnProperty(key)) continue;</span><br><span class="line">  console.log(key + &#39;: &#39; + person[key]);</span><br><span class="line">&#125;</span><br><span class="line">&#x2F;&#x2F; name: Lee</span><br><span class="line">&#x2F;&#x2F; address: Seoul</span><br></pre></td></tr></table></figure></li>
+<li>for…in 문은 프로퍼티를 열거할 때 순서를 보장하지 않는다.</li>
+<li>배열에는 for 문이나 for…of 문 또는 Array.prototype.forEach 메서드를 사용하기를 권장. 배열에서 다시.</li>
+</ul>
+</li>
+<li>Object.keys/values/entries 메서드<ul>
+<li>객체 자신의 고유 프로퍼티만 열거.</li>
+<li>Object.keys: 객체 자신의 열거 가능한(enumerable) 프로퍼티 키를 배열로 반환한다.</li>
+<li>Object.values: 객체 자신의 열거 가능한 프로퍼티 값을 배열로 반환한다.</li>
+<li>Object.entries: 객체 자신의 열거 가능한 프로퍼티 키와 값의 쌍의 배열을 배열에 담아 반환한다.</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h1 id="빌트인-객체"><a href="#빌트인-객체" class="headerlink" title="빌트인 객체"></a>빌트인 객체</h1><h1 id="자바스크립트-객체의-분류"><a href="#자바스크립트-객체의-분류" class="headerlink" title="자바스크립트 객체의 분류"></a>자바스크립트 객체의 분류</h1><ol>
+<li>표준 빌트인 객체: ECMAScript 사양에 정의된 객체. 애플리케이션 전역의 공통 기능을 제공. 전역 객체의 프로퍼티로서 제공된다. 따라서, 별도의 선언없이 언제나 참조할 수 있다.</li>
+<li>호스트 객체: 자바스크립트 실행 환경이 추가로 제공하는 객체.</li>
+<li>사용자 정의 객체: 사용자가 직접 정의한 객체<h1 id="표준-빌트인-객체"><a href="#표준-빌트인-객체" class="headerlink" title="표준 빌트인 객체"></a>표준 빌트인 객체</h1></li>
+</ol>
+<ul>
+<li>Objet, String, Number, Boolean, Symbol, Date, Math, Array 등, 자바스크립트가 제공하는 표준 빌트인 객체.</li>
+<li>Math, Reflect, JSON을 제외한 모든 표준 빌트인 객체는 인스턴스를 생성할 수 있다.</li>
+<li>인스턴스를 생성할 수 있단 건, 정적 메서드와 프로토타입 메서드를 제공한다는 거지.</li>
+<li>아닌 건 정적 메서드만 제공하는 거고.</li>
+<li>표준 빌트인 객체가 생성한 인스턴스의 프로토타입은, 그 표준 빌트인 객체의 prototype 프로퍼티에 바인딩된 객체다.</li>
+<li>이 프로토타입이 다양한 프로토타입 메서드를 제공.<h1 id="원시값과-래퍼-객체"><a href="#원시값과-래퍼-객체" class="headerlink" title="원시값과 래퍼 객체"></a>원시값과 래퍼 객체</h1></li>
+<li>원시값을 마치 객체처럼 접근할 수 있는데(ex. str.length),</li>
+<li>이 때 자바스크립트 엔진은 일시적으로 원시값을 연관된 객체로 변환.</li>
+<li>객체로 아주 바꾸는 건 아니고, 할 일 다 하면 버림.</li>
+<li>아무튼 이때 생성되는 임시 객체를 ‘래퍼 객체’라 한다.</li>
+<li>객체가 되었으니 프로토타입의 메서드를 갖다 쓸 수도 있지.</li>
+<li>문자열, 숫자, 불리언, 심벌이 이렇게 움직이는데,</li>
+<li>불리언은 쓸 일이 없고, 심벌은 나중에 배움.</li>
+<li>그외 null과 undefined는 래퍼 객체를 생성하지 않는다.<h1 id="전역-객체"><a href="#전역-객체" class="headerlink" title="전역 객체"></a>전역 객체</h1></li>
+<li>코드가 실행되기 이전 단계에 자바스크립트 엔진에 의해 어떤 객체보다도 먼저 생성되는 특수한 객체이며, 어떤 객체에도 속하지 않은 최상위 객체이다.</li>
+<li>프로토타입 체인상 최상위는 아님. 당연하지. 프로토타입이 아닌데.<h1 id="빌트인-전역-프로퍼티"><a href="#빌트인-전역-프로퍼티" class="headerlink" title="빌트인 전역 프로퍼티"></a>빌트인 전역 프로퍼티</h1></li>
+<li>전역 객체의 프로퍼티.<br>주로 애플리케이션 전역에서 사용하는 값을 제공.</li>
+</ul>
+<ol>
+<li>Infinity</li>
+<li>NaN</li>
+<li>undefined<h1 id="빌트인-전역-함수"><a href="#빌트인-전역-함수" class="headerlink" title="빌트인 전역 함수"></a>빌트인 전역 함수</h1></li>
+</ol>
+<ul>
+<li>전역 객체의 메서드</li>
+<li>전역에서 호출 가능.</li>
+</ul>
+<ol>
+<li>eval<ul>
+<li>금지라는데 일아야 하나?</li>
+</ul>
+</li>
+<li>isFinite<ul>
+<li>전달받은 인수가 정상적인 유한수인지 검사하여 유한수이면 true를 반환하고, 무한수이면 false를 반환한다.</li>
+<li>NaN으로 평가되면 false.</li>
+<li>null은 0으로 변환되므로 true.</li>
+</ul>
+</li>
+<li>isNaN<ul>
+<li>전달받은 인수가 NaN인지 검사하여 그 결과를 불리언 타입으로 반환한다.</li>
+</ul>
+</li>
+<li>parseFloat<ul>
+<li>전달받은 문자열 인수를 실수로 해석(parsing)하여 반환.</li>
+</ul>
+</li>
+<li>parseInt<ul>
+<li>전달받은 문자열 인수를 정수(integer)로 해석(parsing)하여 반환.</li>
+<li>두 번째 인수로 진법을 나타내는 기수(2 ~ 36)를 전달할 수 있다.<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; &#39;10&#39;을 2진수로 해석하고 그 결과를 10진수 정수로 반환한다</span><br><span class="line">parseInt(&#39;10&#39;, 2); &#x2F;&#x2F; -&gt; 2</span><br></pre></td></tr></table></figure></li>
+<li>기수를 지정하여 10진수 숫자를 해당 기수의 문자열로 변환하여 반환하고 싶을 때는 Number.prototype.toString 메서드(“28.3.8. Number.prototype.toString” 참고)를 사용.</li>
+</ul>
+</li>
+<li>encodeURI / decodeURI<ul>
+<li>encodeURI 함수는 완전한 URI(Uniform Resource Identifier)를 문자열로 전달받아 이스케이프 처리를 위해 인코딩한다.</li>
+</ul>
+</li>
+<li>encodeURIComponent / decodeURIComponent<ul>
+<li>encodeURIComponent 함수는 전달된 URI(Uniform Resource Identifier) 구성 요소(component)를 인코딩한다. <h1 id="암묵적-전역"><a href="#암묵적-전역" class="headerlink" title="암묵적 전역"></a>암묵적 전역</h1></li>
+</ul>
+</li>
+</ol>
+<ul>
+<li>선언하지 않은 식별자에 값을 할당하면 전역 객체의 프로퍼티가 된다.</li>
+<li>전역 객체의 프로퍼티가 되어 마치 전역 변수처럼 동작한다.</li>
+<li>변수는 아니므로, 호이스팅은 발생하지 않는다.</li>
+<li>단지 프로퍼티니까, delete 연산자로 삭제할 수 있다.</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="http://bg-shorthand.github.io/2020/12/02/201202-%EC%83%9D%EC%84%B1%EC%9E%90-%ED%95%A8%EC%88%98%EC%97%90-%EC%9D%98%ED%95%9C-%EA%B0%9D%EC%B2%B4-%EC%83%9D%EC%84%B1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -2034,136 +2376,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://bg-shorthand.github.io/2020/11/02/201102-html%20css%20practice-responsive%20web/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="bg-shorthand">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="bg-shorthand-blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/11/02/201102-html%20css%20practice-responsive%20web/" class="post-title-link" itemprop="url">201102-html css practice-responsive web page</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2020-11-02 21:54:52" itemprop="dateCreated datePublished" datetime="2020-11-02T21:54:52+09:00">2020-11-02</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-11-16 20:24:28" itemprop="dateModified" datetime="2020-11-16T20:24:28+09:00">2020-11-16</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/html-css/" itemprop="url" rel="index"><span itemprop="name">html/css</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="html-css-practice"><a href="#html-css-practice" class="headerlink" title="html/css practice"></a>html/css practice</h1><ul>
-<li>반응형 샘플, 추천 메뉴/인포 영역</li>
-</ul>
-<hr>
-<h2 id="반응형-페이지-기획하기"><a href="#반응형-페이지-기획하기" class="headerlink" title="반응형 페이지 기획하기"></a>반응형 페이지 기획하기</h2><ol>
-<li>마크업<ul>
-<li>후에 숨겨야 하는 요소도 빠짐없이 마크업.</li>
-<li>공통적으로 디자인하기 위해, 묶어야 할 요소들은 무엇인지 고려.</li>
-</ul>
-</li>
-<li>스타일 기획 방법<ol>
-<li>작은 화면에서 큰 화면으로, 혹은 큰 화면에서 작은 화면으로.<ul>
-<li>기본이 되는 화면을 선택해 먼저 스타일 하고,</li>
-<li>수정이 되는 것들만 따로 수정.</li>
-</ul>
-</li>
-<li>공통된 것들을 먼저 체크해 스타일 하고, 후에 다른 것들 추가.</li>
-<li>어느 쪽이든 헷갈리지 않게 차근차근.<ul>
-<li>기준을 정해야 하는 듯.</li>
-<li>많이 해 봐야 익숙해지지.</li>
-</ul>
-</li>
-</ol>
-</li>
-</ol>
-<hr>
-<h2 id="기타"><a href="#기타" class="headerlink" title="기타"></a>기타</h2><ol>
-<li>position과 transform 조합.<ul>
-<li>position을 %값으로 줘서 부모 영역과 유기적으로 움직일 수 있게 배치한 후,</li>
-<li>transform 으로 세밀하게 조정.</li>
-</ul>
-</li>
-<li>video 태그의 속성 중에서, autoplay 는 크롬에서 안 됨.<ul>
-<li>접근성의 문제.</li>
-<li>스크린리더의 소리와 겹치면 문제가 되기 때문에,</li>
-<li>기본값으로 mute를 주면 쓸 수 있음.</li>
-</ul>
-</li>
-<li>video 아래 태그.<ul>
-<li>source: 브라우저가 지원하는 동영상 포맷이 각각 다를 때, source를 사용해 여러 포맷을 제공했었다.</li>
-<li>track: 자막 -&gt; 동영상에는 자막이 필수.</li>
-</ul>
-</li>
-<li>.responsive: 이미지나 동영상에서 width: 100%를 준다.<ul>
-<li>부모 요소의 크기에 맞추어 크기가 조절될 수 있게.</li>
-<li>이미지는 height: auto;가 필요하지만, 동영상은 필요 없음.</li>
-</ul>
-</li>
-<li>margin, padding 에서 height 값을 %로 줬을 때, 기준은 부모 요소의 가로.</li>
-<li>svg 코드<ul>
-<li>이미지가 아닌 코드로 삽입되어 있을 때,</li>
-<li>css나 js에서 제어가 용이하다.</li>
-<li>svg 코드만 묶어 스프라이트 파일을 만들 수도 있다.</li>
-<li>성능이 향상됨</li>
-</ul>
-</li>
-</ol>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -2233,7 +2445,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">22</span>
+          <span class="site-state-item-count">23</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
