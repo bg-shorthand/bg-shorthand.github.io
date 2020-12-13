@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"bg-shorthand.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="클래스클래스 정의 class 키워드 사용. 생성자 함수와 마찬가지로, 파스칼 케이스를 사용해 이름을 짓는 게 일반적. 표현식으로 정의할 수 있다 -&gt; 값으로 사용할 수 있다 -&gt; 일급객체다. 클래스 몸체에는 0개 이상의 ‘메서드’만 정의할 수 있다.123456789101112131415161718&#x2F;&#x2F; 클래스 선언문class Pe">
+<meta property="og:type" content="article">
+<meta property="og:title" content="201214-클래스">
+<meta property="og:url" content="http://bg-shorthand.github.io/2020/12/13/201214-%ED%81%B4%EB%9E%98%EC%8A%A4/index.html">
+<meta property="og:site_name" content="bg-shorthand-blog">
+<meta property="og:description" content="클래스클래스 정의 class 키워드 사용. 생성자 함수와 마찬가지로, 파스칼 케이스를 사용해 이름을 짓는 게 일반적. 표현식으로 정의할 수 있다 -&gt; 값으로 사용할 수 있다 -&gt; 일급객체다. 클래스 몸체에는 0개 이상의 ‘메서드’만 정의할 수 있다.123456789101112131415161718&#x2F;&#x2F; 클래스 선언문class Pe">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-12-13T05:21:36.000Z">
+<meta property="article:modified_time" content="2020-12-13T05:21:52.393Z">
+<meta property="article:author" content="bg-shorthand">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://bg-shorthand.github.io/2020/12/13/201214-%ED%81%B4%EB%9E%98%EC%8A%A4/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>201214-클래스 | bg-shorthand-blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">bg-shorthand-blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://bg-shorthand.github.io/2020/12/13/201214-%ED%81%B4%EB%9E%98%EC%8A%A4/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="bg-shorthand">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="bg-shorthand-blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          201214-클래스
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2020-12-13 14:21:36 / Modified: 14:21:52" itemprop="dateCreated datePublished" datetime="2020-12-13T14:21:36+09:00">2020-12-13</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/javascript/" itemprop="url" rel="index"><span itemprop="name">javascript</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="클래스"><a href="#클래스" class="headerlink" title="클래스"></a>클래스</h1><h1 id="클래스-정의"><a href="#클래스-정의" class="headerlink" title="클래스 정의"></a>클래스 정의</h1><ul>
+<li>class 키워드 사용.</li>
+<li>생성자 함수와 마찬가지로, 파스칼 케이스를 사용해 이름을 짓는 게 일반적.</li>
+<li>표현식으로 정의할 수 있다 -&gt; 값으로 사용할 수 있다 -&gt; 일급객체다.</li>
+<li>클래스 몸체에는 0개 이상의 ‘메서드’만 정의할 수 있다.<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; 클래스 선언문</span><br><span class="line">class Person &#123;</span><br><span class="line">  &#x2F;&#x2F; 생성자</span><br><span class="line">  constructor(name) &#123;</span><br><span class="line">    &#x2F;&#x2F; 인스턴스 생성 및 초기화</span><br><span class="line">    this.name &#x3D; name; &#x2F;&#x2F; name 프로퍼티는 public하다.</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  &#x2F;&#x2F; 프로토타입 메서드</span><br><span class="line">  sayHi() &#123;</span><br><span class="line">    console.log(&#96;Hi! My name is $&#123;this.name&#125;&#96;);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  &#x2F;&#x2F; 정적 메서드</span><br><span class="line">  static sayHello() &#123;</span><br><span class="line">    console.log(&#39;Hello!&#39;);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="클래스-호이스팅"><a href="#클래스-호이스팅" class="headerlink" title="클래스 호이스팅"></a>클래스 호이스팅</h1></li>
+<li>let/const 키워드로 선언한 변수처럼 호이스팅</li>
+<li>동작은 동일한데, 실행 컨텍스트 상에서도 동일한가? 모르겠음.<h1 id="인스턴스-생성"><a href="#인스턴스-생성" class="headerlink" title="인스턴스 생성"></a>인스턴스 생성</h1></li>
+<li>클래스는 인스턴스를 생성하는 게 유일한 이유이므로 일반 함수로서 호출이 안 됨.</li>
+<li>new 연산자와 함께 호출.<h1 id="메서드"><a href="#메서드" class="headerlink" title="메서드"></a>메서드</h1></li>
+</ul>
+<ol>
+<li>constructor<ul>
+<li>인스턴스를 생성하고 초기화 하기 위한 메서드.</li>
+<li>constructor 이름을 바꿀 수는 없다.</li>
+<li>클래스 내에 최대 한 개만 존재할 수 있다.</li>
+<li>constructor는 생략할 수 있다. -&gt; 이 경우 인스턴스는 빈 객체.</li>
+<li>constructor를 생략하면 클래스에 다음과 같이 빈 constructor가 암묵적으로 정의된다. constructor를 생략한 클래스는 빈 constructor에 의해 빈 객체를 생성한다.</li>
+<li>따라서 인스턴스를 초기화하려면 constructor를 생략해서는 안 된다.</li>
+<li>생성자 함수와 마찬가지로, 암묵적으로 this를 반환하므로, return은 쓰지 않는다.<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">class Person &#123;</span><br><span class="line">  &#x2F;&#x2F; 생성자</span><br><span class="line">  constructor(name) &#123;</span><br><span class="line">    &#x2F;&#x2F; 인스턴스 생성 및 초기화</span><br><span class="line">    this.name &#x3D; name;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li>근데!</li>
+<li>constructor는 메서드로 해석되는 것이 아니라 클래스가 평가되어 생성한 함수 객체 코드의 일부가 된다. 다시 말해, 클래스 정의가 평가되면 constructor의 기술된 동작을 하는 함수 객체가 생성된다.</li>
+<li>이게 무슨 말이냐면,</li>
+<li>클래스 정의가 평가되어 함수 객체를 만들 때,</li>
+<li>이 때 constructor가 메서드라면 평가를 안하는데,</li>
+<li>메서드로 해석하지 않으니까, constructor 동작을 하는 함수 객체도 만든다~</li>
+<li>이 말이야?</li>
+</ul>
+</li>
+<li>프로토타입 메서드<ul>
+<li>클래스 몸체에 메서드 축약 표현으로 쓴 메서드.</li>
+<li>프로토타입의 메서드가 되고, 인스턴스가 상속받아 쓸 수 있다.</li>
+<li>즉, 클래스는 생성자 함수와 마찬가지로 프로토타입 기반의 객체 생성 매커니즘이다.<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">class Person &#123;</span><br><span class="line">  &#x2F;&#x2F; 생성자</span><br><span class="line">  constructor(name) &#123;</span><br><span class="line">    &#x2F;&#x2F; 인스턴스 생성 및 초기화</span><br><span class="line">    this.name &#x3D; name;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  &#x2F;&#x2F; 프로토타입 메서드</span><br><span class="line">  sayHi() &#123;</span><br><span class="line">    console.log(&#96;Hi! My name is $&#123;this.name&#125;&#96;);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li>정적 메서드<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">class Person &#123;</span><br><span class="line">  &#x2F;&#x2F; 생성자</span><br><span class="line">  constructor(name) &#123;</span><br><span class="line">    &#x2F;&#x2F; 인스턴스 생성 및 초기화</span><br><span class="line">    this.name &#x3D; name;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  &#x2F;&#x2F; 정적 메서드</span><br><span class="line">  static sayHi() &#123;</span><br><span class="line">    console.log(&#39;Hi!&#39;);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="정적-메서드와-프로토타입-메서드의-차이"><a href="#정적-메서드와-프로토타입-메서드의-차이" class="headerlink" title="정적 메서드와 프로토타입 메서드의 차이"></a>정적 메서드와 프로토타입 메서드의 차이</h1></li>
+<li>정적 메서드와 프로토타입 메서드는 자신이 속해 있는 프로토타입 체인이 다르다. -&gt; 인스턴스에서 정적 메서드를 상속받을 수 없다.</li>
+<li>정적 메서드는 클래스로 호출하고 프로토타입 메서드는 인스턴스로 호출한다. -&gt; 인스턴스 생성 없이도 호출할 수 있는 정적 메서드를 지향해야 한다.</li>
+<li>정적 메서드는 인스턴스 프로퍼티를 참조할 수 없지만 프로토타입 메서드는 인스턴스 프로퍼티를 참조할 수 있다. -&gt; this 유무 차이로 간단하게 생각할 수 있다.</li>
+</ol>
+<ul>
+<li>클래스 또는 생성자 함수를 하나의 네임 스페이스로 여기고,</li>
+<li>여기에 관련 메서드들을 정적 메서드로 모아두어 사용할 수 있다.</li>
+<li>메서드를 구조화.<h1 id="클래스에서-정의한-메서드의-특징"><a href="#클래스에서-정의한-메서드의-특징" class="headerlink" title="클래스에서 정의한 메서드의 특징"></a>클래스에서 정의한 메서드의 특징</h1></li>
+</ul>
+<ol>
+<li>function 키워드를 생략한 메서드 축약 표현을 사용한다.</li>
+<li>객체 리터럴과는 다르게 클래스에 메서드를 정의할 때는 콤마가 필요 없다.</li>
+<li>암묵적으로 strict 모드로 실행된다. (“20. strict mode” 참고)</li>
+<li>for…in 문이나 Object.keys 메서드 등으로 열거할 수 없다. 즉, 프로퍼티의 열거 가능 여부를 나타내며, 불리언 값을 갖는 프로퍼티 어트리뷰트 [[Enumerable]]의 값이 false다. (“16. 프로퍼티 어트리뷰트” 참고)</li>
+<li>내부 메서드 [[Construct]]를 갖지 않는 non-constructor다. 따라서 new 연산자와 함께 호출할 수 없다. (“17.2.5. constructor와 non-constructor의 구분” 참고)<h1 id="클래스의-인스턴스-생성-과정"><a href="#클래스의-인스턴스-생성-과정" class="headerlink" title="클래스의 인스턴스 생성 과정"></a>클래스의 인스턴스 생성 과정</h1></li>
+</ol>
+<ul>
+<li>생성자 함수의 인스턴스 생성 과정과 유사하다.</li>
+</ul>
+<ol>
+<li>인스턴스 생성과 this 바인딩.</li>
+<li>constructor 메서드의 내부 코드가 실행되어 인스턴스 초기화.</li>
+<li>인스턴스 반환(암묵적으로 return this)<h1 id="클래스-필드-정의-제안"><a href="#클래스-필드-정의-제안" class="headerlink" title="클래스 필드 정의 제안"></a>클래스 필드 정의 제안</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">class Person &#123;</span><br><span class="line">  &#x2F;&#x2F; 클래스 필드 정의</span><br><span class="line">  name &#x3D; &#39;Lee&#39;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">const me &#x3D; new Person();</span><br><span class="line">console.log(me); &#x2F;&#x2F; Person &#123;name: &quot;Lee&quot;&#125;</span><br></pre></td></tr></table></figure></li>
+</ol>
+<ul>
+<li>클래스 몸체에서 클래스 필드를 정의하는 경우, this에 클래스 필드를 바인딩해서는 안된다. this는 클래스의 constructor와 메서드 내에서만 유효하다.</li>
+<li>클래스 필드에 초기값을 할당하지 않으면 undefined를 갖는다.</li>
+<li>외부의 초기값(인수)으로 클래스 필드를 초기화(프로퍼티 값 설정)해야 할 필요가 있다면 constructor에서 클래스 필드를 초기화해야 한다.</li>
+<li>클래스 필드를 통해 메서드를 정의할 수도 있다.<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">class Person &#123;</span><br><span class="line">  &#x2F;&#x2F; 클래스 필드에 문자열을 할당</span><br><span class="line">  name &#x3D; &#39;Lee&#39;;</span><br><span class="line"></span><br><span class="line">  &#x2F;&#x2F; 클래스 필드에 함수를 할당</span><br><span class="line">  getName &#x3D; function () &#123;</span><br><span class="line">    return this.name;</span><br><span class="line">  &#125;</span><br><span class="line">  &#x2F;&#x2F; 화살표 함수로 정의할 수도 있다.</span><br><span class="line">  &#x2F;&#x2F; getName &#x3D; () &#x3D;&gt; this.name;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li>클래스 필드에 함수를 할당하는 경우, 이 함수는 프로토타입 메서드가 아닌 인스턴스 메서드가 된다.<h1 id="private-필드-정의-제안"><a href="#private-필드-정의-제안" class="headerlink" title="private 필드 정의 제안"></a>private 필드 정의 제안</h1></li>
+<li>private 필드의 선두에는 #을 붙여준다. private 필드를 참조할 때도 #을 붙어주어야 한다.</li>
+<li>private 필드는 반드시 클래스 몸체에 정의해야 한다. private 필드를 직접 constructor에 정의하면 에러가 발생한다.<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">class Person &#123;</span><br><span class="line">  &#x2F;&#x2F; private 필드 정의</span><br><span class="line">  #name &#x3D; &#39;&#39;;</span><br><span class="line"></span><br><span class="line">  constructor(name) &#123;</span><br><span class="line">    &#x2F;&#x2F; private 필드 참조</span><br><span class="line">    this.#name &#x3D; name;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="static-필드-정의-제안"><a href="#static-필드-정의-제안" class="headerlink" title="static 필드 정의 제안"></a>static 필드 정의 제안</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">class MyMath &#123;</span><br><span class="line">  &#x2F;&#x2F; static public 필드 정의</span><br><span class="line">  static PI &#x3D; 22 &#x2F; 7;</span><br><span class="line"></span><br><span class="line">  &#x2F;&#x2F; static private 필드 정의</span><br><span class="line">  static #num &#x3D; 10;</span><br><span class="line"></span><br><span class="line">  &#x2F;&#x2F; static 메서드</span><br><span class="line">  static increment() &#123;</span><br><span class="line">    return ++MyMath.#num;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="상속에-의한-클래스-확장"><a href="#상속에-의한-클래스-확장" class="headerlink" title="상속에 의한 클래스 확장"></a>상속에 의한 클래스 확장</h1></li>
+<li>기존 클래스를 상속받아 새로운 클래스를 확장(extends)하여 정의.</li>
+<li>extends 키워드 사용.<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">class Animal &#123;</span><br><span class="line">  constructor(age, weight) &#123;</span><br><span class="line">    this.age &#x3D; age;</span><br><span class="line">    this.weight &#x3D; weight;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  eat() &#123; return &#39;eat&#39;; &#125;</span><br><span class="line"></span><br><span class="line">  move() &#123; return &#39;move&#39;; &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 상속을 통해 Animal 클래스를 확장한 Bird 클래스</span><br><span class="line">class Bird extends Animal &#123;</span><br><span class="line">  fly() &#123; return &#39;fly&#39;; &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">const bird &#x3D; new Bird(1, 5);</span><br><span class="line"></span><br><span class="line">console.log(bird); &#x2F;&#x2F; Bird &#123;age: 1, weight: 5&#125;</span><br><span class="line">console.log(bird instanceof Bird); &#x2F;&#x2F; true</span><br><span class="line">console.log(bird instanceof Animal); &#x2F;&#x2F; true</span><br><span class="line"></span><br><span class="line">console.log(bird.eat());  &#x2F;&#x2F; eat</span><br><span class="line">console.log(bird.move()); &#x2F;&#x2F; move</span><br><span class="line">console.log(bird.fly());  &#x2F;&#x2F; fly</span><br></pre></td></tr></table></figure></li>
+</ul>
+<ol>
+<li>extends 키워드<ul>
+<li>상속을 통해 확장된 클래스를 서브클래스(subclass)라 부르고, 서브클래스에게 상속된 클래스를 수퍼클래스(superclass)라 부른다.</li>
+<li>수퍼클래스와 서브클래스는 인스턴스의 프로토타입 체인 뿐만이 아니라, 클래스 간의 프로토타입 체인도 생성한다. 이를 통해 프로토타입 메서드, 정적 메서드 모두 상속이 가능하다.</li>
+</ul>
+</li>
+<li>동적 상속<ul>
+<li>extends 키워드 다음에는 클래스뿐만이 아니라 [[Construct]] 내부 메서드를 갖는 함수 객체로 평가될 수 있는 모든 표현식을 사용할 수 있다. 단, extends 키워드 앞에는 반드시 클래스가 와야 한다.</li>
+</ul>
+</li>
+<li>서브클래스의 constructor<ul>
+<li>서브클래스에서 constructor를 생략하면 클래스에 다음과 같은 constructor가 암묵적으로 정의된다.<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">constructor(...args) &#123; super(...args); &#125;</span><br></pre></td></tr></table></figure></li>
+<li>수퍼클래스와 서브클래스 모두 constructor를 생략하면 빈 객체가 생성된다.</li>
+</ul>
+</li>
+<li>super 키워드<ul>
+<li>super를 호출하면 수퍼클래스의 constructor(super-constructor)를 호출한다.<ol>
+<li>서브클래스에서 constructor를 생략하지 않는 경우 서브클래스의 constructor에서는 반드시 super를 호출해야 한다.</li>
+<li>서브클래스의 constructor에서 super를 호출하기 전에는 this를 참조할 수 없다.</li>
+<li>super는 반드시 서브클래스의 constructor에서만 호출한다. 서브클래스가 아닌 클래스의 constructor나 함수에서 super를 호출하면 에러가 발생한다.</li>
+</ol>
+</li>
+<li>super를 참조하면 수퍼클래스의 메서드를 호출할 수 있다.<ol>
+<li>서브클래스의 프로토타입 메서드 내에서 super.sayHi는 수퍼클래스의 프로토타입 메서드 sayHi를 가리킨다.</li>
+<li>super 참조는 클래스의 전유물은 아니다. 객체 리터럴에서도 super 참조를 사용할 수 있다. 단, ES6의 메서드 축약 표현으로 정의된 함수만 가능하다.</li>
+<li>서브클래스의 정적 메서드 내에서 super.sayHi는 수퍼클래스의 정적 메서드 sayHi를 가리킨다.</li>
+</ol>
+</li>
+</ul>
+</li>
+<li>8.6. 상속 클래스의 인스턴스 생성 과정<ol>
+<li>서브클래스의 super 호출<ul>
+<li>서브클래스는 자신이 직접 인스턴스를 생성하지 않고 수퍼클래스에게 인스턴스 생성을 위임한다. 이것이 바로 서브클래스의 constructor에서 반드시 super를 호출해야 하는 이유다.</li>
+</ul>
+</li>
+<li>수퍼클래스의 인스턴스 생성과 this 바인딩<ul>
+<li>인스턴스는 수퍼클래스가 생성한 것이다. 하지만 new 연산자와 함께 호출된 클래스가 서브클래스라는 것이 중요하다.</li>
+<li>즉, new 연산자와 함께 호출된 함수를 가리키는 new.target은 서브클래스를 가리킨다. 따라서 인스턴스는 new.target이 가리키는 서브클래스가 생성한 것으로 처리된다.</li>
+</ul>
+</li>
+<li>수퍼클래스의 인스턴스 초기화<ul>
+<li>수퍼클래스의 constructor가 실행되어 this에 바인딩되어 있는 인스턴스를 초기화한다.</li>
+</ul>
+</li>
+<li>서브클래스 constructor로의 복귀와 this 바인딩<ul>
+<li>서브클래스는 별도의 인스턴스를 생성하지 않고 super가 반환한 인스턴스를 this에 바인딩하여 그대로 사용한다.</li>
+<li>super가 호출되지 않으면 인스턴스가 생성되지 않으며, this 바인딩도 할 수 없다. 서브클래스의 constructor에서 super를 호출하기 전에는 this를 참조할 수 없는 이유가 바로 이 때문이다.</li>
+</ul>
+</li>
+<li>서브클래스의 인스턴스 초기화</li>
+<li>인스턴스 반환</li>
+</ol>
+</li>
+<li>표준 빌트인 생성자 함수 확장<ul>
+<li>extends 키워드 다음에는 클래스뿐만이 아니라 [[Construct]] 내부 메서드를 갖는 함수 객체로 평가될 수 있는 모든 표현식을 사용할 수 있다.</li>
+<li>String, Number, Array와 같은 표준 빌트인 객체도 [[Construct]] 내부 메서드를 갖는 생성자 함수이므로 extends 키워드를 사용하여 확장할 수 있다.</li>
+</ul>
+</li>
+</ol>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/12/10/201210-%EC%8B%A4%ED%96%89-%EC%BB%A8%ED%85%8D%EC%8A%A4%ED%8A%B8-%ED%81%B4%EB%A1%9C%EC%A0%80/" rel="prev" title="201210-실행 컨텍스트, 클로저">
+      <i class="fa fa-chevron-left"></i> 201210-실행 컨텍스트, 클로저
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%ED%81%B4%EB%9E%98%EC%8A%A4"><span class="nav-number">1.</span> <span class="nav-text">클래스</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%ED%81%B4%EB%9E%98%EC%8A%A4-%EC%A0%95%EC%9D%98"><span class="nav-number">2.</span> <span class="nav-text">클래스 정의</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%ED%81%B4%EB%9E%98%EC%8A%A4-%ED%98%B8%EC%9D%B4%EC%8A%A4%ED%8C%85"><span class="nav-number">3.</span> <span class="nav-text">클래스 호이스팅</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%EC%9D%B8%EC%8A%A4%ED%84%B4%EC%8A%A4-%EC%83%9D%EC%84%B1"><span class="nav-number">4.</span> <span class="nav-text">인스턴스 생성</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%EB%A9%94%EC%84%9C%EB%93%9C"><span class="nav-number">5.</span> <span class="nav-text">메서드</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%EC%A0%95%EC%A0%81-%EB%A9%94%EC%84%9C%EB%93%9C%EC%99%80-%ED%94%84%EB%A1%9C%ED%86%A0%ED%83%80%EC%9E%85-%EB%A9%94%EC%84%9C%EB%93%9C%EC%9D%98-%EC%B0%A8%EC%9D%B4"><span class="nav-number">6.</span> <span class="nav-text">정적 메서드와 프로토타입 메서드의 차이</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%ED%81%B4%EB%9E%98%EC%8A%A4%EC%97%90%EC%84%9C-%EC%A0%95%EC%9D%98%ED%95%9C-%EB%A9%94%EC%84%9C%EB%93%9C%EC%9D%98-%ED%8A%B9%EC%A7%95"><span class="nav-number">7.</span> <span class="nav-text">클래스에서 정의한 메서드의 특징</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%ED%81%B4%EB%9E%98%EC%8A%A4%EC%9D%98-%EC%9D%B8%EC%8A%A4%ED%84%B4%EC%8A%A4-%EC%83%9D%EC%84%B1-%EA%B3%BC%EC%A0%95"><span class="nav-number">8.</span> <span class="nav-text">클래스의 인스턴스 생성 과정</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%ED%81%B4%EB%9E%98%EC%8A%A4-%ED%95%84%EB%93%9C-%EC%A0%95%EC%9D%98-%EC%A0%9C%EC%95%88"><span class="nav-number">9.</span> <span class="nav-text">클래스 필드 정의 제안</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#private-%ED%95%84%EB%93%9C-%EC%A0%95%EC%9D%98-%EC%A0%9C%EC%95%88"><span class="nav-number">10.</span> <span class="nav-text">private 필드 정의 제안</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#static-%ED%95%84%EB%93%9C-%EC%A0%95%EC%9D%98-%EC%A0%9C%EC%95%88"><span class="nav-number">11.</span> <span class="nav-text">static 필드 정의 제안</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%EC%83%81%EC%86%8D%EC%97%90-%EC%9D%98%ED%95%9C-%ED%81%B4%EB%9E%98%EC%8A%A4-%ED%99%95%EC%9E%A5"><span class="nav-number">12.</span> <span class="nav-text">상속에 의한 클래스 확장</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">bg-shorthand</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">26</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">categories</span>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">bg-shorthand</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
