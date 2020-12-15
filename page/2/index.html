@@ -145,6 +145,385 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://bg-shorthand.github.io/2020/11/19/201119-%EC%97%B0%EC%82%B0%EC%9E%90-%EC%A0%9C%EC%96%B4%EB%AC%B8-%ED%83%80%EC%9E%85-%EB%B3%80%ED%99%98-%EB%8B%A8%EC%B6%95-%ED%8F%89%EA%B0%80/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="bg-shorthand">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="bg-shorthand-blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/11/19/201119-%EC%97%B0%EC%82%B0%EC%9E%90-%EC%A0%9C%EC%96%B4%EB%AC%B8-%ED%83%80%EC%9E%85-%EB%B3%80%ED%99%98-%EB%8B%A8%EC%B6%95-%ED%8F%89%EA%B0%80/" class="post-title-link" itemprop="url">연산자, 제어문, 타입 변환, 단축 평가</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2020-11-19 19:22:36 / Modified: 19:23:13" itemprop="dateCreated datePublished" datetime="2020-11-19T19:22:36+09:00">2020-11-19</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/javascript/" itemprop="url" rel="index"><span itemprop="name">javascript</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="1바이트가-8비트인-이유"><a href="#1바이트가-8비트인-이유" class="headerlink" title="1바이트가 8비트인 이유"></a>1바이트가 8비트인 이유</h1><ul>
+<li>내가 순서대로 말해볼게, 들어봐.<ol>
+<li>1바이트=8비트 라고 결정되지 않은 때가 있었어.</li>
+<li>처음 아이디어는 1바이트에 한 글자를 표현할 수 있도록 하고 싶었지.</li>
+<li>영어 대소문자와 숫자, 공백과 몇 개의 특수문자, 그 외 출력 불가능한 제어 문자들(?)을 표현하려면 100개 남짓의 가짓수가 필요하겠지?</li>
+<li>컴퓨터는 2진수로 값을 저장하니까, 2의 7승(128)이면 다 담을 수 있지.</li>
+<li>그래서 1바이트-&gt;표현하고 싶은 글자들 중 하나-&gt;7비트 였는데,</li>
+<li>후에 영어가 아닌 다른 언어도 넣고 싶어서 8비트로 확장했어.</li>
+<li>그때부터 규격이 정해지고 표준화 됨.</li>
+<li>ㅇㅇ?</li>
+<li>근데 세상엔 너무 많은 언어가 있잖아.</li>
+<li>2의 8승으로 그게 다 표현 안 되지.</li>
+<li>그래서,</li>
+<li>세계 모든 언어를 같은 방법으로 인코딩하고 싶은 유니코드는, 한 글자를 표현하기 위해 2바이트를 써.</li>
+<li>2바이트, 8비트<em>8비트, 2의8승</em>2의8승 = 65536.</li>
+<li>더 필요할 거 같은데, 그 이후로 어떻게 됐지?</li>
+</ol>
+</li>
+<li><a target="_blank" rel="noopener" href="https://ko.wikipedia.org/wiki/ASCII">https://ko.wikipedia.org/wiki/ASCII</a></li>
+<li><a target="_blank" rel="noopener" href="https://ko.wikipedia.org/wiki/%EC%9C%A0%EB%8B%88%EC%BD%94%EB%93%9C">https://ko.wikipedia.org/wiki/%EC%9C%A0%EB%8B%88%EC%BD%94%EB%93%9C</a></li>
+<li><a target="_blank" rel="noopener" href="https://zepeh.tistory.com/313">https://zepeh.tistory.com/313</a></li>
+<li><a target="_blank" rel="noopener" href="https://namu.wiki/w/%EC%95%84%EC%8A%A4%ED%82%A4%20%EC%BD%94%EB%93%9C">https://namu.wiki/w/%EC%95%84%EC%8A%A4%ED%82%A4%20%EC%BD%94%EB%93%9C</a></li>
+<li><a target="_blank" rel="noopener" href="https://whatisthenext.tistory.com/103">https://whatisthenext.tistory.com/103</a></li>
+</ul>
+<hr>
+<h1 id="연산자"><a href="#연산자" class="headerlink" title="연산자"></a>연산자</h1><ul>
+<li>하나 이상의 표현식을 대상으로 산술, 할당, 비교, 논리, 타입, 지수 연산(operation) 등을 수행해 하나의 값을 만든다.</li>
+<li>피연산자: 연산의 대상, 표현식이어야 함,</li>
+<li>피연산자와 연산자로 만들어진 문도 값으로 평가될 수 있어 표현식.<h1 id="산술-연산자"><a href="#산술-연산자" class="headerlink" title="산술 연산자"></a>산술 연산자</h1></li>
+<li>수학적 연산으로 숫자 값을 만든다.</li>
+<li>수학적 연산이 불가할 경우, NaN값.</li>
+<li>피연산자의 개수에 따라 이항 산술 연산자, 단항 산술 연산자.</li>
+</ul>
+<ol>
+<li>이항 산술 연산자<ul>
+<li>+, -, / *, %</li>
+<li>새로운 값을 만들어낸다.</li>
+<li>피연산자의 값을 변경하는 ‘부수 효과’ 없음.</li>
+</ul>
+</li>
+<li>단항 산술 연산자<ul>
+<li>++, –, +, -</li>
+<li>++, – 는 피연산자의 값을 변경, ‘부수 효과’.</li>
+<li>+는 아무 효과도 없어 보이지만, 숫자 타입이 아닌 값을 숫자 타입으로 바꿈. 단, 피연산자의 값을 변경하지는 않음.</li>
+<li>-도 +와 같이 피연산자의 값을 숫자 타입으로 바꿈.</li>
+</ul>
+</li>
+<li>문자열 연결 연산자<ul>
+<li>+</li>
+<li>피연산자 중 하나가 문자열 타입일 때, 나머지도 문자열로 바꾸고 합침.</li>
+<li>문자열 연결 연산자.</li>
+<li>단항 산술 연산자의 +, -와 함께, ‘암묵적 타입 변환’을 일으킴.<h1 id="할당-연산자"><a href="#할당-연산자" class="headerlink" title="할당 연산자"></a>할당 연산자</h1></li>
+</ul>
+</li>
+</ol>
+<ul>
+<li>=, +=, -=, *=, /=, %=, **=</li>
+<li>우항의 결과를 좌항의 변수에 할당.</li>
+<li>할당문은 값으로 평가되는 표현식인 문.<h1 id="비교-연산자"><a href="#비교-연산자" class="headerlink" title="비교 연산자"></a>비교 연산자</h1></li>
+<li>좌항과 우항의 피연산자를 비교한 다음 그 결과를 불리언 값으로 반환.</li>
+</ul>
+<ol>
+<li>동등/일치 비교 연산자<ul>
+<li>==, ===</li>
+<li>동등 비교 연산자(==)는 암묵적 타입 변환을 통해 두 피연산자의 타입을 일치 시킨 후 비교.</li>
+<li>일치 피교 연산자(===)는 암묵적 타입 변환을 하지 않고, 두 피연산자를 비교. 타입이 다르면 false.</li>
+<li>일치 피교 연산자로 비교했을 때, NaN값은 자신과 일치하지 않는 유일한 값.</li>
+<li>0도 양의 0과 음의 0을 같다고 비교함.</li>
+<li>메소드인 Object.is()을 쓰면 +0과 -0도 동일, NaN도 자신과 동일하다고 표시함.</li>
+<li>!=, !==</li>
+</ul>
+</li>
+<li>대소 관계 비교 연산자<ul>
+<li>&lt;, &gt;, &lt;=, &gt;= <h1 id="삼항-조건-연산자"><a href="#삼항-조건-연산자" class="headerlink" title="삼항 조건 연산자"></a>삼항 조건 연산자</h1></li>
+</ul>
+</li>
+</ol>
+<ul>
+<li>조건식의 평가 결과(불리언으로 평가)에 따라 반환할 값을 결정.</li>
+<li>(조건식) ? (트루일 때 반환 값) : (펄스일 때 반환 값)</li>
+<li>조건식을 사용하므로, 조건문.</li>
+<li>if…else 문과 유사하게 사용 가능.</li>
+<li>단, 삼항 조건 연산자는 값으로 평가 가능, if…else 문은 값으로 평가 불가.</li>
+<li>삼항 조건 연산자는 표현식, if…else문은 평가식이 아님.</li>
+<li>그래서, 값을 결정해야 한다면 삼항 조건 연산자를 사용하고,</li>
+<li>조건에 따라 수행해야 할 문이 많은 경우에는 if…else.<h1 id="논리-연산자"><a href="#논리-연산자" class="headerlink" title="논리 연산자"></a>논리 연산자</h1></li>
+<li>||, &amp;&amp;, !</li>
+<li>!는 피연산자를 불리언 속성으로 변환, 부정하여 반환.</li>
+<li>불리언 속성이 아닌 값을 불리언 속성으로 바꿀 수 있다. -&gt; !!값</li>
+<li>||, &amp;&amp;는 불리언 값만 반환하는 게 아니야,<ol>
+<li>양쪽의 피연산자 중 하나를 반환.</li>
+<li>불리언 타입이 아닌 값은 불리언 타입으로 변환하여 평가, 피연산자 중 하나를 반환.</li>
+<li>단축 평가<h1 id="쉼표-연산자"><a href="#쉼표-연산자" class="headerlink" title="쉼표 연산자"></a>쉼표 연산자</h1></li>
+</ol>
+</li>
+<li>,</li>
+<li>왼쪽부터 평가를 시작해 마지막 피연산자의 값을 반환.<h1 id="그룹-연산자"><a href="#그룹-연산자" class="headerlink" title="그룹 연산자"></a>그룹 연산자</h1></li>
+<li>(, )</li>
+<li>연산자 우선순위가 가장 높다.</li>
+<li>연산자 우선순위를 명시적으로 표시할 수 있다.<h1 id="typeof-연산자"><a href="#typeof-연산자" class="headerlink" title="typeof 연산자"></a>typeof 연산자</h1></li>
+<li>typeof</li>
+<li>데이터 타입을 문자열로 반환.</li>
+<li>null 타입은 undefined로 반환하는데, 버그임.</li>
+<li>선언되지 않은 식별자를 연산하면 undefined를 반환.<h1 id="지수-연산자"><a href="#지수-연산자" class="headerlink" title="지수 연산자"></a>지수 연산자</h1></li>
+<li>**</li>
+<li>Math.pow()</li>
+<li>이항 연산자 중에서 우선순위가 가장 높다.</li>
+<li>할당 연산자와 함께 쓸 수 있따. **=</li>
+<li>음수의 거듭제곱의 경우 음수를 ()로 묶어줘서 사용.<h1 id="그외-연산자"><a href="#그외-연산자" class="headerlink" title="그외 연산자"></a>그외 연산자</h1></li>
+<li>?., ??, delete, new, instanceof, in</li>
+<li>다른 주제와 연관되어 있으므로, 그때 다시.<h1 id="연산자-우선순위"><a href="#연산자-우선순위" class="headerlink" title="연산자 우선순위"></a>연산자 우선순위</h1></li>
+<li>() 가 제일 높고,</li>
+<li>그 아래로 단항 산술 연산자</li>
+<li>이항 산술 연산자(그 중에 **이 가장 높다.)</li>
+<li>비교 연산자</li>
+<li>동등/일치 연산자</li>
+<li>논리 연산자</li>
+<li>삼항</li>
+<li>할당</li>
+<li>-&gt; 외우기 어려움. (, ) 로 명시적으로 표시가 필요하다.</li>
+</ul>
+<hr>
+<h1 id="제어문"><a href="#제어문" class="headerlink" title="제어문"></a>제어문</h1><ul>
+<li>위에서 아래로 한 줄씩 진행되는 코드 진행 방향을 제어.</li>
+<li>조건문, 반복문</li>
+<li>코드 흐름이 왔다갔다 하면 가독성이 떨어지는데, 후에 살펴볼 고차 함수가 이를 해결하려 노력.</li>
+<li>하지만 일단 이거부터 해야지.<h1 id="블록문"><a href="#블록문" class="headerlink" title="블록문"></a>블록문</h1></li>
+<li>0개 이상의 문을 중괄호({, })로 묶은 것, 코드 블록, 블록.</li>
+<li>블록문을 하나의 실행 단위로 취급한다.</li>
+<li>자체 종결성을 갖기 때문에 뒤에 ;을 붙이지 않는다.</li>
+<li>일반적으로 제어문이나 함수에 사용한다.</li>
+<li>제어문과 함수의 형식에 중괄호가 있는 게 아니라, 블록문이 따로 있는 거.</li>
+<li>그러니까 제어문과 함수에서 한 줄의 문만 있을 땐 블록문을 안 써도 되지.<h1 id="조건문"><a href="#조건문" class="headerlink" title="조건문"></a>조건문</h1></li>
+<li>조건식의 평가 결과에 따라 블록의 실행을 결정.</li>
+<li>if…else문과 switch…case문.</li>
+</ul>
+<ol>
+<li>if…else<ul>
+<li>조건식을 불리언 타입으로 평가하여 트루면 if의 블록 실행, 펄스면 else의 블록 실행.</li>
+<li>평가된 조건식의 값이 불리언 타입이 아니더라도, 불리언 타입으로 암묵적 변환.</li>
+<li>조건식을 추가하고 싶으면 else if를 사용.</li>
+<li>삼항 조건 연산자로 바꿔 쓸 수 있다.</li>
+</ul>
+</li>
+<li>switch<ul>
+<li>조건식을 평가하여, 그 값과 일치하는 case로 실행 흐름을 옮긴다.</li>
+<li>: 이후의 문들을 실행하고,</li>
+<li>break로 빠져나간다.<ol>
+<li>break가 없을 경우,</li>
+<li>가장 아래의 default를 실행.</li>
+<li>이것을 폴스루(fall through)라고 한다.</li>
+<li>이걸 이용할 수도 있는데,<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">var year &#x3D; 2000; &#x2F;&#x2F; 2000년은 윤년으로 2월이 29일이다.</span><br><span class="line">var month &#x3D; 2;</span><br><span class="line">var days &#x3D; 0;</span><br><span class="line"></span><br><span class="line">switch (month) &#123;</span><br><span class="line">  case 1: case 3: case 5: case 7: case 8: case 10: case 12:</span><br><span class="line">    days &#x3D; 31;</span><br><span class="line">    break;</span><br><span class="line">  case 4: case 6: case 9: case 11:</span><br><span class="line">    days &#x3D; 30;</span><br><span class="line">    break;</span><br><span class="line">  case 2:</span><br><span class="line">    &#x2F;&#x2F; 윤년 계산 알고리즘</span><br><span class="line">    &#x2F;&#x2F; 1. 연도가 4로 나누어떨어지는 해(2000, 2004, 2008, 2012, 2016, 2020...)는 윤년이다.</span><br><span class="line">    &#x2F;&#x2F; 2. 연도가 4로 나누어떨어지더라도 연도가 100으로 나누어떨어지는 해(2000, 2100, 2200...)는 평년이다.</span><br><span class="line">    &#x2F;&#x2F; 3. 연도가 400으로 나누어떨어지는 해(2000, 2400, 2800...)는 윤년이다.</span><br><span class="line">    days &#x3D; ((year % 4 &#x3D;&#x3D;&#x3D; 0 &amp;&amp; year % 100 !&#x3D;&#x3D; 0) || (year % 400 &#x3D;&#x3D;&#x3D; 0)) ? 29 : 28;</span><br><span class="line">    break;</span><br><span class="line">  default:</span><br><span class="line">    console.log(&#39;Invalid month&#39;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ol>
+</li>
+<li>case, default, break 등 다양한 키워드가 사용되고, 폴 스루가 적용되는 등, if…else보다 문법적으로 어려워.</li>
+<li>if…else를 쓸 수 있으면 쓰는데, 조건이 너무 많은 경우에는 switch가 가독성이 좋다.<h1 id="반복문"><a href="#반복문" class="headerlink" title="반복문"></a>반복문</h1></li>
+</ul>
+</li>
+</ol>
+<ul>
+<li>조건식이 참일 경우, 거짓이 될 때까지 블록을 반복.</li>
+<li>for, while, do…while</li>
+</ul>
+<ol>
+<li>for문<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">for (var i &#x3D; 0; i &lt; 10; i++) &#123;</span><br><span class="line">  console.log(i);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>선언문, 조건식, 증감식은 모두 옵션으로 안 써도 돼. 안 쓰면 무한 루프.</li>
+<li>for문 안에 for문으로 중첩 가능.</li>
+</ul>
+</li>
+<li>while 문<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">while (count &lt; 3) &#123;</span><br><span class="line">  console.log(count); &#x2F;&#x2F; 0 1 2</span><br><span class="line">  count++;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>블록 안에 if문, break문으로 탈출 가능.</li>
+</ul>
+</li>
+<li>do…while 문<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">do &#123;</span><br><span class="line">  console.log(count);</span><br><span class="line">  count++;</span><br><span class="line">&#125; while (count &lt; 3); &#x2F;&#x2F; 0 1 2</span><br></pre></td></tr></table></figure>
+<ul>
+<li>do를 먼저 실행하므로, 무조건 한 번은 실행.</li>
+</ul>
+</li>
+<li>break 문<ul>
+<li>레이블 문, 반복문(for, for…in, for…of, while, do…while) 또는 switch 문의 코드 블록을 탈출</li>
+<li>그 외의 문에서 사용하면 문법 에러.</li>
+<li>레이블 문<ul>
+<li>식별자가 붙은 문</li>
+<li>식별자: 문;</li>
+<li>문 앞에 식별자: 를 붙여 이름을 붙인다.</li>
+<li>변수처럼 다시 부르기 위한 용도는 아니고, break 문을 사용하기 위한 별칭으로 사용.</li>
+</ul>
+</li>
+<li>레이블 for문(식별자가 달린 for문)을 탈출할 때 유용하지만, 다른 경우는 사용을 권장하지 않아.</li>
+<li>그외 레이블 문을 사용하면 프로그램의 흐름이 복잡해져서 가독성이 나빠지고 오류를 발생시킬 가능성이 높아지기 때문.</li>
+</ul>
+</li>
+<li>continue 문<ul>
+<li>반복문의 코드 블록 실행을 현 지점에서 중단하고 반복문의 증감식으로 실행 흐름을 이동.</li>
+<li>반복문 자체를 탈출하지는 않음.</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h1 id="타입-변환"><a href="#타입-변환" class="headerlink" title="타입 변환"></a>타입 변환</h1><ul>
+<li>명시적 타입 변환과 암묵적 타입 변환</li>
+<li>숫자 타입, 문자열 타입, 불리언 타입으로 변환.</li>
+<li>기존 원시값을 직접 변환하는 것은 아니고, 다른 타입의 새로운 원시값을 생성.</li>
+<li>재할당되지도 않고 한번 쓰고 버리므로, 재사용하기 위해서는 할당이 필요.</li>
+<li>암묵적 타입 변경은 개발자의 의지가 코드에 명백히 나타나지 않는다.</li>
+<li>그러면 데이터 타입의 추측이 어려워지고,</li>
+<li>오류를 생산할 가능성이 높아진다.</li>
+<li>암묵적 타입 변환이 이루어지지 않도록 코딩할 수도 있겠지만, 가독성 상 암묵적 타입 변환을 잘 이해하는 편이 좋다.<h1 id="암묵적-타입-변환"><a href="#암묵적-타입-변환" class="headerlink" title="암묵적 타입 변환"></a>암묵적 타입 변환</h1></li>
+<li>자바스크립트 엔진이 개발자의 의도와 상관없이 코드의 문맥을 고려해 데이터 타입을 강제 변환.</li>
+<li>가급적 에러를 발생시키지 않기 위해</li>
+</ul>
+<ol>
+<li>문자열 타입으로 변환<ul>
+<li>문자열 연결 연산자 1 + ‘2’</li>
+<li>템플릿 리터널의 표현식 삽입 ‘1 + 1 = &amp;{1 + 1}’ -&gt; 숫자 타입으로 평가된 표현식을 문자열 타입으로 변환.</li>
+<li>참고<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; 숫자 타입</span><br><span class="line">0 + &#39;&#39;         &#x2F;&#x2F; -&gt; &quot;0&quot;</span><br><span class="line">-0 + &#39;&#39;        &#x2F;&#x2F; -&gt; &quot;0&quot;</span><br><span class="line">1 + &#39;&#39;         &#x2F;&#x2F; -&gt; &quot;1&quot;</span><br><span class="line">-1 + &#39;&#39;        &#x2F;&#x2F; -&gt; &quot;-1&quot;</span><br><span class="line">NaN + &#39;&#39;       &#x2F;&#x2F; -&gt; &quot;NaN&quot;</span><br><span class="line">Infinity + &#39;&#39;  &#x2F;&#x2F; -&gt; &quot;Infinity&quot;</span><br><span class="line">-Infinity + &#39;&#39; &#x2F;&#x2F; -&gt; &quot;-Infinity&quot;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 불리언 타입</span><br><span class="line">true + &#39;&#39;  &#x2F;&#x2F; -&gt; &quot;true&quot;</span><br><span class="line">false + &#39;&#39; &#x2F;&#x2F; -&gt; &quot;false&quot;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; null 타입</span><br><span class="line">null + &#39;&#39; &#x2F;&#x2F; -&gt; &quot;null&quot;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; undefined 타입</span><br><span class="line">undefined + &#39;&#39; &#x2F;&#x2F; -&gt; &quot;undefined&quot;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 심벌 타입</span><br><span class="line">(Symbol()) + &#39;&#39; &#x2F;&#x2F; -&gt; TypeError: Cannot convert a Symbol value to a string</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 객체 타입</span><br><span class="line">(&#123;&#125;) + &#39;&#39;           &#x2F;&#x2F; -&gt; &quot;[object Object]&quot;</span><br><span class="line">Math + &#39;&#39;           &#x2F;&#x2F; -&gt; &quot;[object Math]&quot;</span><br><span class="line">[] + &#39;&#39;             &#x2F;&#x2F; -&gt; &quot;&quot;</span><br><span class="line">[10, 20] + &#39;&#39;       &#x2F;&#x2F; -&gt; &quot;10,20&quot;</span><br><span class="line">(function()&#123;&#125;) + &#39;&#39; &#x2F;&#x2F; -&gt; &quot;function()&#123;&#125;&quot;</span><br><span class="line">Array + &#39;&#39;          &#x2F;&#x2F; -&gt; &quot;function Array() &#123; [native code] &#125;&quot;</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li>숫자 타입으로 변환<ul>
+<li>+를 제외한 이항 산술 연산자 -,*,/,%</li>
+<li>단항 산술 연산자 +</li>
+<li>비교 연산자 &gt;,&lt; -&gt; 크기를 비교에 불리언 값을 반환. 크기를 비교하려면 피연산자 모두 숫자 타입이어야지.</li>
+<li>참고<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; 문자열 타입</span><br><span class="line">+&#39;&#39;       &#x2F;&#x2F; -&gt; 0</span><br><span class="line">+&#39;0&#39;      &#x2F;&#x2F; -&gt; 0</span><br><span class="line">+&#39;1&#39;      &#x2F;&#x2F; -&gt; 1</span><br><span class="line">+&#39;string&#39; &#x2F;&#x2F; -&gt; NaN</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 불리언 타입</span><br><span class="line">+true     &#x2F;&#x2F; -&gt; 1</span><br><span class="line">+false    &#x2F;&#x2F; -&gt; 0</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; null 타입</span><br><span class="line">+null     &#x2F;&#x2F; -&gt; 0</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; undefined 타입</span><br><span class="line">+undefined &#x2F;&#x2F; -&gt; NaN</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 심벌 타입</span><br><span class="line">+Symbol() &#x2F;&#x2F; -&gt; ypeError: Cannot convert a Symbol value to a number</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 객체 타입</span><br><span class="line">+&#123;&#125;             &#x2F;&#x2F; -&gt; NaN</span><br><span class="line">+[]             &#x2F;&#x2F; -&gt; 0</span><br><span class="line">+[10, 20]       &#x2F;&#x2F; -&gt; NaN</span><br><span class="line">+(function()&#123;&#125;) &#x2F;&#x2F; -&gt; NaN</span><br></pre></td></tr></table></figure>
+<ul>
+<li>객체, 빈 배열이 아닌 배열, undefined는 NaN으로 반환</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>불리언 타입으로 변환<ul>
+<li>if문, for문, 삼항 조건 연산자 등의 조건식</li>
+<li>falsy 값 여섯 개<ol>
+<li>false</li>
+<li>undefined</li>
+<li>null</li>
+<li>0, -0</li>
+<li>NaN</li>
+<li>’’ (빈 문자열)</li>
+</ol>
+</li>
+<li>나머지는 모두 truthy값<h1 id="명시적-타입-변환"><a href="#명시적-타입-변환" class="headerlink" title="명시적 타입 변환"></a>명시적 타입 변환</h1></li>
+</ul>
+</li>
+</ol>
+<ul>
+<li>개발자의 의도에 따라 명시적으로 타입을 변경</li>
+<li>빌트인 생성자 함수를 new 연산자 없이 호출하는 방법, 빌트인 메서드를 사용, 암묵적 타입 변환을 이용.</li>
+</ul>
+<ol>
+<li>문자열 타입으로 변환<ol>
+<li>String(1);</li>
+<li>(1).toString();</li>
+<li>1 + ‘’;</li>
+</ol>
+</li>
+<li>숫자 타입으로 변환<ol>
+<li>Number(‘0’);</li>
+<li>parseInt(‘0’);</li>
+<li>+’0’;</li>
+</ol>
+</li>
+<li>불리언 타입으로 변환<ol>
+<li>Boolean(‘x’);</li>
+<li>!!’x’;</li>
+</ol>
+</li>
+</ol>
+<hr>
+<h1 id="단축-평가"><a href="#단축-평가" class="headerlink" title="단축 평가"></a>단축 평가</h1><ul>
+<li>논리 연산자 표현식은 언제나 2개의 피연산자 중 어느 한쪽으로 평가된다.<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#39;Cat&#39; &amp;&amp; &#39;Dog&#39; &#x2F;&#x2F; -&gt; &quot;Dog&quot;</span><br></pre></td></tr></table></figure></li>
+<li>논리 연산의 결과를 결정하는 피연산자를 타입 변환하지 않고 그대로 반환.</li>
+<li>이 단축 평가로 if문을 대체할 수 있다.</li>
+<li>if문의 조건이 truthy값일 때 무얼 해야 한다면 &amp;&amp; -&gt; 앞의 피연산자가 트루일 때, 뒤 피연산자를 반환하니까.</li>
+<li>if문의 조건이 falsy값일 때 무얼 해야 한다면 || -&gt; 앞의 피연산자가 펄스일 때, 뒤 피연산자를 반환하니까.<ul>
+<li>삼항 조건 연산자는 if…else문을 대체할 수 있다.<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">if (done) message &#x3D; &#39;완료&#39;;</span><br><span class="line">else      message &#x3D; &#39;미완료&#39;;</span><br><span class="line">console.log(message); &#x2F;&#x2F; 완료</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; if...else 문은 삼항 조건 연산자로 대체 가능하다.</span><br><span class="line">message &#x3D; done ? &#39;완료&#39; : &#39;미완료&#39;;</span><br><span class="line">console.log(message); &#x2F;&#x2F; 완료</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li>객체와 함수에서의 단축 평가 사용<ol>
+<li>객체를 가리키기를 기대하는 변수가 null 또는 undefined이 아닌지 확인하고 프로퍼티를 참조할 때.<ul>
+<li>값이 null, undefined인 변수를 객체인 줄 알고 프로퍼티를 참조하면, 타입 에러TypeError, 프로그램 강제 종료.</li>
+<li>이 때, &amp;&amp; 단축 평가를 사용하는 거지.<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var elem &#x3D; null;</span><br><span class="line">var value &#x3D; elem &amp;&amp; elem.value;</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li>함수 매개변수에 기본값을 설정할 때.<ul>
+<li>함수를 호출할 때 인수를 전달하지 않으면 매개변수는 undefined를 갖는다. -&gt; 에러</li>
+<li>이 때, || 단축 평가를 먼저 하고 함수 내용을 쓰는 거지.<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">function getStringLength(str) &#123;</span><br><span class="line">  str &#x3D; str || &#39;&#39;;</span><br><span class="line">  return str.length;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li>인수를 전달 받지 못한 경우, str은 false가 되고, 뒤 피연산자인 ‘’를 반환.<h1 id="옵셔널-체이닝-연산자"><a href="#옵셔널-체이닝-연산자" class="headerlink" title="옵셔널 체이닝 연산자"></a>옵셔널 체이닝 연산자</h1></li>
+</ul>
+</li>
+</ol>
+</li>
+<li>?.</li>
+<li>좌항의 피연산자가 null 또는 undefined일 경우, undefined를 반환.</li>
+<li>그렇지 않으면 우항의 프로퍼티 참조를 계속.<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var value &#x3D; elem?.value;</span><br></pre></td></tr></table></figure></li>
+<li>이전에는 &amp;&amp; 단축 평가를 사용했다.</li>
+<li>&amp;&amp; 단축 평가는 null, undefined 외에도 falsy값이면 우항의 프로퍼티 참조를 계속 하는데,</li>
+<li>falsy값인 0이나 ‘’(빈 문자열)은 객체로 평가될 때도 있어서 오류를 일으킴<h1 id="null-병합-연산자"><a href="#null-병합-연산자" class="headerlink" title="null 병합 연산자"></a>null 병합 연산자</h1></li>
+<li>좌항의 피연산자가 null 또는 undefined인 경우 우항의 피연산자를 반환하고,</li>
+<li>그렇지 않으면 좌항의 피연산자를 반환.</li>
+<li>변수의 기본값을 설정할 때 유용.<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var foo &#x3D; null ?? &#39;default string&#39;;</span><br></pre></td></tr></table></figure></li>
+<li>이전에는 || 연산자를 써서 사용했음</li>
+<li>이거 뭔지 잘 모르겠는데?</li>
+</ul>
+<hr>
+<h1 id="용어"><a href="#용어" class="headerlink" title="용어"></a>용어</h1><ol>
+<li>표준 빌트인 생성자 함수와 빌트인 메서드<ul>
+<li>표준 빌트인(built-in) 생성자 함수와 표준 빌트인 메서드는 자바스크립트에서 기본 제공하는 함수이다. 표준 빌트인 생성자 함수는 객체를 생성하기 위한 함수이며 new 연산자와 함께 호출한다. 표준 빌트인 메서드는 자바스크립트에서 기본 제공하는 빌트인 객체의 메서드다.</li>
+</ul>
+</li>
+</ol>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="http://bg-shorthand.github.io/2020/11/17/201117-%EB%B3%80%EC%88%98-%ED%91%9C%ED%98%84%EC%8B%9D%EA%B3%BC-%EB%AC%B8-%EB%8D%B0%EC%9D%B4%ED%84%B0-%ED%83%80%EC%9E%85/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1525,158 +1904,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://bg-shorthand.github.io/2020/10/26/201026-html-css-practice-search-form-markup-style/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="bg-shorthand">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="bg-shorthand-blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/10/26/201026-html-css-practice-search-form-markup-style/" class="post-title-link" itemprop="url">201026-html css practice - search-form markup & style</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2020-10-26 18:54:03 / Modified: 18:54:19" itemprop="dateCreated datePublished" datetime="2020-10-26T18:54:03+09:00">2020-10-26</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/html-css/" itemprop="url" rel="index"><span itemprop="name">html/css</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="HTML-CSS-PRACTICE"><a href="#HTML-CSS-PRACTICE" class="headerlink" title="HTML/CSS PRACTICE"></a>HTML/CSS PRACTICE</h1><ul>
-<li>웹 관련 용어 부분 스타일 / 검색폼 마크업, 스타일</li>
-</ul>
-<hr>
-<h2 id="html-주요-주석"><a href="#html-주요-주석" class="headerlink" title="html 주요 주석"></a>html 주요 주석</h2><ol>
-<li>button 은 label 필요 없음. value 값으로 표시</li>
-<li>form은 fieldset&gt;legend 를 데리고 다녀</li>
-<li>section으로 명시적으로 구분되지 않은 영역도, heading 태그로 제목 표시</li>
-<li>form, fieldset 등에는 스타일을 하지 않음.<ul>
-<li>브라우저마다 기본 형태가 달라 오차가 발생할 수 있음.</li>
-<li>편의를 위해 div로 묶음.</li>
-<li>input 요소도 마찬가지.<h2 id="html-전체-코드"><a href="#html-전체-코드" class="headerlink" title="html 전체 코드"></a>html 전체 코드</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;h2 class&#x3D;&quot;a11y-hidden&quot;&gt;검색&lt;&#x2F;h2&gt;</span><br><span class="line">    &lt;form class&#x3D;&quot;search-form&quot; method&#x3D;&quot;POST&quot; action&#x3D;&quot;https:&#x2F;&#x2F;formspree.io&#x2F;seulbinim@gmail.com&quot;&gt;</span><br><span class="line">      &lt;fieldset&gt;</span><br><span class="line">        &lt;legend&gt;검색폼&lt;&#x2F;legend&gt;</span><br><span class="line">        &lt;div class&#x3D;&quot;search-form-container&quot;&gt;</span><br><span class="line">          &lt;label for&#x3D;&quot;search&quot;&gt;&lt;span class&#x3D;&quot;icon-search&quot;&gt;&lt;&#x2F;span&gt;자료검색&lt;&#x2F;label&gt;</span><br><span class="line">          &lt;input type&#x3D;&quot;search&quot; id&#x3D;&quot;search&quot; name&#x3D;&quot;search&quot; required placeholder&#x3D;&quot;검색어를 입력하세요&quot;&gt;</span><br><span class="line">          &lt;button class&#x3D;&quot;btn-search&quot; type&#x3D;&quot;submit&quot;&gt;검색&lt;&#x2F;button&gt;</span><br><span class="line">        &lt;&#x2F;div&gt;</span><br><span class="line">    &lt;&#x2F;fieldset&gt;</span><br><span class="line">    &lt;&#x2F;form&gt;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-</ol>
-<hr>
-<h2 id="css-주요-주석"><a href="#css-주요-주석" class="headerlink" title="css 주요 주석"></a>css 주요 주석</h2><ol>
-<li>float를 자세히 볼 것.<ul>
-<li>인라인 요소는 밖으로 뺀다.</li>
-<li>라인 박스를 만든다.</li>
-<li>블록 요소로 변한다.</li>
-<li>꼼꼼히 따져볼 수 있다.</li>
-</ul>
-</li>
-<li>속성 선택자로 [name=”~”]를 쓸 수 있음.<ul>
-<li>id는 선택자로 잘 쓰지 않아, 대체할 수 있다.<h2 id="css-전체-코드"><a href="#css-전체-코드" class="headerlink" title="css 전체 코드"></a>css 전체 코드</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;* 웹 관련 용어 *&#x2F;</span><br><span class="line">.term &#123;</span><br><span class="line">  border: 1px solid #aaa;</span><br><span class="line">  background: linear-gradient(to bottom, #eee, #ccc);</span><br><span class="line">  padding: 15px;</span><br><span class="line">  margin-top: 20px;</span><br><span class="line">  border-radius: 5px;</span><br><span class="line">&#125;</span><br><span class="line">.term-heading &#123;</span><br><span class="line">  margin-top: 0;</span><br><span class="line">  margin-bottom: 0;</span><br><span class="line">  &#x2F;* margin: 0;</span><br><span class="line">  필요한 부분만 0을 주는 게 성능이 좋을 수 있다. 갑론을박 있음. *&#x2F;</span><br><span class="line">  font-size: 1.6rem;</span><br><span class="line">  font-weight: 700;</span><br><span class="line">&#125;</span><br><span class="line">.term-list &#123;</span><br><span class="line">  margin: 15px 0 0 0;</span><br><span class="line">&#125;</span><br><span class="line">.term-list-subject &#123;</span><br><span class="line">  display: inline-block;</span><br><span class="line">  color: #296897;</span><br><span class="line">&#125;</span><br><span class="line">.term-list-thumnail &#123;</span><br><span class="line">  float: left;</span><br><span class="line">  margin: 0 10px;</span><br><span class="line">&#125;</span><br><span class="line">.term-list-brief &#123;</span><br><span class="line">  margin-top: 5px;</span><br><span class="line">  line-height: 1.5;</span><br><span class="line">&#125;</span><br><span class="line">.term-list p &#123;</span><br><span class="line">  margin: 0;</span><br><span class="line">&#125;</span><br><span class="line">.term-list dd &#123;</span><br><span class="line">  margin: 0;</span><br><span class="line">&#125;</span><br><span class="line">.term-list div:nth-child(even) &#123;</span><br><span class="line">  margin-top: 50px;</span><br><span class="line">&#125;</span><br><span class="line">.term-list div:nth-child(even) .term-list-thumnail &#123;</span><br><span class="line">  float: right;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;* 검색폼 *&#x2F;</span><br><span class="line">.search-form &#123;</span><br><span class="line">  background: #ccc linear-gradient(#ccc, #eee);</span><br><span class="line">  &#x2F;* 앞에 ccc는 콜백. 리니어 그라디언트가 안 되는 브라우저면 단색으로라도 나오라고. *&#x2F;</span><br><span class="line">  border: 1px solid #aaa;</span><br><span class="line">  border-bottom-color: #fff;</span><br><span class="line">  &#x2F;* 굵기를 없애는 게 아니라 색을 투명하게. *&#x2F;</span><br><span class="line">  border-radius: 15px 15px 0 0;</span><br><span class="line">  padding: 15px 25px 10px;</span><br><span class="line">&#125;</span><br><span class="line">.search-form fieldset &#123;</span><br><span class="line">  border: 0;</span><br><span class="line">  margin: 0;</span><br><span class="line">  padding: 0;</span><br><span class="line">&#125;</span><br><span class="line">.search-form-container &#123;</span><br><span class="line">  display: flex;</span><br><span class="line">  flex-flow: row nowrap;</span><br><span class="line">  align-items: center;</span><br><span class="line">  justify-content: space-between;</span><br><span class="line">&#125;</span><br><span class="line">.search-form [name&#x3D;&quot;search&quot;] &#123;</span><br><span class="line">  &#x2F;* 유니크한 이름으로 name 속성을 많이 쓴다. *&#x2F;</span><br><span class="line">  border: 1px solid #aaa;</span><br><span class="line">  border-radius: 3px;</span><br><span class="line">  padding: 1px 1px 1px .5em;</span><br><span class="line">  height: 22px;</span><br><span class="line">  &#x2F;* flex-grow: 1; *&#x2F;</span><br><span class="line">  width: 190px;</span><br><span class="line">  &#x2F;* margin: 0 5px; *&#x2F;</span><br><span class="line">&#125;</span><br><span class="line">.btn-search &#123;</span><br><span class="line">  background-color: #333;</span><br><span class="line">  border: 1px solid #aaa;</span><br><span class="line">  color: #fff;</span><br><span class="line">  border-radius: 3px;</span><br><span class="line">  height: 22px;</span><br><span class="line">  padding: 0 10px;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;* .search-form &#123;</span><br><span class="line">  border: 1px solid #aaa;</span><br><span class="line">  border-bottom: none;</span><br><span class="line">  border-radius: 10px 10px 0 0;</span><br><span class="line">  background: linear-gradient(to bottom, #ccc, #eee);</span><br><span class="line">  padding: 15px 15px 5px 15px;</span><br><span class="line">&#125;</span><br><span class="line">.search-form fieldset &#123;</span><br><span class="line">  border: none;</span><br><span class="line">  display: flex;</span><br><span class="line">  flex-direction: row;</span><br><span class="line">  align-items: center;</span><br><span class="line">  justify-content: space-between;</span><br><span class="line">&#125;</span><br><span class="line">.search-form fieldset input &#123;</span><br><span class="line">  width: 180px;</span><br><span class="line">&#125;</span><br><span class="line">-&gt;내가 한 거 *&#x2F;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-</ol>
-<hr>
-<h2 id="기타"><a href="#기타" class="headerlink" title="기타"></a>기타</h2><ol>
-<li>agent css: h1의 마진 등과 같은 요소의 css 기본값.</li>
-<li>float/position: absolute/flex/grid 등은 마진 겹침이 일어나지 않는다.<ul>
-<li>마진 겹침이 일어나는 이유: 웹 초창기, css가 충분하지 않을 때, 요소들은 아래로만 쭉 늘어졌을 텐데, 이 때 요소 사이의 거리를 자동으로 조정할 수 있도록 겹침.</li>
-<li>위 속성들은 그 이후에 만들어진 속성으로 마진 겹침이 불합리하다.</li>
-</ul>
-</li>
-<li>블럭 박스 안에 인라인 박스가 있으면 바텀에 갭이 생김.</li>
-<li>input과 label은 일대일로.</li>
-<li>label을 선택하지 않은 경우엔, title이나 aria-label을 사용할 수 있다.</li>
-<li>required 로 뜨는 팝업 메시지: 브라우저가 기본적으로 제공하는 디자인<ul>
-<li>커스텀하고 싶으면,</li>
-<li>정보를 돌려받은 다음에 p가 노출되는 방식 등으로 할 수 있다.</li>
-<li>여기까지는 아직 안 배워서 몰라도 되는데,</li>
-<li>aria-live를 붙여 스크린리더가 읽을 수 있게 할 수 있다.</li>
-<li>는 알아두기.</li>
-</ul>
-</li>
-<li>대한 항공의 메인 메뉴: 메가 네비게이션(tab ui)<ul>
-<li>수업 샘플의 메인 메뉴와 다르다.</li>
-<li>논리적인 마크업은 수업 샘플이 맞지만, 훨씬 복잡한 네비에서는 불합리할 수 있어.</li>
-<li>tablist(&gt;tab/tabpanel)의 형태로 만들 수 있다.<ol>
-<li>tablist라는 태그는 없으니, 일단 ul&gt;li로 만듦.</li>
-<li>ul에는 role=”tablist”</li>
-<li>li에 tab을 줘야 하는데 ui는 포커스를 받지 못하니,</li>
-<li>li 안에 a를 만들고 a에 role=”tab”</li>
-<li>여기까지 하면 li가 역할이 없으니, role=”none”</li>
-<li>그 아래 탭 패널을 만든다.</li>
-<li>section이든, div든 영역을 만들고 role=”tabpanel”</li>
-<li>탭 패널을 위 탭 리스트와 연결하기 위해서,</li>
-<li>탭 패널에 id=”tabpanel01”, 탭 리스트에 aria-controls=”tabpanel01”</li>
-<li>혹은</li>
-<li>탭 리스트에 id=”tab01”, 탭 패널에 aria-labelledby=”tab01”</li>
-</ol>
-</li>
-<li>참조 : <a target="_blank" rel="noopener" href="https://github.com/niawa/ARIA">https://github.com/niawa/ARIA</a> / 웹 접근성 자료실 aira 사례집</li>
-</ul>
-</li>
-</ol>
-<hr>
-<h2 id="TEST"><a href="#TEST" class="headerlink" title="TEST"></a>TEST</h2><ol>
-<li><p>vertical-align 프로퍼티의 기본 값은 ( base-line )이며, ( block ) 요소에는 적용되지 않고, inline 요소와 table-cell요소에만 적용된다.</p>
-</li>
-<li><p>다음 중 ul 요소에 적용된 기본 스타일(user-agent style)이 아닌 것은?</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">padding-left: 40px</span><br><span class="line">margin: 1rem 0</span><br><span class="line">display: block</span><br><span class="line">list-style-type: disc</span><br><span class="line">box-sizing: border-box - 답</span><br></pre></td></tr></table></figure></li>
-<li><p>다음의 두 요소를 선택하는 속성 선택자 attribute selector을 작성해주세요</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;ul class&#x3D;&quot;search-history&quot; name&#x3D;&quot;search-childeren&quot;&gt; &lt;&#x2F;ul&gt;</span><br><span class="line">&lt;ul class&#x3D;&quot;search-results&quot; name&#x3D;&quot;search-childeren&quot;&gt; &lt;&#x2F;ul&gt;</span><br><span class="line"></span><br><span class="line">답: [name&#x3D;&quot;search-children&quot;] or [class^&#x3D;&quot;search&quot;] or [class*&#x3D;&quot;search&quot;]</span><br></pre></td></tr></table></figure></li>
-<li><p>form 요소에 대한 설명으로 옳지 않은 것은?</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">block 요소이다.</span><br><span class="line">자식 요소로 또 다른 form 요소를 포함할 수 있다 - 답</span><br><span class="line">method 어트리뷰트로 서버로 HTTP 전송방식을 설정할 수 있다.</span><br><span class="line">AUTOCOMPLETE 어트리뷰트로 이전에 입력한 값으로 자동완성 기능을 사용할 수 있다.</span><br></pre></td></tr></table></figure></li>
-<li><p>팀 버너스 리는 “웹의 힘은 그 광범위함에 있다. 장애에 관계없이 모든 사람이 접근할 수 있다는 것이 절대적인 장점이다.”라고 말했다. 이러한 가치를 평가하고 설명하는 데에 쓰이는 1용어 와 이를 구현하기 위해 사용할 수 있는 2HTML어트리뷰트를 하나 이상 작성해주세요.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1. 접근성</span><br><span class="line">2. aria-속성들, alt 등.</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1746,7 +1973,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">26</span>
+          <span class="site-state-item-count">27</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
