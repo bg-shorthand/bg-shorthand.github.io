@@ -145,6 +145,118 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://bg-shorthand.github.io/2020/10/28/201028-html-css-practice-news-markup-style-grid/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="bg-shorthand">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="bg-shorthand-blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/10/28/201028-html-css-practice-news-markup-style-grid/" class="post-title-link" itemprop="url">201028 html css practice-news markup style(grid)</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2020-10-28 19:51:48 / Modified: 19:52:06" itemprop="dateCreated datePublished" datetime="2020-10-28T19:51:48+09:00">2020-10-28</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/html-css/" itemprop="url" rel="index"><span itemprop="name">html/css</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="HTML-CSS-PRACTICE"><a href="#HTML-CSS-PRACTICE" class="headerlink" title="HTML/CSS PRACTICE"></a>HTML/CSS PRACTICE</h1><ul>
+<li>새소식 부분 마크업 및 스타일(grid)</li>
+</ul>
+<hr>
+<h2 id="html-주요-주석"><a href="#html-주요-주석" class="headerlink" title="html 주요 주석"></a>html 주요 주석</h2><ol>
+<li>article / section 은 독립된 영역이므로 h1 태그가 새로 올 수 있다.<ul>
+<li>h1으로 써도 기계는 알아서 맞는 뎁스로 읽음.</li>
+<li>그래서 쓸 수는 있지만, 권장은 안 해.</li>
+<li>seo에서 h1이 점수가 높은데 그게 여러 개면 헷갈리니까,</li>
+<li>맞는 뎁스로 넣어주는 게 좋다.<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;section class&#x3D;&quot;news&quot;&gt;</span><br><span class="line">    &lt;h2 class&#x3D;&quot;news-heading&quot; id&#x3D;&quot;newsHeading&quot;&gt;새소식&lt;&#x2F;h2&gt;</span><br><span class="line">    &lt;article class&#x3D;&quot;news-article&quot;&gt;</span><br><span class="line">      &lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;news-article-link&quot;&gt;</span><br><span class="line">        &lt;h3 class&#x3D;&quot;news-article-subject&quot;&gt;W3C 사이트가 리뉴얼 되었습니다.&lt;&#x2F;h3&gt;</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li>img 태그에서, alt 속성은 aria-labelledby 로 대체 할 수 있다.<ul>
+<li>단, 없애서는 안 되고 null값으로 줘야 함.(alt=””)</li>
+</ul>
+</li>
+<li>a태그 안의 블록 요소 삽입<ul>
+<li>넣어서 a태그를 display: block</li>
+<li>할 수는 있지만 권장은 하지 않는다.</li>
+<li>접근성, 사용성 측면에서 너무 불편함.<h2 id="html-전체-코드"><a href="#html-전체-코드" class="headerlink" title="html 전체 코드"></a>html 전체 코드</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">&lt;section class&#x3D;&quot;news&quot;&gt;</span><br><span class="line">  &lt;h2 class&#x3D;&quot;news-heading&quot; id&#x3D;&quot;newsHeading&quot;&gt;새소식&lt;&#x2F;h2&gt;</span><br><span class="line">  &lt;article class&#x3D;&quot;news-article&quot;&gt;</span><br><span class="line">    &lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;news-article-link&quot;&gt;</span><br><span class="line">      &lt;h3 class&#x3D;&quot;news-article-subject&quot;&gt;W3C 사이트가 리뉴얼 되었습니다.&lt;&#x2F;h3&gt;</span><br><span class="line">      &lt;!-- 아티클 안에 독립된 영역 안에서 h1로 다시 시작할 수 있다.</span><br><span class="line">      기계는 h3으로 읽음</span><br><span class="line">      -&gt; seo 에서는 h1이 점수가 젤 높은데 이게 왜 이래 싶음.  -&gt; h3으로 하셈&lt;&#x2F;div&gt; --&gt;</span><br><span class="line">      &lt;time datetime&#x3D;&quot;2020-10-28T14:19:07&quot; class&#x3D;&quot;news-article-date&quot;&gt;2020.10.28.&lt;&#x2F;time&gt;</span><br><span class="line">      &lt;p class&#x3D;&quot;news-article-brief&quot;&gt;</span><br><span class="line">      디자인 및 다양한 view 환경을 고려하여 구성되어 있으며, 기존보다 최신 정보 및 개발자를 위한 기술 가이드도 찾기 쉽도록 구성되어 있습니다.</span><br><span class="line">      &lt;&#x2F;p&gt;</span><br><span class="line">      &lt;figure&gt;</span><br><span class="line">        &lt;img src&#x3D;&quot;.&#x2F;images&#x2F;news.gif&quot; class&#x3D;&quot;news-article-thumbnail&quot; alt&#x3D;&quot;&quot; aria-labelledby&#x3D;&quot;newsArticleThumbnail&quot;&gt;</span><br><span class="line">        &lt;figcaption id&#x3D;&quot;newsArticleThumbnail&quot;&gt;W3C 리뉴얼&lt;&#x2F;figcaption&gt;</span><br><span class="line">        &lt;!-- alt 내용이 figcaption과 같으므로, id, aria-labelledby --&gt;</span><br><span class="line">      &lt;&#x2F;figure&gt;</span><br><span class="line">    &lt;&#x2F;a&gt;</span><br><span class="line">  &lt;&#x2F;article&gt;</span><br><span class="line">  &lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;news-more icon-plus&quot; aria-labelledby&#x3D;&quot;newsHeading&quot; title&#x3D;&quot;새소식&quot;&gt;더보기&lt;&#x2F;a&gt;</span><br><span class="line">&lt;&#x2F;section&gt;  </span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 id="css-주요-주석"><a href="#css-주요-주석" class="headerlink" title="css 주요 주석"></a>css 주요 주석</h2><ol>
+<li>이 부분의 레이아웃은 position, inline-block, float, flex, 다 가능. gird로 실습. 나머지 다 해볼 것 (나는 플롯으로 함)<h2 id="css-전체-코드"><a href="#css-전체-코드" class="headerlink" title="css 전체 코드"></a>css 전체 코드</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;* .news *&#x2F;</span><br><span class="line">&#x2F;* position, inline-block, float, flex, 다 가능. gird로 실습. 나머지 다 해볼 것 (나는 플롯으로 함)*&#x2F;</span><br><span class="line">.news &#123;</span><br><span class="line">  margin-top: 20px;</span><br><span class="line">  position: relative;</span><br><span class="line">&#125;  </span><br><span class="line">.news::before &#123;</span><br><span class="line">  content: &quot;&quot;;</span><br><span class="line">  position: absolute;</span><br><span class="line">  top: 35px;</span><br><span class="line">  left: 0;</span><br><span class="line">  height: 1px;</span><br><span class="line">  width: 100%;</span><br><span class="line">  background: #ccc linear-gradient(to right, #ccc, #fff);</span><br><span class="line">&#125;</span><br><span class="line">.news-heading &#123;</span><br><span class="line">  font-size: 1.6rem;</span><br><span class="line">  font-weight: 700;</span><br><span class="line">  color: #ed702d;</span><br><span class="line">  margin: 0;</span><br><span class="line">&#125;</span><br><span class="line">.news-article &#123;</span><br><span class="line">  margin-top: 35px;</span><br><span class="line">&#125;</span><br><span class="line">.news-article-link &#123;</span><br><span class="line">  display: grid;</span><br><span class="line">  &#x2F;* a태그라 원래 block 줘야 하는데 그리드 됐으니까 안줌 *&#x2F;</span><br><span class="line">  &#x2F;* grid-template-columns: 130px 1fr;</span><br><span class="line">  grid-template-rows: auto; *&#x2F;</span><br><span class="line">  grid-template-areas:</span><br><span class="line">  &quot;thumbnail subject&quot;</span><br><span class="line">  &quot;thumbnail date&quot;</span><br><span class="line">  &quot;thumbnail brief&quot;;</span><br><span class="line">&#125;</span><br><span class="line">.news-article-subject &#123;</span><br><span class="line">  margin: 0 0 5px;</span><br><span class="line">  grid-area: subject;</span><br><span class="line">  font-size: 1.5rem;</span><br><span class="line">&#125;</span><br><span class="line">.news-article-date &#123;</span><br><span class="line">  grid-area: date;</span><br><span class="line">&#125;</span><br><span class="line">.news-article-brief &#123;</span><br><span class="line">  margin: 10px 0;</span><br><span class="line">  grid-area: brief;</span><br><span class="line">  line-height: 1.5;</span><br><span class="line">&#125;</span><br><span class="line">figure &#123;</span><br><span class="line">  margin: 0;</span><br><span class="line">  margin-right: 10px;</span><br><span class="line">  grid-area: thumbnail;</span><br><span class="line">  text-align: center;</span><br><span class="line">&#125;</span><br><span class="line">figure img &#123;</span><br><span class="line">  box-shadow: 0 15px 10px 0 #aaax;</span><br><span class="line">&#125;</span><br><span class="line">figure figcaption &#123;</span><br><span class="line">  margin-top: 15px;</span><br><span class="line">&#125;</span><br><span class="line">&#x2F;* .news-article-thumbnail &#123;</span><br><span class="line">  background-color: tomato;</span><br><span class="line">  margin: 0;</span><br><span class="line">  grid-area: thumbnail;</span><br><span class="line">&#125; *&#x2F;</span><br><span class="line">.news-more &#123;</span><br><span class="line">  position: absolute;</span><br><span class="line">  top: -8px;</span><br><span class="line">  right: -8px;</span><br><span class="line">  padding: 8px;</span><br><span class="line">&#125;</span><br><span class="line">.news-more::before &#123;</span><br><span class="line">  color: hsla(110, 50%, 30%, 1);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<hr>
+<h2 id="기타"><a href="#기타" class="headerlink" title="기타"></a>기타</h2><ol>
+<li>a 태그 안에 a, button은 주지 않는다. display: block 줘도 안 됨.</li>
+<li>border-image 검색해볼 것.</li>
+<li>normal flow: 요소의 레이아웃을 변경하지 않을 시 웹페이지 요소가 자기 자신을 배치하는 방법</li>
+<li>레이아웃 변천사<ol>
+<li>테이블 - 테이블 안의 테이블을 만드는 등, 관리가 어렵고 복잡. 느림.</li>
+<li>프레임 - 프레임 셋을 하나로 묶어 표시하는 방식. 다른 프레임을 갖다 넣는 방식이라 보안상의 이슈가 있을 수 있다.</li>
+<li>css레이아웃(float, position) - 유연하지가 않다.</li>
+<li>flex box 레이아웃 - 같은 행/열로만 관리할 수 있음</li>
+<li>gird - 끝판왕</li>
+</ol>
+</li>
+<li>IE에서 지원하지 않는 grid 속성: span, gutter 등.</li>
+</ol>
+<hr>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="http://bg-shorthand.github.io/2020/10/27/201027-html-css-practic-board-markup-style/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1501,7 +1613,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">28</span>
+          <span class="site-state-item-count">29</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>

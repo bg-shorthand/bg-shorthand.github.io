@@ -145,6 +145,73 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://bg-shorthand.github.io/2020/12/17/%EB%B0%B0%EC%97%B4-%EB%A9%94%EC%86%8C%EB%93%9C/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="bg-shorthand">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="bg-shorthand-blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/12/17/%EB%B0%B0%EC%97%B4-%EB%A9%94%EC%86%8C%EB%93%9C/" class="post-title-link" itemprop="url">배열 메소드</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2020-12-17 16:03:06 / Modified: 16:03:26" itemprop="dateCreated datePublished" datetime="2020-12-17T16:03:06+09:00">2020-12-17</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/javascript/" itemprop="url" rel="index"><span itemprop="name">javascript</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="배열-메소드"><a href="#배열-메소드" class="headerlink" title="배열 메소드"></a>배열 메소드</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br><span class="line">265</span><br><span class="line">266</span><br><span class="line">267</span><br><span class="line">268</span><br><span class="line">269</span><br><span class="line">270</span><br><span class="line">271</span><br><span class="line">272</span><br><span class="line">273</span><br><span class="line">274</span><br><span class="line">275</span><br><span class="line">276</span><br><span class="line">277</span><br><span class="line">278</span><br><span class="line">279</span><br><span class="line">280</span><br><span class="line">281</span><br><span class="line">282</span><br><span class="line">283</span><br><span class="line">284</span><br><span class="line">285</span><br><span class="line">286</span><br><span class="line">287</span><br><span class="line">288</span><br><span class="line">289</span><br><span class="line">290</span><br><span class="line">291</span><br><span class="line">292</span><br><span class="line">293</span><br><span class="line">294</span><br><span class="line">295</span><br><span class="line">296</span><br><span class="line">297</span><br><span class="line">298</span><br><span class="line">299</span><br><span class="line">300</span><br><span class="line">301</span><br><span class="line">302</span><br><span class="line">303</span><br><span class="line">304</span><br><span class="line">305</span><br><span class="line">306</span><br><span class="line">307</span><br><span class="line">308</span><br><span class="line">309</span><br><span class="line">310</span><br><span class="line">311</span><br><span class="line">312</span><br><span class="line">313</span><br><span class="line">314</span><br><span class="line">315</span><br><span class="line">316</span><br><span class="line">317</span><br><span class="line">318</span><br><span class="line">319</span><br><span class="line">320</span><br><span class="line">321</span><br><span class="line">322</span><br><span class="line">323</span><br><span class="line">324</span><br><span class="line">325</span><br><span class="line">326</span><br><span class="line">327</span><br><span class="line">328</span><br><span class="line">329</span><br><span class="line">330</span><br><span class="line">331</span><br><span class="line">332</span><br><span class="line">333</span><br><span class="line">334</span><br><span class="line">335</span><br><span class="line">336</span><br><span class="line">337</span><br><span class="line">338</span><br><span class="line">339</span><br><span class="line">340</span><br><span class="line">341</span><br><span class="line">342</span><br><span class="line">343</span><br><span class="line">344</span><br><span class="line">345</span><br><span class="line">346</span><br><span class="line">347</span><br><span class="line">348</span><br><span class="line">349</span><br><span class="line">350</span><br><span class="line">351</span><br><span class="line">352</span><br><span class="line">353</span><br><span class="line">354</span><br><span class="line">355</span><br><span class="line">356</span><br><span class="line">357</span><br><span class="line">358</span><br><span class="line">359</span><br><span class="line">360</span><br><span class="line">361</span><br><span class="line">362</span><br><span class="line">363</span><br><span class="line">364</span><br><span class="line">365</span><br><span class="line">366</span><br><span class="line">367</span><br><span class="line">368</span><br><span class="line">369</span><br></pre></td><td class="code"><pre><span class="line">console.log(Array.of(1));</span><br><span class="line">console.log(Array.of(1, 2, 3));</span><br><span class="line">console.log(Array.of(&#39;string&#39;));</span><br><span class="line">console.log(Array.of(&#39;stirng&#39;, &#39;a&#39;, &#39;b&#39;, &#39;c&#39;, 1, 2, 3));</span><br><span class="line"></span><br><span class="line">console.log(Array.from(&#123; length: 2, 0: &#39;a&#39;, 1: &#39;b&#39; &#125;));</span><br><span class="line">console.log(Array.from(&#39;Hello&#39;));</span><br><span class="line">console.log(Array.from(&#123; length: 3 &#125;));</span><br><span class="line">console.log(Array.from(&#123; length: 3 &#125;, (e, i) &#x3D;&gt; i));</span><br><span class="line">&#x2F;&#x2F; Array.from 두번째 인자로 받은 함수가 배열을 순회함.</span><br><span class="line">&#x2F;&#x2F; 함수의 첫번째 인자는 요소, 두번째 인자는 인덱스.</span><br><span class="line"></span><br><span class="line">let arr &#x3D; [1, 2];</span><br><span class="line">console.log(arr[2]); &#x2F;&#x2F; undefined</span><br><span class="line"></span><br><span class="line">arr &#x3D; [1, , 3]; &#x2F;&#x2F; 리터럴이 만든 배열이 희소배열일 경우, eslint에서 빨간 줄</span><br><span class="line">console.log(Object.getOwnPropertyDescriptors(arr));</span><br><span class="line">&#x2F;&#x2F; 인덱스가 1인 요소는 존재하지 않음.</span><br><span class="line">console.log(arr[1]); &#x2F;&#x2F; undefined</span><br><span class="line">arr[100] &#x3D; 100;</span><br><span class="line">console.log(arr);</span><br><span class="line">console.log(arr.lenght);</span><br><span class="line">console.log(Object.getOwnPropertyDescriptors(arr));</span><br><span class="line">&#x2F;&#x2F; 중간에 빈 요소는 프로퍼티로 갖지 않음.</span><br><span class="line"></span><br><span class="line">arr[&#39;foo&#39;] &#x3D; 3;</span><br><span class="line">arr.bar &#x3D; 4;</span><br><span class="line">arr[1.1] &#x3D; 5;</span><br><span class="line">arr[-1] &#x3D; 6;</span><br><span class="line">console.log(arr);</span><br><span class="line">console.log(arr.length);</span><br><span class="line">&#x2F;&#x2F; 인덱스가 아니면 프로퍼티로 들어감</span><br><span class="line"></span><br><span class="line">arr &#x3D; [1, 2, 3];</span><br><span class="line">console.log(arr);</span><br><span class="line">delete arr[1];</span><br><span class="line">console.log(arr);</span><br><span class="line">console.log(arr.length); &#x2F;&#x2F; 3</span><br><span class="line"></span><br><span class="line">arr &#x3D; [1, 2, 3, 4, 5, 6];</span><br><span class="line">arr.splice(1, 3);</span><br><span class="line">console.log(arr);</span><br><span class="line"></span><br><span class="line">console.log(Array.isArray([]));</span><br><span class="line">console.log(Array.isArray([1, 2]));</span><br><span class="line">console.log(Array.isArray(new Array()));</span><br><span class="line"></span><br><span class="line">console.log(Array.isArray());</span><br><span class="line">console.log(Array.isArray(&#123;&#125;));</span><br><span class="line">console.log(Array.isArray(null));</span><br><span class="line">console.log(Array.isArray(&#123; 0: 1, length: 1&#125;));</span><br><span class="line"></span><br><span class="line">arr &#x3D; [1, 2, 2, 3];</span><br><span class="line">console.log(arr.indexOf(2));</span><br><span class="line">console.log(arr.indexOf(4));</span><br><span class="line">console.log(arr.indexOf(2, 2));</span><br><span class="line">arr &#x3D; [1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5];</span><br><span class="line">console.log(arr.indexOf(4));</span><br><span class="line">console.log(arr.indexOf(4, 5));</span><br><span class="line">console.log(arr.indexOf(4, 10));</span><br><span class="line"></span><br><span class="line">let foods &#x3D; [&#39;apple&#39;, &#39;banana&#39;, &#39;orange&#39;];</span><br><span class="line">if (foods.indexOf(&#39;orange&#39;) &#x3D;&#x3D;&#x3D; -1) &#123;</span><br><span class="line">  foods.push(&#39;orange&#39;);</span><br><span class="line">&#125;</span><br><span class="line">console.log(foods);</span><br><span class="line">if (foods.indexOf(&#39;watermelon&#39;) &#x3D;&#x3D;&#x3D; -1) &#123;</span><br><span class="line">  foods[foods.length] &#x3D; &#39;watermelon&#39;;</span><br><span class="line">&#125;</span><br><span class="line">console.log(foods);</span><br><span class="line"></span><br><span class="line">foods &#x3D; [&#39;apple&#39;, &#39;banana&#39;];</span><br><span class="line">if (!foods.includes(&#39;orange&#39;)) &#123;</span><br><span class="line">  foods[foods.length] &#x3D; &#39;orange&#39;;</span><br><span class="line">&#125;</span><br><span class="line">console.log(foods);</span><br><span class="line">if (!foods.includes(&#39;watermelon&#39;)) &#123;</span><br><span class="line">  foods[foods.length] &#x3D; &#39;watermelon&#39;;</span><br><span class="line">&#125;</span><br><span class="line">console.log(foods);</span><br><span class="line"></span><br><span class="line">arr &#x3D; [1, 2];</span><br><span class="line">let result &#x3D; arr.push(3, 4);</span><br><span class="line">console.log(result); &#x2F;&#x2F; push는 length 값을 반환한다.</span><br><span class="line">console.log(arr); &#x2F;&#x2F; push는 원본 배열을 변경한다.</span><br><span class="line">&#x2F;&#x2F; push는 성능이 좋지 않아, length 접근을 사용할 수 있다.</span><br><span class="line">arr &#x3D; [1, 2];</span><br><span class="line">arr[arr.length] &#x3D; 3;</span><br><span class="line">console.log(arr);</span><br><span class="line"></span><br><span class="line">arr &#x3D; [1, 2];</span><br><span class="line">let newArr &#x3D; [...arr, 3];</span><br><span class="line">console.log(newArr);</span><br><span class="line"></span><br><span class="line">arr &#x3D; [1, 2];</span><br><span class="line">console.log(arr.pop(2)); &#x2F;&#x2F; pop 은 삭제한 값을 반환한다.</span><br><span class="line">console.log(arr);</span><br><span class="line">arr &#x3D; [1, 2];</span><br><span class="line">result &#x3D; arr.pop(2);</span><br><span class="line">console.log(result);</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 스택 자료구조 만들기</span><br><span class="line">const Stack &#x3D; (function () &#123;</span><br><span class="line">  function Stack(array &#x3D; []) &#123;</span><br><span class="line">    if (!Array.isArray(array)) &#123;</span><br><span class="line">      throw new TypeError(&#96;$&#123;array&#125; is not an array.&#96;);</span><br><span class="line">    &#125;</span><br><span class="line">    this.array &#x3D; array;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  &#x2F;&#x2F; Stack.prototype &#x3D; &#123;</span><br><span class="line">  &#x2F;&#x2F;   constructor: Stack,</span><br><span class="line">  &#x2F;&#x2F;   push(value) &#123;</span><br><span class="line">  &#x2F;&#x2F;     return this.array.push(value);</span><br><span class="line">  &#x2F;&#x2F;   &#125;,</span><br><span class="line">  &#x2F;&#x2F;   pop() &#123;</span><br><span class="line">  &#x2F;&#x2F;     return this.array.pop();</span><br><span class="line">  &#x2F;&#x2F;   &#125;,</span><br><span class="line">  &#x2F;&#x2F;   entries() &#123;</span><br><span class="line">  &#x2F;&#x2F;     return [...this.array];</span><br><span class="line">  &#x2F;&#x2F;   &#125;</span><br><span class="line">  &#x2F;&#x2F; &#125;;</span><br><span class="line"></span><br><span class="line">  Stack.prototype.push &#x3D; function (value) &#123;</span><br><span class="line">    return this.array.push(value);</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">  Stack.prototype.pop &#x3D; function () &#123;</span><br><span class="line">    return this.array.pop();</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">  Stack.prototype.entries &#x3D; function () &#123;</span><br><span class="line">    return [...this.array];</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">  return Stack;</span><br><span class="line">&#125;());</span><br><span class="line"></span><br><span class="line">let stack &#x3D; new Stack([1, 2]);</span><br><span class="line">console.log(stack.entries());</span><br><span class="line"></span><br><span class="line">stack.push(3);</span><br><span class="line">console.log(stack.entries());</span><br><span class="line"></span><br><span class="line">stack.pop();</span><br><span class="line">console.log(stack.entries());</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 클래스로 구현</span><br><span class="line">class StackByClass &#123;</span><br><span class="line">  #array;</span><br><span class="line">  </span><br><span class="line">  constructor (array) &#123;</span><br><span class="line">    if (!Array.isArray(array)) &#123;</span><br><span class="line">      throw new TypeError(&#96;$&#123;array&#125; is not a array.&#96;);</span><br><span class="line">    &#125;</span><br><span class="line">    this.#array &#x3D; array;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  push(value) &#123;</span><br><span class="line">    return this.#array.push(value);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  pop() &#123;</span><br><span class="line">    return this.#array.pop();</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  entries() &#123;</span><br><span class="line">    return [...this.#array];</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">stack &#x3D; new StackByClass([1, 2]);</span><br><span class="line">console.log(stack.entries());</span><br><span class="line"></span><br><span class="line">stack.push(3);</span><br><span class="line">console.log(stack.entries());</span><br><span class="line"></span><br><span class="line">stack.pop();</span><br><span class="line">console.log(stack.entries());</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; Array.prototype.unshift</span><br><span class="line">arr &#x3D; [1, 2];</span><br><span class="line">result &#x3D; arr.unshift(3, 4);</span><br><span class="line">console.log(result); &#x2F;&#x2F; unshift 는 length값을 반환</span><br><span class="line">console.log(arr);</span><br><span class="line">&#x2F;&#x2F; 원본 배열을 직접 변경하므로, 스프레드 문법을 쓴다</span><br><span class="line">arr &#x3D; [1, 2];</span><br><span class="line">newArr &#x3D; [3, ...arr];</span><br><span class="line">console.log(newArr);</span><br><span class="line"></span><br><span class="line">arr &#x3D; [1, 2];</span><br><span class="line">result &#x3D; arr.shift(); &#x2F;&#x2F; 삭제한 요소를 반환.</span><br><span class="line">console.log(result);</span><br><span class="line">console.log(arr);</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 큐 자료구조 만들기</span><br><span class="line">let Queue &#x3D; (function () &#123;</span><br><span class="line">  function Queue(array &#x3D; []) &#123;</span><br><span class="line">    if (!Array.isArray(array)) &#123;</span><br><span class="line">      throw new TypeError(&#96;$&#123;array&#125; is not an array&#96;);</span><br><span class="line">    &#125;</span><br><span class="line">    this.array &#x3D; array;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  Queue.prototype &#x3D; &#123;</span><br><span class="line">    constructor: Queue,</span><br><span class="line"></span><br><span class="line">    enqueue(value) &#123;</span><br><span class="line">      return this.array.push(value)</span><br><span class="line">    &#125;,</span><br><span class="line"></span><br><span class="line">    dequeue(value) &#123;</span><br><span class="line">      return this.array.shift(value)</span><br><span class="line">    &#125;,</span><br><span class="line"></span><br><span class="line">    entries() &#123;</span><br><span class="line">      return [...this.array];</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">  return Queue;</span><br><span class="line">&#125;)();</span><br><span class="line"></span><br><span class="line">let queue &#x3D; new Queue([1, 2]);</span><br><span class="line">console.log(queue);</span><br><span class="line"></span><br><span class="line">queue.enqueue(3);</span><br><span class="line">console.log(queue.entries());</span><br><span class="line"></span><br><span class="line">queue.dequeue();</span><br><span class="line">console.log(queue.entries());</span><br><span class="line"></span><br><span class="line">class QueueByClass &#123;</span><br><span class="line">  #array;</span><br><span class="line"></span><br><span class="line">  constructor (array) &#123;</span><br><span class="line">    if(!Array.isArray(array)) &#123;</span><br><span class="line">      throw new TypeError(&#96;$&#123;array&#125; is not an array.&#96;);</span><br><span class="line">    &#125;</span><br><span class="line">    this.#array &#x3D; array;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  enqueue(value) &#123;</span><br><span class="line">    return this.#array.push(value);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  dequeue() &#123;</span><br><span class="line">    return this.#array.shift();</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  entries() &#123;</span><br><span class="line">    return [...this.#array];</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">queue &#x3D; new QueueByClass([1, 2]);</span><br><span class="line">console.log(queue.entries());</span><br><span class="line"></span><br><span class="line">queue.enqueue(3);</span><br><span class="line">console.log(queue.entries());</span><br><span class="line"></span><br><span class="line">queue.dequeue();</span><br><span class="line">console.log(queue.entries());</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; Array.prototype.concat</span><br><span class="line">let arr1 &#x3D; [1, 2];</span><br><span class="line">let arr2 &#x3D; [3, 4];</span><br><span class="line">console.log(arr1.concat(arr2));</span><br><span class="line">console.log(arr1.concat(arr2, 4, 5));</span><br><span class="line">console.log(arr1); &#x2F;&#x2F; 원본 배열 변경 안함.</span><br><span class="line"></span><br><span class="line">arr1.push(arr2);</span><br><span class="line">console.log(arr1);</span><br><span class="line">arr1 &#x3D; [1, 2];</span><br><span class="line">arr2 &#x3D; [3, 4];</span><br><span class="line">result &#x3D; arr1.concat(arr2);</span><br><span class="line">console.log(result);</span><br><span class="line">&#x2F;&#x2F; push, unshift 는 인수로 전달받은 배열을 그대로 추가한다.</span><br><span class="line">arr1.unshift(arr2);</span><br><span class="line">console.log(arr1);</span><br><span class="line">&#x2F;&#x2F; concat 역시 스프레드 문법으로 대체할 수 있다.</span><br><span class="line">result &#x3D; [...[1, 2], ...[3, 4]];</span><br><span class="line">console.log(result);</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; Array.prototype.splice</span><br><span class="line">arr &#x3D; [1, 2, 3, 4];</span><br><span class="line">result &#x3D; arr.splice(1, 2, 20, 30);</span><br><span class="line">console.log(result); &#x2F;&#x2F; 제거한 요소가 반환된다.</span><br><span class="line">console.log(arr); &#x2F;&#x2F; 원본 배열을 직접 변경한다.</span><br><span class="line"></span><br><span class="line">arr &#x3D; [1, 2, 3, 4];</span><br><span class="line">result &#x3D; arr.splice(1, 0, 100);</span><br><span class="line">console.log(arr);</span><br><span class="line">console.log(result);</span><br><span class="line">&#x2F;&#x2F; 두번째 인자를 0줘서 삭제는 안하고 추가만</span><br><span class="line"></span><br><span class="line">arr &#x3D; [1, 2, 3, 4];</span><br><span class="line">console.log(arr);</span><br><span class="line">arr.splice(1);</span><br><span class="line">console.log(arr);</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 특정 요소를 찾아서 제거하기</span><br><span class="line">arr &#x3D; [1, 2, 3, 1, 2];</span><br><span class="line">function remove(array, item) &#123;</span><br><span class="line">  const index &#x3D; array.indexOf(item);</span><br><span class="line">  if (index !&#x3D;&#x3D; -1) &#123;</span><br><span class="line">    array.splice(index, 1);</span><br><span class="line">  &#125;;</span><br><span class="line">  return array;</span><br><span class="line">&#125;</span><br><span class="line">console.log(remove(arr, 2));</span><br><span class="line">console.log(remove(arr, 2));</span><br><span class="line"></span><br><span class="line">arr &#x3D; [1, 2, 3, 1, 2];</span><br><span class="line">function removeAll(array, item) &#123;</span><br><span class="line">  return array.filter(e &#x3D;&gt; e !&#x3D;&#x3D; item);</span><br><span class="line">&#125;</span><br><span class="line">console.log(removeAll(arr, 2));</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; Array.prototype.slice</span><br><span class="line">arr &#x3D; [1, 2, 3];</span><br><span class="line">console.log(arr.slice(0, 2));</span><br><span class="line">console.log(arr.slice(1));</span><br><span class="line">console.log(arr.slice());</span><br><span class="line">&#x2F;&#x2F; 복사는 간단하게 스프레드 문법</span><br><span class="line">result &#x3D; [...arr];</span><br><span class="line">console.log(result);</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; Array.prototype.join</span><br><span class="line">arr &#x3D; [1, 2, 3, 4];</span><br><span class="line">console.log(arr.join());</span><br><span class="line">console.log(arr.join(&#39;&#39;));</span><br><span class="line">console.log(arr.join(&#39;_&#39;));</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; Array.prototype.reverse</span><br><span class="line">console.log(arr.reverse());</span><br><span class="line">console.log(arr); &#x2F;&#x2F; 원본 배열을 변경한다.</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; Array.prototype.fill</span><br><span class="line">arr &#x3D; new Array(5);</span><br><span class="line">console.log(arr);</span><br><span class="line">arr.fill(3);</span><br><span class="line">console.log(arr);</span><br><span class="line">arr.fill(1, 2);</span><br><span class="line">console.log(arr);</span><br><span class="line">arr.fill(2, 2, 3);</span><br><span class="line">console.log(arr);</span><br><span class="line">&#x2F;&#x2F; 원본 배열을 변경한다. 변경된 원본 배열을 반환한다.</span><br><span class="line">&#x2F;&#x2F; Array.from 을 사용하면 두 번째 인수로 전달한 콜백 함수로 요소값을 만들면서 채울 수 있다.</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; Array.prototype.includes</span><br><span class="line">arr &#x3D; [1, 2, 3, 4];</span><br><span class="line">console.log(arr.includes(2)); &#x2F;&#x2F;true</span><br><span class="line">console.log(arr.includes(5)); &#x2F;&#x2F;false</span><br><span class="line">console.log(arr.includes(2, 2)); &#x2F;&#x2F;true</span><br><span class="line">console.log(arr.includes(2, -3)); &#x2F;&#x2F;false</span><br><span class="line">&#x2F;&#x2F; indexOf도 특정 요소를 찾을 수 있는데,</span><br><span class="line">&#x2F;&#x2F; 반환값이 -1인지 확인 절차가 필요하고,</span><br><span class="line">&#x2F;&#x2F; NaN은 찾지 못한다.</span><br><span class="line">console.log([NaN].indexOf(NaN)); &#x2F;&#x2F; -1 -&gt; 없다는 뜻</span><br><span class="line">console.log([NaN].includes(NaN)); &#x2F;&#x2F; true</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; Array.prototype.flat</span><br><span class="line">console.log([1, [2, 3, 4, 5], 6].flat());</span><br><span class="line">console.log([1, [2, [3, [4]]]].flat());</span><br><span class="line">console.log([1, [2, [3, [4]]]].flat(1));</span><br><span class="line">console.log([1, [2, [3, [4]]]].flat(2));</span><br><span class="line">console.log([1, [2, [3, [4]]]].flat().flat());</span><br><span class="line">console.log([1, [2, [3, [4]]]].flat(infinity));</span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="http://bg-shorthand.github.io/2020/12/17/201218-%EB%B0%B0%EC%97%B4/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1881,215 +1948,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://bg-shorthand.github.io/2020/11/24/201125-%ED%95%A8%EC%88%98/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="bg-shorthand">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="bg-shorthand-blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/11/24/201125-%ED%95%A8%EC%88%98/" class="post-title-link" itemprop="url">함수</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2020-11-24 14:27:03" itemprop="dateCreated datePublished" datetime="2020-11-24T14:27:03+09:00">2020-11-24</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-11-26 11:22:35" itemprop="dateModified" datetime="2020-11-26T11:22:35+09:00">2020-11-26</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/javascript/" itemprop="url" rel="index"><span itemprop="name">javascript</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="함수"><a href="#함수" class="headerlink" title="함수"></a>함수</h1>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">function add(x, y) &#123;</span><br><span class="line">  return x + y;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">add(2, 5);</span><br></pre></td></tr></table></figure>
-<ul>
-<li>일련의 과정을 문(statement)로 구현하고 코드 블록으로 감싸서 하나의 실행 단위로 정의한 것.</li>
-<li>함수 정의 통해 생성, 함수 호출을 통해 실행.</li>
-<li>호출의 인수(argument)가 매개변수(parameter)를 통해 함수 몸체(문)의 과정을 실행하고 결과값 출력.</li>
-<li>return이 없거나 값이 없으면, undefined 출력.<h1 id="함수의-사용-이유"><a href="#함수의-사용-이유" class="headerlink" title="함수의 사용 이유"></a>함수의 사용 이유</h1></li>
-<li>코드의 재사용.</li>
-<li>함수는 유지보수의 편의성을 높이고 실수를 줄여 코드의 신뢰성을 높이는 효과가 있다.</li>
-<li>적절한 함수 이름을 통해 코드의 가독성을 향상.<h1 id="함수-리터럴"><a href="#함수-리터럴" class="headerlink" title="함수 리터럴"></a>함수 리터럴</h1></li>
-<li>자바스크립트의 함수는 객체 타입의 ‘값’이므로, 리터럴로 생성할 수 있다.<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">function add(x, y) &#123;</span><br><span class="line">  return x + y;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-<li>함수 이름<ul>
-<li>식별자다. 식별자 네이밍 규칙을 준수해야 한다.</li>
-<li>함수 몸체 내에서만 참조할 수 있는 식별자다.(밖에서 부르는 식별자를 가지려면 변수 식별자에 할당이 필요하다.)</li>
-<li>함수 이름은 생략할 수 있다. 기명함수, 익명 함수.</li>
-</ul>
-</li>
-<li>매개변수 목록<ul>
-<li>0개 이상의 매개변수를 소괄호로 감싸고, 쉼표로 구분</li>
-<li>각 매개변수에는 지정한 인수가 순서대로 할당. 즉, 매개 변수 목록은 ‘순서’에 의미가 있다.</li>
-<li>매개변수는 몸체 내에서 변수와 동일하게 취급.(암묵적으로 선언과 할당을 실행한다.) -&gt; 식별자 네이밍 규칙을 준수해야 한다.</li>
-</ul>
-</li>
-<li>함수 몸체<ul>
-<li>실행된 문들을 묶은 코드 블록.</li>
-<li>함수 호출에 의해 실행된다.</li>
-</ul>
-</li>
-<li>함수 리터럴도 ‘리터럴’이므로 값으로 평가 가능. 그 값은 ‘객체’이고, 즉, 함수는 객체.</li>
-<li>리터럴만 된 코드의 함수를 호출할 수는 없다.(식별자가 없잖아.)</li>
-<li>함수 객체 값을 만들기 위한 수단.</li>
-<li>일반 객체는 호출할 수 없지만 함수는 호출할 수 있다. 그리고 일반 객체에는 없는 함수 객체만의 고유한 프로퍼티를 갖는다.<h1 id="함수-정의"><a href="#함수-정의" class="headerlink" title="함수 정의"></a>함수 정의</h1></li>
-</ul>
-<ol>
-<li>함수 선언문<ul>
-<li>함수 이름을 생략할 수 없다는 것만 빼면 함수 리터럴과 형태가 같다.</li>
-<li>차이는 값으로 평가되느냐, 되지 않느냐.</li>
-<li>자바스크립트 엔진은 문맥(값이 들어가야 할 자린지 아닌지)에 따라 둘을 구분한다.</li>
-<li>함수 선언문의 함수 이름은 자바스크립트 엔진이 암묵적으로 식별자로 생성해 선언, 할당한다.</li>
-<li>선언문이므로, 호이스팅된다.</li>
-</ul>
-</li>
-<li>함수 표현식<ul>
-<li>자바스크립트의 함수는 객체 타입의 값이므로, 함수를 값처럼 자유롭게 사용할 수 있다.</li>
-<li>변수에 함수(리터럴)를 할당하는 모양새.</li>
-<li>함수 이름은 생략하는 것이 일반적이다.(호출하는데는 식별자만 변수 식별자만 있으면 되니까.)</li>
-<li>호이스팅으로 함수 선언문과 차이를 보인다.</li>
-<li>함수를 호출하기 전에 반드시 함수를 선언해야한다는 규칙을, 호이스팅은 무시하므로, 선언문 대신 함수 표현식(var가 아닌)을 사용하는 걸 권장.</li>
-</ul>
-</li>
-<li>Function 생성자 함수<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var add &#x3D; new Function(&#39;x&#39;, &#39;y&#39;, &#39;return x + y&#39;);</span><br></pre></td></tr></table></figure>
-<ul>
-<li>Function 함수로 생성하는 방식은 일반적이지 않으며 바람직하지도 않다.</li>
-<li>클로저를 생성하지 않는 등, 함수 선언문이나 함수 표현식으로 생성한 함수와 다르게 동작한다.</li>
-</ul>
-</li>
-<li>화살표 함수.<ul>
-<li>이후 자세히.<h1 id="함수-호출"><a href="#함수-호출" class="headerlink" title="함수 호출"></a>함수 호출</h1><h1 id="매개변수와-인수"><a href="#매개변수와-인수" class="headerlink" title="매개변수와 인수"></a>매개변수와 인수</h1></li>
-</ul>
-</li>
-</ol>
-<ul>
-<li>인수는 함수를 호출할 때 지정하며, 개수와 타입에 제한이 없다.</li>
-<li>매개변수는 함수 몸체 내부에서만 참조할 수 있다. 즉, 매개변수의 스코프는 함수 내부다.</li>
-<li>매개변수의 개수와 인수의 개수가 일치하는지 체크하지 않는다.<ul>
-<li>인수가 더 적을 때, 전달되지 않은 매개변수는 undefined.</li>
-<li>인수가 더 많을 때, 무시.(버려지는 것처럼 보이지만, 모든 인수는 암묵적으로 arguments 객체의 프로퍼티로 보관.)</li>
-</ul>
-</li>
-<li>인수 확인<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">function add(x, y) &#123;</span><br><span class="line">  return x + y;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">console.log(add(2));        &#x2F;&#x2F; NaN</span><br><span class="line">console.log(add(&#39;a&#39;, &#39;b&#39;)); &#x2F;&#x2F; &#39;ab&#39;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>자바스크립트 함수는 매개변수와 인수의 개수가 일치하는지 확인하지 않는다.</li>
-<li>자바스크립트는 동적 타입 언어다. 따라서 자바스크립트 함수는 매개변수의 타입을 사전에 지정할 수 없다.</li>
-<li>따라서, 의도하지 않은 동작을 할 수도 있다.</li>
-<li>이 때, 인수 확인이 필요하다.<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">function add(x, y) &#123;</span><br><span class="line">  if (typeof x !&#x3D;&#x3D; &#39;number&#39; || typeof y !&#x3D;&#x3D; &#39;number&#39;) &#123;</span><br><span class="line">    &#x2F;&#x2F; 매개변수를 통해 전달된 인수의 타입이 부적절한 경우 에러를 발생시킨다.</span><br><span class="line">    throw new TypeError(&#39;인수는 모두 숫자 값이어야 합니다.&#39;);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  return x + y;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-<li>타입스크립트를 사용하는 것도 방법.</li>
-<li>인수가 전달되지 않은 경우, 단축 평가(or 옵셔널 체이닝 연산자 ?.)를 사용해 매개변수에 기본값을 할당할 수도 있다.</li>
-<li>매개변수의 기본값도 사용 가능.<h1 id="매개변수의-최대-개수"><a href="#매개변수의-최대-개수" class="headerlink" title="매개변수의 최대 개수"></a>매개변수의 최대 개수</h1></li>
-</ul>
-</li>
-<li>매개변수가 많아지면 함수를 호출할 때 전달해야 할 인수의 순서를 고려해야 한다. 이는 함수의 사용법을 이해하기 어렵게 만들고 실수를 발생시킬 가능성을 높인다.</li>
-<li>또한 매개변수의 개수나 순서가 변경되면 함수의 호출 방법도 바뀌므로 함수를 사용하는 코드 전체가 영향을 받는다. 즉, 유지보수성이 나빠진다.</li>
-<li>이상적인 매개변수 개수는 0개이며 적을 수록 좋다.</li>
-<li>매개변수의 개수가 많다는 것은 함수가 여러가지 일을 한다는 증거이므로 바람직하지 않다. 이상적인 함수는 한 가지 일만 해야 하며 가급적 작게 만들어야 한다.</li>
-<li>매개변수는 최대 3개 이상을 넘지 않는 것을 권장한다. 만약 그 이상의 매개변수가 필요하다면 하나의 매개변수를 선언하고 객체를 인수로 전달하는 것이 유리하다.</li>
-<li>객체를 인수로 전달했을 때, 주의할 것은 부수 효과.<h1 id="반환문"><a href="#반환문" class="headerlink" title="반환문"></a>반환문</h1></li>
-<li>반환문은 값을 반환하고, 이 값으로 평가되는 함수 호출은 평가식이다.</li>
-<li>반환문은 return 키워드 뒤에 오는 표현식을 평가해 반환한다. return 키워드 뒤에 반환값으로 사용할 표현식을 명시적으로 지정하지 않으면 undefined가 반환된다.</li>
-<li>반환문은 함수의 실행을 중단하고 함수 몸체를 빠져나간다.(이후 문은 무시.)</li>
-<li>반환문이 생략되면, 함수 몸체의 마지막 문까지 실행 후, undefined를 반환.</li>
-<li>반환문과 뒤의 표현식에 줄바꿈이 있으면 세미콜론이 자동 추가 되어, 아래 쓰인 표현식이 무시된다.<h1 id="참조에-의한-전달과-외부-상태의-변경"><a href="#참조에-의한-전달과-외부-상태의-변경" class="headerlink" title="참조에 의한 전달과 외부 상태의 변경"></a>참조에 의한 전달과 외부 상태의 변경</h1></li>
-<li>인수 -&gt; 매개변수 -&gt; 함수 몸체 에서, 원시값은 ‘값에 의한 전달’, 객체는 ‘참조에 의한 전달’</li>
-<li>특히 객체를 매개변수로 사용할 경우, 함수 몸체에서 참조값을 통해 객체를 변경할 경우 원본이 훼손된다. -&gt; 부수효과 발생.</li>
-<li>이런 변경을 어떻게 추적하겠어.(옵저버 패턴을 통해 객체의 참조를 공유하는 모든 이들에게 변경 사실을 통지하고 이에 대처하는 추가 대응?)</li>
-<li>이 때, 객체를 불변 객체로 만들어 사용해, 방어적 복사를 통한 깊은 복사를 통해 새로운 객체를 생성하고 재할당을 통해 교체할 수 있다.</li>
-<li>이것도 힘드니까 외부 상태를 변경하지 않고 외부 상태에 의존하지도 않는, ‘순수 함수’를 지향하는 게 필요.<h1 id="다양한-함수의-형태"><a href="#다양한-함수의-형태" class="headerlink" title="다양한 함수의 형태"></a>다양한 함수의 형태</h1></li>
-</ul>
-<ol>
-<li>즉시 실행 함수(생성과 동시에 ())<ul>
-<li>리터럴을 ()그룹 연산자로 감싼 형태.(값이 들어갈 자리. -&gt; 자바스크립트 엔진이 함수 선언문이 아닌 리터럴로 읽을 수 있도록. -&gt; 다른 연산자도 사용할 수 있지만, 일반적이지 않다.)</li>
-<li>감싸지 않으면 엔진이 함수 선언문이라고 읽는다. -&gt; 중괄호 뒤에 세미콜론이 찍히고, -&gt; 뒤의 ()은 그룹 연산자로 읽어, 에러.</li>
-<li>즉시 실행하며, 일반 함수처럼 값을 반환할 수 있고, 인수를 전달할 수도 있다.</li>
-<li>즉시 실행 함수 내에 코드를 모아 두면 혹시 있을 수 있는 변수나 함수 이름의 충동을 방지할 수 있다 -&gt; 전역 변수 사용 억제 방법.</li>
-</ul>
-</li>
-<li>재귀 함수<ul>
-<li>함수가 자기 자신을 호출(재귀 호출)할 때, 재귀 호출을 수행하는 함수.</li>
-<li>반복되는 처리를 위하 새용한다.</li>
-<li>함수 몸체에서, 함수 이름으로 호출한다.</li>
-<li>탈출 조건이 반드시 있어야 한다. -&gt; 없으면 스택 오버플로 에러.</li>
-<li>따라서, 반복문을 대체할 수 있지만, 주의해서 사용해야 해.</li>
-<li>반복문을 사용하는 것보다 직관적으로 이해하기 쉬울 때만 한정적으로 사용.</li>
-</ul>
-</li>
-<li>중첩 함수<ul>
-<li>일반적으로 중첩 함수는 외부 함수를 돕는 헬퍼 함수의 역항르 한다.</li>
-<li>함수 정의는 문이 위치할 수 있는 문맥이라면 어디든지 가능하지만,</li>
-<li>호이스팅으로 인해 혼란이 발생할 수 있으므로, if문이나 for문 등의 코드 블록에서 정의하는 것은 바람직하지 않다.</li>
-</ul>
-</li>
-<li>콜백 함수<ul>
-<li>함수를 인수로 사용, 매개변수를 통해 함수 안에 함수를(중첩 함수)를 만든다.</li>
-<li>공통적으로 수행해야 할 함수(고차함수)에 일부분만 다른 함수들(콜백함수)를 조합해 사용.</li>
-<li>고차 함수의 몸체에는 콜백 함수의 호출 시점이 명시.</li>
-<li>이 때 필요에 따라 인수를 전달.</li>
-<li>콜백 함수가 고차 함수 내부에만 호출된다면, 콜백 함수를 익명 함수 리터럴로 정의하면서 곧바로 고차 함수에 전달하는 것이 일반적이다.(즉시 실행 함수).</li>
-<li>다른 곳에서도 호출할 필요가 있다면, 콜백 함수를 정의한 후, 함수 참조(식별자)를 고차 함수에 전달.</li>
-<li>콜백 함수는 비동기 처리, 배열 고차 함수 등에 활용된다.(아직은 뭔지 모름)</li>
-</ul>
-</li>
-<li>순수 함수와 비순수 함수<ul>
-<li>순수 함수: 어떤 외부 상태에 의존하지도 않고 변경하지도 않는, 즉 부수 효과가 없는 함수</li>
-<li>비순수 함수:  외부 상태에 의존하거나 외부 상태를 변경하는, 즉 부수 효과가 있는 함수 -&gt; 외부 상태에 따라 반환값이 달라진다.</li>
-<li>함수형 프로그래밍은 결국 순수 함수를 통해 부수 효과를 최대한 억제해 오류를 피하고 프로그램의 안정성을 높이려는 노력의 일환이라 할 수 있다. 자바스크립트는 멀티 패러다임 언어이므로 객체지향 프로그래밍뿐만 아니라 함수형 프로그래밍을 적극적으로 활용하고 있다.</li>
-</ul>
-</li>
-</ol>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -2159,7 +2017,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">28</span>
+          <span class="site-state-item-count">29</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
