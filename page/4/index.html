@@ -145,6 +145,210 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://bg-shorthand.github.io/2020/10/20/201020-What-is-CSS-html-css-practice/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="bg-shorthand">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="bg-shorthand-blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/10/20/201020-What-is-CSS-html-css-practice/" class="post-title-link" itemprop="url">201020 What is CSS & html/css practice</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2020-10-20 20:37:10 / Modified: 20:49:13" itemprop="dateCreated datePublished" datetime="2020-10-20T20:37:10+09:00">2020-10-20</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/html-css/" itemprop="url" rel="index"><span itemprop="name">html/css</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="What-is-CSS3"><a href="#What-is-CSS3" class="headerlink" title="What is CSS3"></a>What is CSS3</h1><ol>
+<li>마크업 언어가 실제로 표시되는 방법을 기술하는 언어</li>
+<li>W3C의 표준이며, 레이아웃과 스타일을 정의할 때 자유도가 높음.</li>
+<li>웹 이전에 워드프로세서 등에서 이미 활용되던 개념<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">각 부분의 렌더링을 설정하기 보다,</span><br><span class="line">전체 스타일을 미리 설정하는 것이 유지보수에 용이.</span><br><span class="line">어떻게 전체 스타일을 선언할지 고민이 필요.</span><br></pre></td></tr></table></figure></li>
+<li>3라는 버전이름은 마케팅적 이름.</li>
+<li>현재는 모듈 단위로 개발되고 있어, 각 모듈마다 버전이 다르다.(내부 모듈 중 레벨4도 있고, 레벨1도 있음.)</li>
+<li>draft -&gt; wd -&gt; cr -&gt; pr -&gt; rec(권고안)의 절차로 표준안이 정해지지만,</li>
+<li>모든 브라우저가 표준에 맞추어 사용하지 않는다.(we단계의 모듈을 표준으로 쓰는 브라우저도 있음.)</li>
+<li>이로 인해 크로스 브라우징이 어려워졌다.</li>
+<li>구조 / 표현 / 동작<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">기본적으로, </span><br><span class="line">구조는 html, 표현은 css, 동작은 javascript로 나누어 개발하지만,</span><br><span class="line">요즘에 이르러서는 모듈 단위로 개발한다.</span><br></pre></td></tr></table></figure></li>
+<li>css는 코드상 오류를 표시하지 않는다. display만 바꾸면 오류 아니니까.</li>
+</ol>
+<h2 id="기타"><a href="#기타" class="headerlink" title="기타"></a>기타</h2><ol>
+<li>모던 브라우징(반응형 페이지)<ul>
+<li>display: flex; flex-flow: column nowrap; align-items:center;</li>
+<li>화면이 작아지면 자연스럽게 정렬되도록</li>
+</ul>
+</li>
+<li>box-sizing(content-box/border-box)<ul>
+<li>margin/border/padding 모두 박스의 크기를 변형시킨다.</li>
+<li>특히 margin은 요소를 이동시키는 것처럼 보이지만, 사실은 박스 사이즈가 변하는 것.</li>
+</ul>
+</li>
+<li>html/css reference</li>
+<li>float<ul>
+<li>float을 선언하면 부모 요소의 컨텐츠 크기만큼 가상의 line box를 만든다.</li>
+<li>line box를 기준으로 left/right.</li>
+<li>line box가 가지는 높이는 요소의 높이와 같다.</li>
+<li>따라서 두번째 줄의 컨텐츠는 위와 겹치지 않는다.</li>
+<li>text는 float영역과 겹치지 않는다.</li>
+<li>float clear의 두 가지 방법.<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">1. 부모 요소에 .clearfix를 만들고,</span><br><span class="line">2. .clearfix::after에 clear: both</span><br><span class="line">3. 가상 요소 선택자로 선택된 영역은 기본적으로 inline.</span><br><span class="line">4. float clear는 블럭 요소일 때만 가능하므로, display: block;</span><br><span class="line">  - 마크업에 의미없는 요소를 만들고 사용해야 하는 단점이 있다.</span><br><span class="line"></span><br><span class="line">1. overflow&#x3D;&quot;hidden&quot;</span><br><span class="line">  - 넘치는 자식 요소를 조절.</span><br><span class="line">  - 넘치는지 알려면 자신의 크기를 먼저 알아야 하고, -&gt; BFC</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li>BFC<ul>
+<li>블록 박스의 레이아웃이 발생하는 지점과 플로팅 요소의 상호작용 범위를 결정하는 범위</li>
+<li>맥락을 생성하는 요소는 아래와 같은 작용을 하기 때문에 위치 설정과 플로팅 해제를 위해 더 많이 사용<ol>
+<li>내부 플로팅 가두기</li>
+<li>외부 플로팅 제외하기</li>
+<li>여백 상쇄 제거</li>
+</ol>
+</li>
+<li>자신의 레이아웃을 계산하면서, float과 상호작용한다.</li>
+</ul>
+</li>
+<li>CBD BANK -&gt; 접근성의 측면에서, 줄임말은 제대로 읽지 못함 -&gt; C.B.D. BANK</li>
+<li>ul 중첩 : 까만 동그라미 - 걍 동그라미 - 까만 네모 - 걍 네모</li>
+<li>마크업에서 인라인 요소가 엔터로 나눠져 있으면 띄어쓰기가 들어감.<ul>
+<li>마크업에서 한 줄로 수정하거나,</li>
+<li>스타일에서 폰트 사이즈 조절.<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;img</span><br><span class="line">&gt;&lt;img&gt;</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li>유용한 사이트<ul>
+<li>caniuse.com</li>
+<li>css3test.com</li>
+<li>csszengarden.com</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h1 id="html-실습의-주요-주석"><a href="#html-실습의-주요-주석" class="headerlink" title="html 실습의 주요 주석"></a>html 실습의 주요 주석</h1><ul>
+<li><p>네비를 지나쳐서 바로 본문으로 갈 수 있는 링크. 웹접근성 입장에서 본문 맨 앞에 필요하다.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line">  &lt;div class&#x3D;&quot;skip-nav&quot;&gt;&lt;a href&#x3D;&quot;#&quot;&gt;본문 바로가기&lt;&#x2F;a&gt;&lt;&#x2F;div&gt;</span><br></pre></td></tr></table></figure></li>
+<li><p>전체 구조 뿐만 아니라 각 섹터에서도 논리적인 순서를 고민해야 한다.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;header class&#x3D;&quot;header&quot;&gt;</span><br><span class="line">  &lt;!-- 1. 로고 (이미지)</span><br><span class="line">  2. 안내링크 (텍스트, 리스트, 콜론은 span으로 넣고 aria-hidden&#x3D;&quot;true&quot;)</span><br><span class="line">  3. 내비게이션 (텍스트) --&gt;</span><br></pre></td></tr></table></figure></li>
+<li><p>렌더링상 필요하지만, 스크린리더에 읽혀서 안되는 부분은 aria-hidden=”true”</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;span class&#x3D;&quot;divider&quot; aria-hidden&#x3D;&quot;true&quot;&gt;ㅣ&lt;&#x2F;span&gt;</span><br></pre></td></tr></table></figure></li>
+<li><p>전체 구조에서 필요하지만, 해당되는 시멘틱 태그가 없을 경우 div를 써서 만들 수 있다.</p>
+</li>
+<li><p>nth-child는 성능상의 문제가 있을 수 있으므로, 대신 클래스 네임을 설정할 수 있다.</p>
+<ul>
+<li>부모 요소부터 일일이 찾아야 하기 때문.</li>
+<li>구조적으로 필요할 때 쓸 수 있다. (ex. nth-child(2n))</li>
+</ul>
+<h2 id="실습-전체-코드"><a href="#실습-전체-코드" class="headerlink" title="실습 전체 코드"></a>실습 전체 코드</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">  &lt;html lang&#x3D;&quot;ko-KR&quot;&gt;</span><br><span class="line">    &lt;!-- 한국어-한국 --&gt;</span><br><span class="line">  &lt;head&gt;</span><br><span class="line">    &lt;meta charset&#x3D;&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;title&gt;웹카페 - 고정형 레이아웃&lt;&#x2F;title&gt;</span><br><span class="line">    &lt;!-- 다른 것들도 많음. meta 등. 공부 --&gt;</span><br><span class="line">    &lt;link rel&#x3D;&quot;stylesheet&quot; href&#x3D;&quot;.&#x2F;css&#x2F;stylesheet.css&quot;&gt;</span><br><span class="line">  &lt;&#x2F;head&gt;</span><br><span class="line">  &lt;body&gt;</span><br><span class="line">    &lt;div class&#x3D;&quot;skip-nav&quot;&gt;&lt;a href&#x3D;&quot;#&quot;&gt;본문 바로가기&lt;&#x2F;a&gt;&lt;&#x2F;div&gt;</span><br><span class="line">    &lt;!-- 네비를 지나쳐서 바로 본문으로 갈 수 있는 링크. 웹접근성 입장에서 본문 맨 앞에 필요하다. --&gt;</span><br><span class="line"></span><br><span class="line">    &lt;!-- 3단으로 실습할 거야(visual, slogan 넣으니까 5단됨?) --&gt;</span><br><span class="line">    &lt;header class&#x3D;&quot;header&quot;&gt;</span><br><span class="line">      &lt;!-- 각 섹터 역시 구조&#x2F;논리적인 순서를 고려하여 작성</span><br><span class="line">      1. 로고 (이미지)</span><br><span class="line">      2. 안내링크 (텍스트, 리스트, 콜론은 span으로 넣고 aria-hidden&#x3D;&quot;true&quot;)</span><br><span class="line">      3. 내비게이션 (텍스트) --&gt;</span><br><span class="line">      &lt;h1 class&#x3D;&quot;logo&quot;&gt;&lt;a href&#x3D;&quot;#&quot;&gt;&lt;img src&#x3D;&quot;.&#x2F;images&#x2F;logo.png&quot; alt&#x3D;&quot;Web Cafe&quot;&gt;&lt;&#x2F;a&gt;&lt;&#x2F;h1&gt;</span><br><span class="line">      &lt;ul class&#x3D;&quot;member&quot;&gt;</span><br><span class="line">        &lt;li&gt;</span><br><span class="line">          &lt;a href&#x3D;&quot;#&quot;&gt;홈&lt;&#x2F;a&gt;</span><br><span class="line">        &lt;&#x2F;li&gt;</span><br><span class="line">        &lt;li&gt;</span><br><span class="line">          &lt;span class&#x3D;&quot;divider&quot; aria-hidden&#x3D;&quot;true&quot;&gt;ㅣ&lt;&#x2F;span&gt;</span><br><span class="line">          &lt;!-- aria-hedden 스크린리더가 읽지 않도록 히든 처리 --&gt;</span><br><span class="line">          &lt;a href&#x3D;&quot;#&quot;&gt;로그인&lt;&#x2F;a&gt;</span><br><span class="line">        &lt;&#x2F;li&gt;</span><br><span class="line">        &lt;li&gt;</span><br><span class="line">          &lt;span class&#x3D;&quot;divider&quot; aria-hidden&#x3D;&quot;true&quot;&gt;ㅣ&lt;&#x2F;span&gt;</span><br><span class="line">          &lt;a href&#x3D;&quot;#&quot;&gt;회원가입&lt;&#x2F;a&gt;</span><br><span class="line">        &lt;&#x2F;li&gt;</span><br><span class="line">        &lt;li&gt;</span><br><span class="line">          &lt;span class&#x3D;&quot;divider&quot; aria-hidden&#x3D;&quot;true&quot;&gt;ㅣ&lt;&#x2F;span&gt;</span><br><span class="line">          &lt;a href&#x3D;&quot;#&quot;&gt;사이트맵&lt;&#x2F;a&gt;</span><br><span class="line">        &lt;&#x2F;li&gt;</span><br><span class="line">        &lt;li&gt;</span><br><span class="line">          &lt;span class&#x3D;&quot;divider&quot; aria-hidden&#x3D;&quot;true&quot;&gt;ㅣ&lt;&#x2F;span&gt;</span><br><span class="line">          &lt;a href&#x3D;&quot;#&quot;&gt;english&lt;&#x2F;a&gt;</span><br><span class="line">        &lt;&#x2F;li&gt;</span><br><span class="line">      &lt;&#x2F;ul&gt;</span><br><span class="line">    &lt;&#x2F;header&gt;</span><br><span class="line">    </span><br><span class="line">    &lt;div class&#x3D;&quot;visual&quot;&gt;visual&lt;&#x2F;div&gt;</span><br><span class="line">    &lt;!-- 시멘틱과 관계없는 구조니까 div --&gt;</span><br><span class="line">    </span><br><span class="line">    &lt;main class&#x3D;&quot;main clearfix&quot;&gt;</span><br><span class="line">      &lt;div class&#x3D;&quot;group group1&quot;&gt;group1&lt;&#x2F;div&gt;</span><br><span class="line">    &lt;!-- group1 -&gt; nth-child를 쓸 수도 있는데 성능 문제가 있을 수 있음. 구조적으로 선택할 때 필요. --&gt;</span><br><span class="line"></span><br><span class="line">      &lt;div class&#x3D;&quot;group group2&quot;&gt;group2&lt;&#x2F;div&gt;</span><br><span class="line"></span><br><span class="line">      &lt;div class&#x3D;&quot;group group3&quot;&gt;group3&lt;&#x2F;div&gt;</span><br><span class="line">    &lt;&#x2F;main&gt;</span><br><span class="line"></span><br><span class="line">    &lt;div class&#x3D;&quot;slogan&quot;&gt;slogan&lt;&#x2F;div&gt;</span><br><span class="line">    </span><br><span class="line">    &lt;footer class&#x3D;&quot;footer&quot;&gt;</span><br><span class="line">      &lt;div class&#x3D;&quot;footer-wrapper&quot;&gt;footer&lt;&#x2F;div&gt;</span><br><span class="line">    &lt;&#x2F;footer&gt;</span><br><span class="line">  &lt;&#x2F;body&gt;</span><br><span class="line">  &lt;&#x2F;html&gt;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<hr>
+<h1 id="css-실습의-주요-주석"><a href="#css-실습의-주요-주석" class="headerlink" title="css 실습의 주요 주석"></a>css 실습의 주요 주석</h1><ul>
+<li><p>레이아웃을 쉽게 잡기 위해 모든 요소의 box-sizing을 border-box로.</p>
+<ul>
+<li>모든 브라우저를 커버하기 위해, 가상요소 선택자에도 적용한다.<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">body *,</span><br><span class="line">body *::before,</span><br><span class="line">body *::after &#123;</span><br><span class="line">  box-sizing: border-box;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>font-family에서, 글꼴 계열은 필수 입력.</p>
+<ul>
+<li>serif는 삐침(궁서) / sans-serif는 고딕<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">font-family: &#39;Spoqa Han Sans&#39;, &#39;Spoqa Han Sans JP&#39;, &#39;Sans-serif&#39;;</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>a는 부모 요소와 색을 맞추어 유지보수가 쉽게 되도록.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a&#123;</span><br><span class="line">  color: inherit;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li><p>position: absolute;</p>
+<ul>
+<li>float처럼 요소를 띄워 영역을 차지 하지 않는다.(다른 요소와 겹침)</li>
+<li>띄우려면 해당 요소의 영역을 알아야 하고 영역을 알아야 하면 -&gt; BFC</li>
+<li>상위 요소 중에서 포지션 값이 static이 아닌 것을 기준으로 한다.</li>
+<li>위치상 부모 요소에 position: relative; 를 많이 쓰는 건 전체 구조를 망치지 않기 때문.</li>
+<li>전체 웹페이지에 속해 있는 모듈을 작업할 때는 absolute값을 부모로 쓰기도 한다.</li>
+</ul>
+</li>
+<li><p>부모 요소에 여백을 사용하여 자식 요소를 배치할 수 있지만, 클릭 영역을 넓히기 위해 자식 요소의 여백을 사용하기도 한다.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">.member li&#123;</span><br><span class="line">  padding: 2px 0;</span><br><span class="line">&#125;</span><br><span class="line">.member li a&#123;</span><br><span class="line">  padding: 6px 0;</span><br><span class="line">&#125;</span><br><span class="line">  -&gt; 부모 요소의 패딩은 포커스 됐을 때의 셀이 들어갈 자리.</span><br></pre></td></tr></table></figure>
+
+<h2 id="css-실습-전체-코드"><a href="#css-실습-전체-코드" class="headerlink" title="css 실습 전체 코드"></a>css 실습 전체 코드</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br></pre></td><td class="code"><pre><span class="line">@import url(&#x2F;&#x2F;spoqa.github.io&#x2F;spoqa-han-sans&#x2F;css&#x2F;SpoqaHanSans-kr.css);</span><br><span class="line">@import url(https:&#x2F;&#x2F;necolas.github.io&#x2F;normalize.css&#x2F;8.0.1&#x2F;normalize.css);</span><br><span class="line">@import url(.&#x2F;fontello.css);</span><br><span class="line"></span><br><span class="line">body *,</span><br><span class="line">body *::before,</span><br><span class="line">body *::after &#123;</span><br><span class="line">  box-sizing: border-box;</span><br><span class="line">  &#x2F;* border,padding,margin 넣어도 크기가 안 변하게.</span><br><span class="line">  비포 에프터를 넣은 건 모든 브라우저를 커버하기 위해서.</span><br><span class="line">  성능 관점에서 부모 선택자로 body.*&#x2F;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;* float 이나 flex 로 배치 학습할 것 *&#x2F;</span><br><span class="line">html &#123;</span><br><span class="line">  font-size: 10px;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">body &#123;</span><br><span class="line">  font-family: &#39;Spoqa Han Sans&#39;, &#39;Spoqa Han Sans JP&#39;, &#39;Sans-serif&#39;;</span><br><span class="line">  &#x2F;* 맨 뒤에 &#39;Sans-serif&#39;는 글꼴 계열. 필수. serif는 삐침(궁서) sans-serif는 고딕 *&#x2F;</span><br><span class="line">  font-size: 1.5rem;</span><br><span class="line">  color: #181818;</span><br><span class="line">  background: #fff;</span><br><span class="line">&#125;</span><br><span class="line">&#x2F;* 링크 스타일 *&#x2F;</span><br><span class="line">a&#123;</span><br><span class="line">  color: inherit;</span><br><span class="line">  &#x2F;* a가 속해 있는 곳과 색을 맞추어 유지보수가 쉽게 상속 시킴 *&#x2F;</span><br><span class="line">  text-decoration: none;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;* 스킵 내비게이션 *&#x2F;</span><br><span class="line">.skip-nav &#123;</span><br><span class="line">  display: none;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;* 레이아웃*&#x2F;</span><br><span class="line"></span><br><span class="line">.header,</span><br><span class="line">.visual,</span><br><span class="line">.main,</span><br><span class="line">.slogan &#123;</span><br><span class="line">  width: 940px;</span><br><span class="line">  margin: 0 auto;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;* 헤더 *&#x2F;</span><br><span class="line">header &#123;</span><br><span class="line">  background: yellow;</span><br><span class="line">  position: relative;</span><br><span class="line">  border-radius: 0 0 15px 15px;</span><br><span class="line">  &#x2F;* 사분할면 만들고 1분할면부터 시계방향 </span><br><span class="line">  x1 x2 x3 x4 &#x2F; y1 y2 y3 y4*&#x2F;</span><br><span class="line">  padding: 0 30px;</span><br><span class="line">&#125;</span><br><span class="line">&#x2F;* 로고 *&#x2F;</span><br><span class="line">  .logo&#123;</span><br><span class="line">    background: blue;</span><br><span class="line">    margin: 0;</span><br><span class="line">    position: absolute;</span><br><span class="line">    &#x2F;* absolute 도 화면에서 띄우는 거. 영역 차지 안함.</span><br><span class="line">    띄우려면 상자 사이즈를 알아야 하고 그러면 BFC</span><br><span class="line">    absolute는 상위 요소 중에서 포지션이 스태틱이 아닌 게 기준</span><br><span class="line">    relative를 많이 쓰는 건 전체 구조를 망치지 않으니까.</span><br><span class="line">    모듈화된 사이트를 만들다보면 ab&gt;ab도 쓸 수 있음. *&#x2F;</span><br><span class="line">    top: 50px;</span><br><span class="line">    left: 65px;</span><br><span class="line">  &#125;</span><br><span class="line">  &#x2F;* 안내 링크 목록 *&#x2F;</span><br><span class="line">  .member&#123;</span><br><span class="line">    margin: 0;</span><br><span class="line">    padding-left: 0;</span><br><span class="line">    list-style: none;</span><br><span class="line">    text-align: right;</span><br><span class="line">    &#x2F;* 블럭 요소 안의 인라인 요소를 정렬 *&#x2F;</span><br><span class="line">  &#125;</span><br><span class="line">  .member li&#123;</span><br><span class="line">    display: inline-block;</span><br><span class="line">    padding: 2px 0;</span><br><span class="line">  &#125;</span><br><span class="line">  .member li a&#123;</span><br><span class="line">    display: inline-block;</span><br><span class="line">    padding: 6px 0;</span><br><span class="line">    &#x2F;* 부모요소에 여백을 줄 수도 있지만 클릭 영역을 넓히기 위해 a에 줬음. *&#x2F;</span><br><span class="line">    background: pink;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">.visual &#123;</span><br><span class="line">  background: lime;</span><br><span class="line">  height: 120px;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.main &#123;</span><br><span class="line">  background: skyblue;</span><br><span class="line">  &#x2F;* height: 400px; *&#x2F;</span><br><span class="line">  &#x2F;* float 부모 요소에 높이를 줘서 아래를 포함할 수 있지만, 보수유지 어쩔 거. *&#x2F;</span><br><span class="line">  padding: 30px 15px;</span><br><span class="line">  overflow: hidden;</span><br><span class="line">  &#x2F;* BFC? *&#x2F;</span><br><span class="line">  min-height: 450px;</span><br><span class="line">  &#x2F;* 높이 값은 고정하지 않는 게 좋다. 고정할 영역은 고정. *&#x2F;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">  &#x2F;* .clearfix &#123;</span><br><span class="line">    clear: both;</span><br><span class="line">  &#125; *&#x2F;</span><br><span class="line">  &#x2F;* float 아래 보이지 않는 자식 요소를 만들어 클리어 *&#x2F;</span><br><span class="line"></span><br><span class="line">  &#x2F;* .clearfix::after&#123;</span><br><span class="line">    content: &quot;&quot;;</span><br><span class="line">    display: block;</span><br><span class="line">    clear: both;</span><br><span class="line">  &#125; *&#x2F;</span><br><span class="line">  &#x2F;* 부모요소의 뒤에 가상요소를 만들어서 클리어. </span><br><span class="line">  부모요소에 clearfix 클래스 이름 줘서 넣음.*&#x2F;</span><br><span class="line"></span><br><span class="line">  .group &#123;</span><br><span class="line">    margin: 0 15px;</span><br><span class="line">    float: left;</span><br><span class="line">  &#125;</span><br><span class="line">  .group1 &#123;</span><br><span class="line">    background: blueviolet;</span><br><span class="line">    width: 250px;</span><br><span class="line">  &#125;</span><br><span class="line">  .group2 &#123;</span><br><span class="line">    background: lightgreen;</span><br><span class="line">    width: 380px;</span><br><span class="line">  &#125;</span><br><span class="line">  .group3 &#123;</span><br><span class="line">    background: tomato;</span><br><span class="line">    width: 190px;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">.slogan &#123;</span><br><span class="line">  background: orange;</span><br><span class="line">  height: 250px;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.footer &#123;</span><br><span class="line">  background: pink;</span><br><span class="line">  height: 240px;</span><br><span class="line">  width: 100%;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li><p>위의 메인 부분은 float 으로 수평 정렬, 아래는 flex를 사용한 예제</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">  .main &#123;</span><br><span class="line">  background: skyblue;</span><br><span class="line">  height: 500px;</span><br><span class="line">  display: flex;</span><br><span class="line">  flex: row nowrap;</span><br><span class="line">  &#x2F;* row, nowrap 은 명시적으로 표시. *&#x2F;</span><br><span class="line">  &#x2F;* justify-content: space-evenly; *&#x2F;</span><br><span class="line">  &#x2F;* IE에서 evenly 지원 안함. space-between을 쓰고, 좌우에 패딩 추가.</span><br><span class="line">  컨테이너에 패딩만 넣고, 컨텐츠에 마진을 넣어 만들 수도 있지만, 유지보수 차원에서 이게 낫다.(ex. 컨텐츠 순서 바꿔달라고 하면 어떡해.) *&#x2F;</span><br><span class="line">  justify-content: space-between;</span><br><span class="line">  padding: 30px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<hr>
+<h2 id="test"><a href="#test" class="headerlink" title="test"></a>test</h2><ol>
+<li><p>다음 코드가 갖는 다양한 문제점을 정보 접근성 측면에서 간략히 서술하시오.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;h1 class&#x3D;&quot;logo&quot;&gt;&lt;a href&#x3D;&quot;&#x2F;&quot;&gt;&lt;img src&#x3D;&quot;logo.png&quot;&gt;&lt;&#x2F;a&gt;&lt;&#x2F;h1&gt;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>h1 요소 안에 텍스트 정보가 없다. 헤딩레벨의 요소는 SEO, 접근성 면에서 다른 태그보다 중요하기 때문에, 이 태그로 대제목을 표현한다면, 시각적인 표시여부와 관계없이 텍스트 정보를 작성해야 한다.</li>
+<li>alt 작성 필요.</li>
+</ul>
+</li>
+<li><p>다음 중 블록 요소가 아닌 것을 모두 고르시오.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">div</span><br><span class="line">img - 답</span><br><span class="line">h1</span><br><span class="line">section</span><br><span class="line">label - 답</span><br><span class="line">input - 답</span><br><span class="line">video - 답</span><br><span class="line">table - 답</span><br><span class="line">a - 답</span><br></pre></td></tr></table></figure></li>
+<li><p>main 태그에 마지막 자식요소로 ‘divider’라는 텍스트를 표현하는 요소를 가상요소를 활용하여 표현하고자 한다. 한 단위의 ruleset을 완성하시오.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">main::after&#123;</span><br><span class="line">  content: &quot;divider&quot;</span><br><span class="line">  color: red&#39;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li><p>다음 코드에서 ‘html에 대해’라는 텍스트의 색상은?</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;head&gt;</span><br><span class="line">  &lt;style&gt;</span><br><span class="line">    .menu &#123;color: red;&#125;</span><br><span class="line">    ul .menu-item &#123;color: coral;&#125;</span><br><span class="line">    .menu-item &#123;color: cyan; !important&#125;</span><br><span class="line">    li .menu-button&#123;color: purple;&#125;</span><br><span class="line">    .menu-button&#123;color: greenyellow;&#125;</span><br><span class="line">    span &#123;color: red;&#125;</span><br><span class="line">  &lt;&#x2F;style&gt;</span><br><span class="line">&lt;&#x2F;head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">  &lt;ul class&#x3D;&quot;menu&quot;&gt;</span><br><span class="line">    &lt;li class&#x3D;&quot;menu-item&quot; tabindex&#x3D;&quot;0&quot;&gt;</span><br><span class="line">      &lt;span class&#x3D;&quot;menu-button&quot;&gt;html에 대해&lt;&#x2F;span&gt;</span><br><span class="line">    &lt;&#x2F;li&gt;</span><br><span class="line">  &lt;&#x2F;ul&gt;</span><br><span class="line">&lt;&#x2F;body&gt;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>답 : purple</li>
+</ul>
+</li>
+<li><p>float를 해제하는 방법은 아래 방식이 대표적으로 사용된다. 이를 구현하는 방식과 발생할 수 있는 단점을 설명하세요.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1. css 프로퍼티 overflow를 활용하는 방법.</span><br><span class="line">2. css 프로퍼티 clear를 활용하는 방법</span><br></pre></td></tr></table></figure></li>
+<li><p>다음 코드에서 section의 자식요소 div를 가로-중앙정렬시키기 위한 css ruleset을 하나 이상 작성하시오.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;section&gt;</span><br><span class="line">  &lt;div id&#x3D;&quot;min-content&quot;&gt;가운데!!&lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;section&gt;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>#main-content{<br> margin: 0 auto;<br>}</li>
+</ul>
+</li>
+</ol>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="http://bg-shorthand.github.io/2020/10/19/201019-What-is-HTML/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -505,7 +709,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">32</span>
+          <span class="site-state-item-count">33</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
