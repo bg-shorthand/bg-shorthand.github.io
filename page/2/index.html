@@ -145,6 +145,145 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://bg-shorthand.github.io/2020/12/02/201202-%EC%83%9D%EC%84%B1%EC%9E%90-%ED%95%A8%EC%88%98%EC%97%90-%EC%9D%98%ED%95%9C-%EA%B0%9D%EC%B2%B4-%EC%83%9D%EC%84%B1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="bg-shorthand">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="bg-shorthand-blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/12/02/201202-%EC%83%9D%EC%84%B1%EC%9E%90-%ED%95%A8%EC%88%98%EC%97%90-%EC%9D%98%ED%95%9C-%EA%B0%9D%EC%B2%B4-%EC%83%9D%EC%84%B1/" class="post-title-link" itemprop="url">201202-생성자 함수에 의한 객체 생성</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2020-12-02 10:04:52 / Modified: 10:05:14" itemprop="dateCreated datePublished" datetime="2020-12-02T10:04:52+09:00">2020-12-02</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/javascript/" itemprop="url" rel="index"><span itemprop="name">javascript</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="생성자-함수에-의한-객체-생성"><a href="#생성자-함수에-의한-객체-생성" class="headerlink" title="생성자 함수에 의한 객체 생성"></a>생성자 함수에 의한 객체 생성</h1><h1 id="Object-생성자-함수"><a href="#Object-생성자-함수" class="headerlink" title="Object 생성자 함수"></a>Object 생성자 함수</h1><ul>
+<li>new 연산자와 함께 호출하여 객체(인스턴스)를 생성하는 함수.</li>
+<li>생성자 함수에 의해 생성된 객체를 인스턴스(instance)라 한다.<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">const person &#x3D; new Object();</span><br></pre></td></tr></table></figure></li>
+<li>빈 객체를 생성, 프로퍼티 또는 메소드를 추가하여 객체를 완성.<ul>
+<li>String, Number, Boolean, Function, Array, Date, RegExp, Promise 등의 빌트인(built-in, 내장) 생성자 함수.</li>
+</ul>
+</li>
+<li>객체 리터럴이 더 간편해, 특별한 이유가 없다면 그다지 유용하지 않다.<h1 id="생성자-함수"><a href="#생성자-함수" class="headerlink" title="생성자 함수"></a>생성자 함수</h1></li>
+<li>객체 리터럴과 달리, 프로퍼티 구조가 동일한 객체 여러 개를 간편하게 생성할 수 있다.<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">function Who(name, age) &#123;</span><br><span class="line">  this.name &#x3D; name;</span><br><span class="line">  this.age &#x3D; age;</span><br><span class="line">  this.hi &#x3D; function () &#123;</span><br><span class="line">    console.log(&#96;hi $&#123;name&#125;!&#96;)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">const me &#x3D; new Who(han, 32);</span><br><span class="line">const you &#x3D; new Who(park, 31);</span><br></pre></td></tr></table></figure></li>
+<li>이런 식.</li>
+<li>this는 객체 자신의 프로퍼티나 메서드를 참조하기 위한 자기 참조 변수. 함수를 호출하면서, 어떤 ‘객체’와 바인딩.</li>
+<li>위의 경우, 생성자 함수가 생성할 인스턴스와 바인딩된다.</li>
+<li>다시 생성자 함수로 돌아가서,</li>
+<li>생성자 함수는 일반 함수와 동일한 방법으로 정의된다.</li>
+<li>이후 new 연산자와 함께 호출하면 해당 함수는 생성자 함수로 동작.</li>
+<li>new 연산자가 없으면 일반 함수로 동작한다.</li>
+<li>생성자 함수의 인스턴스 생성 과정(인스턴스 생성, 인스턴스 초기화)<ol>
+<li>인스턴스 생성과 this 바인딩<ul>
+<li>런타임 이전에 실행.</li>
+<li>암묵적으로 빈 객체 생성.</li>
+<li>객체는 this에 바인딩(식별자와 값을 연결).</li>
+<li>필수.</li>
+</ul>
+</li>
+<li>인스턴스 초기화<ul>
+<li>런타임.</li>
+<li>함수 몸체가 한 줄씩 실행되며, this에 바인딩되어 있는 인스턴스를 초기화(프로퍼티나 메서드를 추가.)</li>
+<li>인수로 전달받은 초기값을 인스턴스 프로퍼티에 할당하여 초기화하거나 고정값을 할당한다.</li>
+<li>옵션.(함수 몸체가 비어있을 수 있다. 이 경우 빈 객체 반환.)</li>
+</ul>
+</li>
+<li>인스턴스 반환<ul>
+<li>모든 처리가 끝나면 인스턴스(함수로 만들어진 객체)가 바인딩된 this가 암묵적으로 반환.</li>
+<li>return 문으로 명시적인 다른 객체를 반환하면 this는 무시.</li>
+<li>return 문으로 명시적인 원시값을 반환하면 무시, this 반환.</li>
+<li>return 문으로 다른 값을 반환하는 것은 생성자 함수의 기본 동작을 훼손하므로 반드시 생략.<h1 id="내부-메서드-Call-과-Construct"><a href="#내부-메서드-Call-과-Construct" class="headerlink" title="내부 메서드 [[Call]] 과 [[Construct]]"></a>내부 메서드 [[Call]] 과 [[Construct]]</h1></li>
+</ul>
+</li>
+</ol>
+</li>
+<li>함수는 객체이므로 일반 객체가 가지고 있는 내부 슬롯과 내부 메서드를 모두 가진다.</li>
+<li>일반 객체와 달리 호출할 수 있는 건, 함수 객체만이 가진 내부 슬롯과 내부 메서드가 있기 때문.</li>
+<li>[[Environment]], [[FormalParameters]] 등의 내부 슬롯과 [[Call]], [[Construct]] 같은 내부 메서드 등.</li>
+<li>이 때, 함수가 일반 수로 호출되면 [[Call]]이, new 연산자와 함께 생성자 함수로 호출되면 [[Construct]]가 호출된다.</li>
+<li>모든 함수는 호출이 가능하므로 [[Call]]을 가지고 있으나,</li>
+<li>[[Construct]] 는 생성자 함수만 가지고 있다.</li>
+<li>즉, 함수는 constructor 와 non-constructor로 구분할 수 있다.</li>
+<li>모든 함수가 생성자 함수로서 호출할 수 있는 것은 아닌 것.<h1 id="constructor와-non-constructor의-구분"><a href="#constructor와-non-constructor의-구분" class="headerlink" title="constructor와 non-constructor의 구분"></a>constructor와 non-constructor의 구분</h1></li>
+<li>constructor: 함수 선언문, 함수 표현식, 클래스(클래스도 함수다)</li>
+<li>non-constructor: 메서드(ES6 메서드 축약 표현), 화살표 함수</li>
+<li>여기서 메서드는, ES6의 메서드 축약 표현만을 의미.</li>
+<li>non-constructor 함수는 [[Construct]]가 없으므로, 생성자 함수로 호출하면 에러.</li>
+<li>주의할 것은 생성자 함수로서 호출될 것을 기대하고 정의하지 않은 일반 함수(callable이면서 constructor)에 new 연산자를 붙여 호출하면 생성자 함수처럼 동작할 수 있다는 것이다.</li>
+<li>this 등의 객체를 만들기 위한 내용이 있어야 하는데 없는 애를 데리고 그럴 수 있단 거지.</li>
+<li>그럴 때는, 함수가 객체를 반환하지 않았으므로 반환문이 무시된다. 따라서 빈 객체가 생성되어 반환된다.<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; 생성자 함수로서 정의하지 않은 일반 함수</span><br><span class="line">function add(x, y) &#123;</span><br><span class="line">  return x + y;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 생성자 함수로서 정의하지 않은 일반 함수를 new 연산자와 함께 호출</span><br><span class="line">let inst &#x3D; new add();</span><br><span class="line">&#x2F;&#x2F; 함수가 객체를 반환하지 않았으므로 반환문이 무시된다. 따라서 빈 객체가 생성되어 반환된다.</span><br><span class="line">console.log(inst); &#x2F;&#x2F; &#123;&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 객체를 반환하는 일반 함수</span><br><span class="line">function createUser(name, role) &#123;</span><br><span class="line">  return &#123; name, role &#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 생성자 함수로서 정의하지 않은 일반 함수를 new 연산자와 함께 호출</span><br><span class="line">inst &#x3D; new createUser(&#39;Lee&#39;, &#39;admin&#39;);</span><br><span class="line">&#x2F;&#x2F; 함수가 생성한 객체를 반환한다.</span><br><span class="line">console.log(inst); &#x2F;&#x2F; &#123;name: &quot;Lee&quot;, role: &quot;admin&quot;&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="new-연산자"><a href="#new-연산자" class="headerlink" title="new 연산자"></a>new 연산자</h1></li>
+<li>일반 호출일 땐 [[Call]] 호출, new 연산자와 함께 호출할 땐 [[Construct]] 호출.</li>
+<li>생성자 함수로 만들어진 함수를 일반 호출하면, 내부의 this는 전역 객체 window와 바인딩.</li>
+<li>이로 인해 만들어진 프로퍼티와 메서드는 전역 객체의 프로퍼티와 메서드가 된다.</li>
+<li>일반 함수와 생성자 함수는 특별한 형식적 차이가 없으므로, 이름 짓는 방법을 구분한다. 일반적으로 생성자 함수는 첫 문자를 대문자로 기술하는 파스칼 케이스.<h1 id="new-target"><a href="#new-target" class="headerlink" title="new.target"></a>new.target</h1></li>
+<li>함수를 정의할 때, 이후 호출에 new가 붙을지 안 붙을지 모르잖아?</li>
+<li>그걸 확인하는 new.target</li>
+<li>new 연산자와 함께 호출되면 new.target은 함수 자신을 가리키고,</li>
+<li>일반 함수로 호출되면 new.target은 undefined.</li>
+<li>이걸 이용해서 함수가 실행될 때 호출 방법을 확인하고, 재귀 호출로 new 연산자를 붙일 수 있다.<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; 생성자 함수</span><br><span class="line">function Circle(radius) &#123;</span><br><span class="line">  &#x2F;&#x2F; 이 함수가 new 연산자와 함께 호출되지 않았다면 new.target은 undefined다.</span><br><span class="line">  if (!new.target) &#123;</span><br><span class="line">    &#x2F;&#x2F; new 연산자와 함께 생성자 함수를 재귀 호출하여 생성된 인스턴스를 반환한다.</span><br><span class="line">    return new Circle(radius);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  this.radius &#x3D; radius;</span><br><span class="line">  this.getDiameter &#x3D; function () &#123;</span><br><span class="line">    return 2 * this.radius;</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; new 연산자 없이 생성자 함수를 호출하여도 new.target을 통해 생성자 함수로서 호출된다.</span><br><span class="line">const circle &#x3D; Circle(5);</span><br><span class="line">console.log(circle.getDiameter());</span><br></pre></td></tr></table></figure></li>
+<li>IE에서는 지원하지 않아, 스코프 세이프 생성자 패턴을 사용할 수도 있다.<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; Scope-Safe Constructor Pattern</span><br><span class="line">function Circle(radius) &#123;</span><br><span class="line">  &#x2F;&#x2F; 생성자 함수가 new 연산자와 함께 호출되면 함수의 선두에서 빈 객체를 생성하고</span><br><span class="line">  &#x2F;&#x2F; this에 바인딩한다. 이때 this와 Circle은 프로토타입에 의해 연결된다.</span><br><span class="line"></span><br><span class="line">  &#x2F;&#x2F; 이 함수가 new 연산자와 함께 호출되지 않았다면 이 시점의 this는 전역 객체 window를 가리킨다.</span><br><span class="line">  &#x2F;&#x2F; 즉, this와 Circle은 프로토타입에 의해 연결되지 않는다.</span><br><span class="line">  if (!(this instanceof Circle)) &#123;</span><br><span class="line">    &#x2F;&#x2F; new 연산자와 함께 호출하여 생성된 인스턴스를 반환한다.</span><br><span class="line">    return new Circle(radius);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  this.radius &#x3D; radius;</span><br><span class="line">  this.getDiameter &#x3D; function () &#123;</span><br><span class="line">    return 2 * this.radius;</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li>프로토타입이랑 instanceof를 모르겠네. 나중에 다시.</li>
+<li>아무튼 중요한 건 호출될 때 new가 붙었는지 안붙었는지 확인할 수 있단 건데,</li>
+<li>대부분의 빌트인 생성자 함수(Object, String, Number, Boolean, Function, Array, Date, RegExp, Promise 등)는 new 연산자와 함께 호출되었는지를 확인한 후 적절한 값을 반환한다.</li>
+<li>가령, Object와 Function 은 new가 없이 호출되어도 new가 있는 것과 동일하게 동작.</li>
+<li>String, Number, Boolean 생성자 함수는 new 연산자와 함께 호출했을 때 String, Number, Boolean 객체를 생성하여 반환하지만 new 연산자 없이 호출하면 문자열, 숫자, 불리언 값을 반환한다. -&gt; 명시적 타입 변환 때 봤던 거. 이것도 결국 꼼수였네.</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="http://bg-shorthand.github.io/2020/11/29/201130-let-const%EC%99%80-%EB%B8%94%EB%A1%9D-%EB%A0%88%EB%B2%A8-%EC%8A%A4%EC%BD%94%ED%94%84-%ED%94%84%EB%A1%9C%ED%8D%BC%ED%8B%B0-%EC%96%B4%ED%8A%B8%EB%A6%AC%EB%B7%B0%ED%8A%B8/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -2025,197 +2164,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://bg-shorthand.github.io/2020/11/02/201101-html-css-practice-responsive-web-page/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="bg-shorthand">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="bg-shorthand-blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/11/02/201101-html-css-practice-responsive-web-page/" class="post-title-link" itemprop="url">201101-html css practice-responsive web page</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2020-11-02 20:14:09 / Modified: 20:14:38" itemprop="dateCreated datePublished" datetime="2020-11-02T20:14:09+09:00">2020-11-02</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/html-css/" itemprop="url" rel="index"><span itemprop="name">html/css</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="HTML-CSS-PRACTICE-반응형-페이지"><a href="#HTML-CSS-PRACTICE-반응형-페이지" class="headerlink" title="HTML/CSS PRACTICE 반응형 페이지"></a>HTML/CSS PRACTICE 반응형 페이지</h1><ul>
-<li>반응형 페이지 이디야 샘플 헤더 부분</li>
-</ul>
-<hr>
-<h2 id="반응형-페이지에-대해"><a href="#반응형-페이지에-대해" class="headerlink" title="반응형 페이지에 대해"></a>반응형 페이지에 대해</h2><ol>
-<li>모바일 디바이스의 등장으로 다양한 크기의 화면에 대응할 필요성<ul>
-<li>초기에는 모바일용 웹페이지를 따로 제작했지만,</li>
-<li>이후에는 한 화면이 크기에 맞춰 재구성될 수 있도록.</li>
-<li>One Source Multi Use</li>
-</ul>
-</li>
-<li>Flexible / Adaptive<ul>
-<li>화면에 맞추어 늘어나거나 줄어드는 구성인지(Flexible)</li>
-<li>일정 크기 안에서는 고정된 구성인지(Adaptive)</li>
-<li>샘플 및 실습은 고정형(Adaptive)로.</li>
-<li>어느 게 맞다 틀리다는 아님. 컨텐츠에 따라 다를 수 있다.</li>
-<li>상황에 따라 마크업을 따로 해야하는 경우도 있음.</li>
-</ul>
-</li>
-<li>반응형 페이지의 기획<ul>
-<li>큰 화면에서 작은 화면으로, 혹은 작은 화면에서 큰 화면으로.</li>
-<li>경우에 따라 둘 다 사용할 수 있지만,</li>
-<li>일반적으로 작은 화면에서 큰 화면으로 기획하는 것이 용이하다.</li>
-</ul>
-</li>
-<li>반응형 페이지의 레이아웃<ul>
-<li>Flexible 페이지일 때,</li>
-<li>px 등의 단위로 레이아웃을 고정하지 않고,</li>
-<li>%, vw, vh 등으로 레이아웃을 지정한다.</li>
-<li>백분율 계산 = target/context</li>
-</ul>
-</li>
-<li>@media all and (~)</li>
-<li>img {max-width: 100%} -&gt; 크기가 변하는 이미지에서, 원본 사이즈보다는 커지지 않게.(이미지 깨짐 방지)</li>
-<li>반응형 페이지에서 고려할 점<ol>
-<li>성능/속도 및 대역폭<ul>
-<li>적절한 크기의 이미지 등으로 성능이 저하되지 않도록 한다.</li>
-</ul>
-</li>
-<li>고해상도 디스플레이<ul>
-<li>최신의 모바일 기기에서, 스크린 크기와 상관없는 배율을 고려해, 고해상도의 이미지를 사용해야 한다.</li>
-<li>그렇다고 다 고화질로 쓰면 또 성능 저하.</li>
-</ul>
-</li>
-<li>아트 디렉션 처리<ul>
-<li>크게 볼 때는 의미 전달이 잘 되던 이미지가,</li>
-<li>작게 보면 어떤 의미인지 알 수 없을 때.</li>
-<li>적당한 내용을 잘라내어(cropped) 보여줄 필요가 있다.</li>
-<li>기획이 필요.</li>
-</ul>
-</li>
-<li>모든 화면에서 이미지가 깨지지 않도록, svg 포맷을 고려.</li>
-<li>해결 방안.<ol>
-<li>img -&gt; srcset</li>
-<li>picture tag</li>
-<li>divece-pixel-ratio</li>
-</ol>
-</li>
-</ol>
-</li>
-</ol>
-<hr>
-<h2 id="html-주요-주석"><a href="#html-주요-주석" class="headerlink" title="html 주요 주석"></a>html 주요 주석</h2><ol>
-<li>viewport meta<ul>
-<li>width=device-width 디바이스 크기에 맞춘다는 의미</li>
-<li>initial-scale=1.0 배율<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;meta name&#x3D;&quot;viewport&quot; content&#x3D;&quot;width&#x3D;device-width, initial-scale&#x3D;1.0&quot; &#x2F;&gt;</span><br></pre></td></tr></table></figure></li>
-</ul>
-</li>
-<li>여러가지 css를 링크<ul>
-<li>기본적으로 들어가는 css(노멀라이즈, 리셋 등)</li>
-<li>크기에 맞춰 적용할 css(데스크탑 대응, 모바일 대응 등)</li>
-</ul>
-</li>
-<li>닫기 버튼의 x는 알파벳 x 아니고 특문.<ul>
-<li>크기도 다르고, 배치도 다르다.</li>
-</ul>
-</li>
-<li>svg 포멧을 코드로 넣을 때,<ul>
-<li>img 태그와 달리 alt를 넣지 않음.</li>
-<li>title을 넣어준다.<h2 id="html-전체-코드"><a href="#html-전체-코드" class="headerlink" title="html 전체 코드"></a>html 전체 코드</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line">&lt;head&gt;</span><br><span class="line">  &lt;meta charset&#x3D;&quot;UTF-8&quot; &#x2F;&gt;</span><br><span class="line">  &lt;meta name&#x3D;&quot;viewport&quot; content&#x3D;&quot;width&#x3D;device-width, initial-scale&#x3D;1.0&quot; &#x2F;&gt;</span><br><span class="line">  &lt;title&gt;이디야 커피(Ediya Coffee)&lt;&#x2F;title&gt;</span><br><span class="line">  &lt;meta name&#x3D;&quot;description&quot; content&#x3D;&quot;이디야 커피 브랜드 사이트 (학습용) 홈페이지입니다.&quot; &#x2F;&gt;</span><br><span class="line">  &lt;meta name&#x3D;&quot;keywords&quot; content&#x3D;&quot;이디야, 커피, 브랜드, 사이트, 학습용, 홈페이지, 이듬, 블렌디드 러닝&quot; &#x2F;&gt;</span><br><span class="line">  &lt;meta name&#x3D;&quot;author&quot; content&#x3D;&quot;이듬(E.UID)&quot; &#x2F;&gt;</span><br><span class="line"></span><br><span class="line">  &lt;link rel&#x3D;&quot;preload&quot; as&#x3D;&quot;style&quot; href&#x3D;&quot;&#x2F;&#x2F;spoqa.github.io&#x2F;spoqa-han-sans&#x2F;css&#x2F;SpoqaHanSans-kr.css&quot; &#x2F;&gt;</span><br><span class="line">  &lt;link rel&#x3D;&quot;preload&quot; as&#x3D;&quot;style&quot; href&#x3D;&quot;&#x2F;&#x2F;cdnjs.cloudflare.com&#x2F;ajax&#x2F;libs&#x2F;normalize&#x2F;8.0.1&#x2F;normalize.min.css&quot; &#x2F;&gt;</span><br><span class="line">  &lt;link rel&#x3D;&quot;preload&quot; as&#x3D;&quot;style&quot; href&#x3D;&quot;.&#x2F;style&#x2F;style.css&quot; &#x2F;&gt;</span><br><span class="line"></span><br><span class="line">  &lt;!-- 스타일링 --&gt;</span><br><span class="line">  &lt;link rel&#x3D;&quot;stylesheet&quot; href&#x3D;&quot;.&#x2F;style&#x2F;style.css&quot; &#x2F;&gt;</span><br><span class="line">  &lt;link rel&#x3D;&quot;shortcut icon&quot; href&#x3D;&quot;.&#x2F;images&#x2F;favicon.png&quot; type&#x3D;&quot;image&#x2F;x-icon&quot; &#x2F;&gt;</span><br><span class="line">&lt;&#x2F;head&gt;</span><br><span class="line"></span><br><span class="line">&lt;body&gt;</span><br><span class="line">  &lt;div class&#x3D;&quot;app-header-container&quot;&gt;</span><br><span class="line">    &lt;header class&#x3D;&quot;app-header&quot;&gt;</span><br><span class="line">      &lt;h1 class&#x3D;&quot;brand&quot;&gt;</span><br><span class="line">        &lt;a href&#x3D;&quot;.&#x2F;index.html&quot;&gt;&lt;img src&#x3D;&quot;.&#x2F;images&#x2F;brand.svg&quot; alt&#x3D;&quot;Ediya Coffee&quot; class&#x3D;&quot;respons&quot; &#x2F;&gt;&lt;&#x2F;a&gt;</span><br><span class="line">      &lt;&#x2F;h1&gt;</span><br><span class="line">      &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;button is-open-menu&quot; aria-label&#x3D;&quot;메뉴 열기&quot; title&#x3D;&quot;메뉴 열기&quot;&gt;</span><br><span class="line">        &lt;span class&#x3D;&quot;ir&quot;&gt;&lt;&#x2F;span&gt;</span><br><span class="line">      &lt;&#x2F;button&gt;</span><br><span class="line">      &lt;nav class&#x3D;&quot;app-navigation&quot;&gt;</span><br><span class="line">        &lt;h2 class&#x3D;&quot;a11y-hidden&quot;&gt;메인 메뉴&lt;&#x2F;h2&gt;</span><br><span class="line"></span><br><span class="line">        &lt;ul class&#x3D;&quot;reset-list&quot;&gt;</span><br><span class="line">          &lt;li&gt;&lt;a href&#x3D;&quot;.&#x2F;views&#x2F;login-fds.html&quot;&gt;로그인&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;</span><br><span class="line">          &lt;li&gt;&lt;a href&#x3D;&quot;.&#x2F;views&#x2F;signup-fds.html&quot;&gt;회원 가입&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;</span><br><span class="line">          &lt;li&gt;&lt;a href&#x3D;&quot;.&#x2F;views&#x2F;ui-design.html&quot;&gt;이디야 디자인&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;</span><br><span class="line">          &lt;li&gt;&lt;a href&#x3D;&quot;.&#x2F;views&#x2F;beverage-fds.html&quot;&gt;이디야 음료&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;</span><br><span class="line">          &lt;li&gt;&lt;a href&#x3D;&quot;.&#x2F;views&#x2F;news-fds.html&quot;&gt;이디야 뉴스&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;</span><br><span class="line">          &lt;li&gt;&lt;a href&#x3D;&quot;.&#x2F;views&#x2F;store-fds.html&quot;&gt;매장 찾기&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;</span><br><span class="line">        &lt;&#x2F;ul&gt;</span><br><span class="line"></span><br><span class="line">        &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;button is-close-menu&quot; title&#x3D;&quot;메뉴 닫기&quot; aria-label&#x3D;&quot;메뉴 닫기&quot;&gt;</span><br><span class="line">          &lt;span class&#x3D;&quot;close&quot; aria-hidden&#x3D;&quot;true&quot;&gt;×&lt;&#x2F;span&gt;</span><br><span class="line">        &lt;&#x2F;button&gt;</span><br><span class="line">      &lt;&#x2F;nav&gt;</span><br><span class="line">    &lt;&#x2F;header&gt;</span><br><span class="line">  &lt;&#x2F;div&gt;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-</ol>
-<hr>
-<h2 id="css-주요-주석"><a href="#css-주요-주석" class="headerlink" title="css 주요 주석"></a>css 주요 주석</h2><ol>
-<li>공통으로 적용할 부분과 모바일, 데스크탑에서 따로 적용할 부분을 구분.</li>
-<li>작성 내용을 주석으로 잘 적어 두어야 나중에 쉽게 찾을 수 있다.(유지보수 용이)</li>
-<li>width: 100%;<ul>
-<li>position: fixed, left: 0, right: 0, 하는 방법도 있음.</li>
-<li>단 브라우저 호환이 안 될 수도 있음.</li>
-</ul>
-</li>
-<li>backdrop-filter</li>
-<li>명도 차이가 분명하지 않아 접근성 기준에 맞지 않을 때,<ul>
-<li>텍스트를 이미지로 넣는 편법도 있다.</li>
-</ul>
-</li>
-<li>margin: -1;<ul>
-<li>네거티브 마진 검색해 볼 것.<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;* 숨김 제목 및 콘텐츠 *&#x2F;</span><br><span class="line">.a11y-hidden,</span><br><span class="line">legend &#123;</span><br><span class="line">  overflow: hidden;</span><br><span class="line">  position: absolute !important;</span><br><span class="line">  clip: rect(0, 0, 0, 0);</span><br><span class="line">  clip-path: polygon(0 0, 0 0, 0 0);</span><br><span class="line">  width: 1px;</span><br><span class="line">  height: 1px;</span><br><span class="line">  margin: -1px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="기타"><a href="#기타" class="headerlink" title="기타"></a>기타</h2></li>
-</ul>
-</li>
-<li>모든 웹페이지에게 반응형이 필요한 건 아니다.<ul>
-<li>너무 복잡한 ui의 페이지는, 모바일에 맞는 콘텐츠만 가져다 따로 다시 만들 수 있다.</li>
-</ul>
-</li>
-<li>읽지 말아야 하는 이미지(아이콘 등)을 마크업해야 하는 경우<ul>
-<li>alt 값을 null 준다. (alt=””)</li>
-<li>alt를 넣었기 때문에 정량적으로는 접근성에 충족. 하지만 값은 없음.</li>
-</ul>
-</li>
-<li>rwd breakpoints 2020 검색<ul>
-<li>2020년 일반적인 디바이스 크기 확인.</li>
-<li>breakpoints 반응형 페이지가 구성을 확인할 구간.</li>
-</ul>
-</li>
-<li><a target="_blank" rel="noopener" href="http://troy.labs.daum.net/">http://troy.labs.daum.net/</a></li>
-<li>프로젝트를 할 때 고려해야 할 것<ul>
-<li>퍼포먼스, 접근성, 검색최적화.</li>
-<li>어떤 것을 고려하여 제작했는지 문서화도 중요.(md 파일 정리.)</li>
-</ul>
-</li>
-</ol>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -2285,7 +2233,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">31</span>
+          <span class="site-state-item-count">32</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
