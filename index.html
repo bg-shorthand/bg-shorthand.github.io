@@ -145,6 +145,79 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://bg-shorthand.github.io/2021/01/02/eslint-setting/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="bg-shorthand">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="bg-shorthand-blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/01/02/eslint-setting/" class="post-title-link" itemprop="url">eslint setting</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2021-01-02 13:53:06 / Modified: 13:56:53" itemprop="dateCreated datePublished" datetime="2021-01-02T13:53:06+09:00">2021-01-02</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/etc/" itemprop="url" rel="index"><span itemprop="name">etc</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="eslint-로컬-설치-Airbnb-style-guide"><a href="#eslint-로컬-설치-Airbnb-style-guide" class="headerlink" title="eslint 로컬 설치, Airbnb style guide"></a>eslint 로컬 설치, Airbnb style guide</h1><p>로컬에서,</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ cd &lt;project-folder&gt;</span><br><span class="line">$ npm init -y</span><br><span class="line"># install eslint &amp; friends</span><br><span class="line">$ npm install eslint eslint-config-airbnb-base eslint-plugin-import eslint-plugin-html --save-dev</span><br></pre></td></tr></table></figure>
+<h1 id="eslintrc-json"><a href="#eslintrc-json" class="headerlink" title=".eslintrc.json"></a>.eslintrc.json</h1><p>로컬 루트에서 파일 생성 후,</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;parserOptions&quot;: &#123;</span><br><span class="line">    &quot;ecmaVersion&quot;: 11</span><br><span class="line">  &#125;,</span><br><span class="line">  &quot;env&quot;: &#123;</span><br><span class="line">    &quot;browser&quot;: true,</span><br><span class="line">    &quot;node&quot;: true</span><br><span class="line">  &#125;,</span><br><span class="line">  &quot;globals&quot;: &#123;</span><br><span class="line">    &quot;_&quot;: false</span><br><span class="line">  &#125;,</span><br><span class="line">  &quot;plugins&quot;: [&quot;import&quot;, &quot;html&quot;],</span><br><span class="line">  &quot;extends&quot;: &quot;airbnb-base&quot;,</span><br><span class="line">  &quot;rules&quot;: &#123;</span><br><span class="line">    &#x2F;&#x2F; &quot;off&quot; or 0 - turn the rule off</span><br><span class="line">    &#x2F;&#x2F; &quot;warn&quot; or 1 - turn the rule on as a warning (doesn’t affect exit code)</span><br><span class="line">    &#x2F;&#x2F; &quot;error&quot; or 2 - turn the rule on as an error (exit code is 1 when triggered)</span><br><span class="line">    &#x2F;&#x2F; &quot;no-var&quot;: &quot;off&quot;,</span><br><span class="line">    &quot;no-console&quot;: &quot;warn&quot;,</span><br><span class="line">    &quot;no-plusplus&quot;: &quot;off&quot;,</span><br><span class="line">    &quot;no-shadow&quot;: &quot;off&quot;,</span><br><span class="line">    &quot;vars-on-top&quot;: &quot;off&quot;,</span><br><span class="line">    &quot;no-underscore-dangle&quot;: &quot;off&quot;, &#x2F;&#x2F; var _foo;</span><br><span class="line">    &quot;comma-dangle&quot;: &quot;off&quot;,</span><br><span class="line">    &quot;func-names&quot;: &quot;off&quot;, &#x2F;&#x2F; setTimeout(function () &#123;&#125;, 0);</span><br><span class="line">    &quot;prefer-template&quot;: &quot;off&quot;,</span><br><span class="line">    &quot;no-nested-ternary&quot;: &quot;off&quot;,</span><br><span class="line">    &quot;max-classes-per-file&quot;: &quot;off&quot;,</span><br><span class="line">    &quot;consistent-return&quot;: &quot;off&quot;,</span><br><span class="line">    &quot;no-restricted-syntax&quot;: [&quot;off&quot;, &quot;ForOfStatement&quot;], &#x2F;&#x2F; disallow specified syntax(ex. WithStatement)</span><br><span class="line">    &quot;prefer-arrow-callback&quot;: &quot;error&quot;, &#x2F;&#x2F; Require using arrow functions for callbacks</span><br><span class="line">    &quot;require-await&quot;: &quot;error&quot;,</span><br><span class="line">    &quot;arrow-parens&quot;: [&quot;error&quot;, &quot;as-needed&quot;], &#x2F;&#x2F; a &#x3D;&gt; &#123;&#125;</span><br><span class="line">    &quot;no-param-reassign&quot;: [&quot;error&quot;, &#123; &quot;props&quot;: false &#125;],</span><br><span class="line">    &quot;import&#x2F;no-extraneous-dependencies&quot;: [&quot;error&quot;, &#123; &quot;devDependencies&quot;: true &#125;],</span><br><span class="line">    &quot;max-len&quot;: [&quot;error&quot;, &#123; &quot;code&quot;: 100, &quot;ignoreComments&quot;: true &#125;] &#x2F;&#x2F; prettier의 printWidth 옵션 대신 사용</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="세미콜론"><a href="#세미콜론" class="headerlink" title="세미콜론"></a>세미콜론</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">eol-last: [&quot;error&quot;, &quot;always&quot;]</span><br></pre></td></tr></table></figure>
+<p>error -&gt; off</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="http://bg-shorthand.github.io/2020/12/27/DOM/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1161,208 +1234,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://bg-shorthand.github.io/2020/12/10/201210-%EC%8B%A4%ED%96%89-%EC%BB%A8%ED%85%8D%EC%8A%A4%ED%8A%B8-%ED%81%B4%EB%A1%9C%EC%A0%80/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="bg-shorthand">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="bg-shorthand-blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/12/10/201210-%EC%8B%A4%ED%96%89-%EC%BB%A8%ED%85%8D%EC%8A%A4%ED%8A%B8-%ED%81%B4%EB%A1%9C%EC%A0%80/" class="post-title-link" itemprop="url">201210-실행 컨텍스트, 클로저</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2020-12-10 12:49:10 / Modified: 12:49:28" itemprop="dateCreated datePublished" datetime="2020-12-10T12:49:10+09:00">2020-12-10</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/javascript/" itemprop="url" rel="index"><span itemprop="name">javascript</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="실행-컨텍스트"><a href="#실행-컨텍스트" class="headerlink" title="실행 컨텍스트"></a>실행 컨텍스트</h1><h1 id="소스코드의-타입"><a href="#소스코드의-타입" class="headerlink" title="소스코드의 타입"></a>소스코드의 타입</h1><ol>
-<li>전역 코드: 전역 변수를 관리하기 위한 전역 스코프 생성. var 키워드로 선언된 전역 변수와 함수 선언문으로 정의된 전역 함수를 전역 객체의 프로퍼티와 메서드로 바인딩하고 참조하기 위해 전역 객체와 연결 -&gt; 전역 실행 컨텍스트 생성</li>
-<li>지역 스코프 생성, 지역 변수, 매개변수, 아규먼츠 객체 관리, 지역 스코프를 스코프 체인에 연결. -&gt; 함수 실행 컨텍스트 생성</li>
-<li>eval 코드: 뭐.</li>
-<li>모듈 코드: 나중에 보나?<h1 id="소스코드의-평가와-실행"><a href="#소스코드의-평가와-실행" class="headerlink" title="소스코드의 평가와 실행"></a>소스코드의 평가와 실행</h1></li>
-<li>실행 전, 소스코드의 평가.<ul>
-<li>변수, 함수 등의 선언문만 먼저 실행.</li>
-<li>식별자를 키로 실행 컨텍스트가 관리하는 스코프(렉시컬 환경의 환경 레코드)에 등록.</li>
-</ul>
-</li>
-<li>실행(런타임)<ul>
-<li>참조는 스코프에서 검색해 취득하고,</li>
-<li>변수 값이 변경과 같은 실행 결과는 다시 스코프에 등록.<h1 id="실행-컨텍스트의-역할"><a href="#실행-컨텍스트의-역할" class="headerlink" title="실행 컨텍스트의 역할"></a>실행 컨텍스트의 역할</h1></li>
-</ul>
-</li>
-</ol>
-<ul>
-<li>코드가 실행되려면 스코프, 식별자, 코드 실행 순서 등의 관리가 필요하다.</li>
-<li>즉,<ol>
-<li>식별자를 스코프에 따라 구분하여 등록하고 상태 변화를 지속적으로 관리할 수 있어야 한다.</li>
-<li>스코프는 중첩 관계에 의해 스코프 체인을 형성해야 한다.</li>
-<li>현재 실행 중인 코드의 실행 순서를 변경할 수 있어야 하며 다시 되돌아갈 수도 있어야 한다.</li>
-</ol>
-</li>
-<li>이 일을 하는 게 실행 컨텍스트.</li>
-<li>식별자를 등록, 관리하는 스코프와 코드 실행 순서 관리를 구현한 내부 매커니즘이다.</li>
-<li>식별자와 스코프는 실행 컨텍스트의 ‘렉시컬 환경’으로 관리.</li>
-<li>코드 실행 순서는 ‘실행 컨텍스트 스택’으로 관리<h1 id="실행-컨텍스트-스택"><a href="#실행-컨텍스트-스택" class="headerlink" title="실행 컨텍스트 스택"></a>실행 컨텍스트 스택</h1></li>
-<li>스택 자료구조.(선입후출)</li>
-<li>실행되는 실행 컨텍스트가 추가(push), 실행 끝나면 삭제(pop).</li>
-<li>전역 코드와 함수 코드로 구분되어서 진행 되고,</li>
-<li>각 코드는 실행 전에 평가 단계를 거친다.</li>
-<li>선입후출 구조로, 나중에 실행된 코드가 종료되면, 이전에 실행되던 코드로 돌아간다.</li>
-<li>스택의 최상위에 존재하는 실행 컨텍스트가 현재 진행 중인 코드의 실행 컨텍스트. 이걸 ‘실행 중인 실행 컨텍스트’라고 부른다.<h1 id="렉시컬-환경"><a href="#렉시컬-환경" class="headerlink" title="렉시컬 환경"></a>렉시컬 환경</h1></li>
-<li>식별자와 식별자에 비인딩된 값, 그리고 상위 스코프에 대한 참조를 기록하는 자료구조.</li>
-<li>즉, 식별자와 스코프를 관리한단 거지.</li>
-<li>두 개를 관리해야 하네? 두 개의 컴포넌트.<ol>
-<li>환경 레코드: 식별자를 등록하고 식별자에 바인딩된 값을 구분하는 저장소.</li>
-<li>외부 렉시컬 환경에 대한 참조: 단방향 링크드 리스트인 스코프 체인 구현.<h1 id="실행-컨텍스트의-생성과-식별자-검색-과정"><a href="#실행-컨텍스트의-생성과-식별자-검색-과정" class="headerlink" title="실행 컨텍스트의 생성과 식별자 검색 과정"></a>실행 컨텍스트의 생성과 식별자 검색 과정</h1></li>
-</ol>
-</li>
-</ul>
-<ol>
-<li>전역 객체 생성<ul>
-<li>전역 객체는 전역 코드가 평가되기 이전에 생성. 빌트인 전역 프로퍼티/함수/객체 등이 있고, 동작 환경에 따라 호스트 객체를 포함.</li>
-<li>이 전역 객체도 Object.prototype을 상속 받는다.</li>
-</ul>
-</li>
-<li>전역 코드 평가<ol>
-<li>전역 실행 컨텍스트 생성</li>
-<li>전역 렉시컬 환경 생성<ol>
-<li>전역 환경 레코드 생성</li>
-<li>객체 환경 레코드 생성</li>
-<li>선언적 환경 레코드 생성</li>
-<li>this 바인딩</li>
-<li>외부 렉시컬 환경에 대한 참조 결정</li>
-</ol>
-</li>
-</ol>
-</li>
-<li>전역 코드 실행</li>
-<li>(함수 호출을 만나면) 함수 코드 평가<ol>
-<li>함수 실행 컨텍스트 생성</li>
-<li>함수 렉시컬 환경 생성<ol>
-<li>함수 환경 레코드 생성</li>
-<li>this 바인딩</li>
-<li>외부 렉시컬 환경에 대한 참조 결정</li>
-</ol>
-</li>
-</ol>
-</li>
-<li>함수 코드 실행</li>
-<li>함수 코드 실행 종료</li>
-<li>전역 코드 실행 종료<h1 id="실행-컨텍스트와-블록-레벨-스코프"><a href="#실행-컨텍스트와-블록-레벨-스코프" class="headerlink" title="실행 컨텍스트와 블록 레벨 스코프"></a>실행 컨텍스트와 블록 레벨 스코프</h1></li>
-</ol>
-<ul>
-<li>소스코드는 전역 코드와 함수 코드로 구분하니까,</li>
-<li>블록 레벨 스코프의 코드 블록은 따로 실행 컨텍스트를 만들지 않는다.</li>
-<li>근데 let/const는 블록 레벨 스코프를 만들잖아?</li>
-<li>이를 위해 블록 레벨 스코프는,</li>
-<li>선언적 환경 레코드를 갖는 렉시컬 환경을 새롭게 생성하여 기존의 전역 렉시컬 환경을 교체한다.</li>
-<li>즉, 실행 컨텍스트는 그대로 둔 상태에서,</li>
-<li>연결되어 있던 렉시컬 환경을 ‘선언적 환경 레코드를 갖는 렉시컬 환경’으로 교체.</li>
-<li>새로 연결된 렉시컬 환경은 기존의 렉시컬 환경을 상위 스코프로 갖는다.</li>
-<li>코드 블록이 끝나면, 이전의 렉시컬 환경으로 복귀.</li>
-<li>만약 코드 블록 내에 함수가 있다면, 이 함수의 상위 스코프는 코드 블록이 생성한 렉시컬 환경(선언적 환경 레코드를 갖는 렉시컬 환경).</li>
-</ul>
-<hr>
-<h1 id="클로저"><a href="#클로저" class="headerlink" title="클로저"></a>클로저</h1><ul>
-<li>중첩 함수에서,</li>
-<li>내부 함수가 외부 함수보다 오래 살아남으며,</li>
-<li>외부 함수가 갖는 식별자를 내부 함수가 참조할 때,</li>
-<li>그 내부 함수를 클로저라고 부른다.<h1 id="렉시컬-스코프"><a href="#렉시컬-스코프" class="headerlink" title="렉시컬 스코프"></a>렉시컬 스코프</h1></li>
-<li>렉시컬 환경의 “외부 렉시컬 환경에 대한 참조”에 저장할 참조값, 즉 상위 스코프에 대한 참조는 함수 정의가 평가되는 시점에 함수가 정의된 환경(위치)에 의해 결정된다.<h1 id="함수-객체의-내부-슬롯-Envirobnment"><a href="#함수-객체의-내부-슬롯-Envirobnment" class="headerlink" title="함수 객체의 내부 슬롯 [[Envirobnment]]"></a>함수 객체의 내부 슬롯 [[Envirobnment]]</h1></li>
-<li>함수 객체는 호출과 상관없이, 자신이 정의된 환경, 상위 스코프를 기억해야 한다.</li>
-<li>이를 위해 함수 객체는 함수 정의가 평가 될 때,(런타임 이전에) 내부 슬롯 [[Environment]] 에 상위 스코프의 참조를 저장한다.</li>
-<li>이 상위 스코프는 ‘현재 실행 중인 실행 컨텍스트’의 렉시컬 환경이다.</li>
-<li>내부 슬롯에 기억하므로, 함수객체가 존재하는 한, 함수는 상위 스코프를 기억한다.</li>
-<li>후에 함수가 호출 되어 함수 코드가 평가되기 시작하면,</li>
-<li>함수 렉시컬 환경의 구성 요소인 외부 렉시컬 환경에 대한 참조에는 함수 객체의 내부 슬롯 [[Environment]]에 저장된 렉시컬 환경의 참조가 할당된다.<h1 id="클로저와-렉시컬-환경"><a href="#클로저와-렉시컬-환경" class="headerlink" title="클로저와 렉시컬 환경"></a>클로저와 렉시컬 환경</h1></li>
-<li>중첩 함수에서, 외부 함수가 실행이 종료 되었을 때,</li>
-<li>외부 함수의 실행 컨텍스트는 스택에서 제거되지만, 렉시컬 환경까지 소멸하는 것은 아니다.(가비지 컬렉터가 처리하지 않는다.)</li>
-<li>내부 함수의 [[Environment]]에 의해 참조되고 있기 때문.</li>
-<li>내부 함수가 다른 곳(변수 등)에서 참조되고 있다면,</li>
-<li>외부 함수 없이 내부 함수를 호출할 수 있고, 이 때 외부 함수 객체의 변수에도 접근할 수 있다.</li>
-<li>모든 함수는 상위 스코프를 기억하므로, 이론적으로 모든 함수는 클로저지만,</li>
-<li>일반적으로 모든 함수를 클로저라고는 하지 않는다.</li>
-<li>클로저는,<ol>
-<li>상위 스코프의 식별자를 참조한다.</li>
-<li>상위 스코프보다 생명 주기가 길다.</li>
-</ol>
-</li>
-<li>를 만족해야 한다.</li>
-<li>클로저에 의해 참조되는 상위 스코프의 변수는 ‘자유 변수’.<h1 id="클로저의-활용"><a href="#클로저의-활용" class="headerlink" title="클로저의 활용"></a>클로저의 활용</h1></li>
-<li>클로저는 상태(state)를 안전하게 변경하고 유지하기 위해 사용한다. 다시 말해, 상태가 의도치 않게 변경되지 않도록 상태를 안전하게 은닉(information hiding)하고 특정 함수에게만 상태 변경을 허용하기 위해 사용한다.<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; 카운트 상태 변경 함수</span><br><span class="line">const increase &#x3D; (function () &#123;</span><br><span class="line">  &#x2F;&#x2F; 카운트 상태 변수</span><br><span class="line">  let num &#x3D; 0;</span><br><span class="line"></span><br><span class="line">  &#x2F;&#x2F; 클로저</span><br><span class="line">  return function () &#123;</span><br><span class="line">    &#x2F;&#x2F; 카운트 상태를 1만큼 증가 시킨다.</span><br><span class="line">    return ++num;</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;());</span><br><span class="line"></span><br><span class="line">console.log(increase()); &#x2F;&#x2F; 1</span><br><span class="line">console.log(increase()); &#x2F;&#x2F; 2</span><br><span class="line">console.log(increase()); &#x2F;&#x2F; 3</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">const counter &#x3D; (function () &#123;</span><br><span class="line">  &#x2F;&#x2F; 카운트 상태 변수</span><br><span class="line">  let num &#x3D; 0;</span><br><span class="line"></span><br><span class="line">  &#x2F;&#x2F; 클로저인 메서드를 갖는 객체를 반환한다.</span><br><span class="line">  &#x2F;&#x2F; 객체 리터럴은 스코프를 만들지 않는다.</span><br><span class="line">  &#x2F;&#x2F; 따라서 아래 메서드들의 상위 스코프는 즉시 실행 함수의 렉시컬 환경이다.</span><br><span class="line">  return &#123;</span><br><span class="line">    &#x2F;&#x2F; num: 0, &#x2F;&#x2F; 프로퍼티는 public하므로 은닉되지 않는다.</span><br><span class="line">    increase() &#123;</span><br><span class="line">      return ++num;</span><br><span class="line">    &#125;,</span><br><span class="line">    decrease() &#123;</span><br><span class="line">      return num &gt; 0 ? --num : 0;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;());</span><br><span class="line"></span><br><span class="line">console.log(counter.increase()); &#x2F;&#x2F; 1</span><br><span class="line">console.log(counter.increase()); &#x2F;&#x2F; 2</span><br><span class="line"></span><br><span class="line">console.log(counter.decrease()); &#x2F;&#x2F; 1</span><br><span class="line">console.log(counter.decrease()); &#x2F;&#x2F; 0</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">const Counter &#x3D; (function () &#123;</span><br><span class="line">  &#x2F;&#x2F; ① 카운트 상태 변수</span><br><span class="line">  let num &#x3D; 0;</span><br><span class="line"></span><br><span class="line">  function Counter() &#123;</span><br><span class="line">    &#x2F;&#x2F; this.num &#x3D; 0; &#x2F;&#x2F; ② 프로퍼티는 public하므로 은닉되지 않는다.</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  Counter.prototype.increase &#x3D; function () &#123;</span><br><span class="line">    return ++num;</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">  Counter.prototype.decrease &#x3D; function () &#123;</span><br><span class="line">    return num &gt; 0 ? --num : 0;</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">  return Counter;</span><br><span class="line">&#125;());</span><br><span class="line"></span><br><span class="line">const counter &#x3D; new Counter();</span><br><span class="line"></span><br><span class="line">console.log(counter.increase()); &#x2F;&#x2F; 1</span><br><span class="line">console.log(counter.increase()); &#x2F;&#x2F; 2</span><br><span class="line"></span><br><span class="line">console.log(counter.decrease()); &#x2F;&#x2F; 1</span><br><span class="line">console.log(counter.decrease()); &#x2F;&#x2F; 0</span><br></pre></td></tr></table></figure></li>
-<li>변수 값은 누군가에 의해 언제든지 변경될 수 있어 오류 발생의 근본적 원인이 될 수 있다. 외부 상태 변경이나 가변(mutable) 데이터를 피하고 불변성(immutability)을 지향하는 함수형 프로그래밍에서 부수 효과를 최대한 억제하여 오류를 피하고 프로그램의 안정성을 높이기 위해 클로저는 적극적으로 사용된다.</li>
-<li>아래의 클로저는, 내용은 같지만 서로 다른 렉시컬 환경을 참조하는 클로저<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; 함수를 인수로 전달받고 함수를 반환하는 고차 함수</span><br><span class="line">&#x2F;&#x2F; 이 함수는 카운트 상태를 유지하기 위한 자유 변수 counter를 기억하는 클로저를 반환한다.</span><br><span class="line">function makeCounter(predicate) &#123;</span><br><span class="line">&#x2F;&#x2F; 카운트 상태를 유지하기 위한 자유 변수</span><br><span class="line">let counter &#x3D; 0;</span><br><span class="line"></span><br><span class="line">  &#x2F;&#x2F; 클로저를 반환</span><br><span class="line">  return function () &#123;</span><br><span class="line">    &#x2F;&#x2F; 인수로 전달 받은 보조 함수에 상태 변경을 위임한다.</span><br><span class="line">    counter &#x3D; predicate(counter);</span><br><span class="line">    return counter;</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 보조 함수</span><br><span class="line">function increase(n) &#123;</span><br><span class="line">  return ++n;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 보조 함수</span><br><span class="line">function decrease(n) &#123;</span><br><span class="line">  return --n;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 함수로 함수를 생성한다.</span><br><span class="line">&#x2F;&#x2F; makeCounter 함수는 보조 함수를 인수로 전달받아 함수를 반환한다</span><br><span class="line">const increaser &#x3D; makeCounter(increase); &#x2F;&#x2F; ①</span><br><span class="line">console.log(increaser()); &#x2F;&#x2F; 1</span><br><span class="line">console.log(increaser()); &#x2F;&#x2F; 2</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; increaser 함수와는 별개의 독립된 렉시컬 환경을 갖기 때문에 카운터 상태가 연동하지 않는다.</span><br><span class="line">const decreaser &#x3D; makeCounter(decrease); &#x2F;&#x2F; ②</span><br><span class="line">console.log(decreaser()); &#x2F;&#x2F; -1</span><br><span class="line">console.log(decreaser()); &#x2F;&#x2F; -2</span><br></pre></td></tr></table></figure></li>
-<li>아래와 같이 수정<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; 함수를 반환하는 고차 함수</span><br><span class="line">&#x2F;&#x2F; 이 함수는 카운트 상태를 유지하기 위한 자유 변수 counter를 기억하는 클로저를 반환한다.</span><br><span class="line">const counter &#x3D; (function () &#123;</span><br><span class="line">  &#x2F;&#x2F; 카운트 상태를 유지하기 위한 자유 변수</span><br><span class="line">  let counter &#x3D; 0;</span><br><span class="line"></span><br><span class="line">  &#x2F;&#x2F; 함수를 인수로 전달받는 클로저를 반환</span><br><span class="line">  return function (predicate) &#123;</span><br><span class="line">    &#x2F;&#x2F; 인수로 전달 받은 보조 함수에 상태 변경을 위임한다.</span><br><span class="line">    counter &#x3D; predicate(counter);</span><br><span class="line">    return counter;</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;());</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 보조 함수</span><br><span class="line">function increase(n) &#123;</span><br><span class="line">  return ++n;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 보조 함수</span><br><span class="line">function decrease(n) &#123;</span><br><span class="line">  return --n;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 보조 함수를 전달하여 호출</span><br><span class="line">console.log(counter(increase)); &#x2F;&#x2F; 1</span><br><span class="line">console.log(counter(increase)); &#x2F;&#x2F; 2</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 자유 변수를 공유한다.</span><br><span class="line">console.log(counter(decrease)); &#x2F;&#x2F; 1</span><br><span class="line">console.log(counter(decrease)); &#x2F;&#x2F; 0</span><br></pre></td></tr></table></figure>
-<h1 id="캡슐화와-정보-은닉"><a href="#캡슐화와-정보-은닉" class="headerlink" title="캡슐화와 정보 은닉"></a>캡슐화와 정보 은닉</h1></li>
-<li>캡슐화(encapsulation)는 객체의 상태(state)를 나타내는 프로퍼티와 프로퍼티를 참조하고 조작할 수 있는 동작(behavior)인 메서드를 하나로 묶는 것을 말한다. 캡슐화는 객체의 특정 프로퍼티나 메서드를 감출 목적으로 사용하기도 하는데 이를 정보 은닉(information hiding)이라 한다.</li>
-<li>즉시 실행 함수를 활용하여 생성자 함수와 프로토타입 프로퍼티 추가를 묶음.</li>
-<li>이 경우 클로저를 단 한번 생성하기 대문에, 인스턴스가 여러 개 만들어지면 동일한 상위 스코프를 사용하게 된다.</li>
-<li>자바스크립트는 정보 은닉을 완전하게 지원하지 않는다. 인스턴스 메서드를 사용한다면 자유 변수를 통해 private을 흉내 낼 수는 있지만 프로토타입 메서드를 사용하면 이마저도 불가능해진다.</li>
-<li>클래스에 private 필드를 정의할 수 있는 표준 사양이 제안되어 있는데, 이건 나중에.<h1 id="자주-발생하는-실수"><a href="#자주-발생하는-실수" class="headerlink" title="자주 발생하는 실수"></a>자주 발생하는 실수</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">var funcs &#x3D; [];</span><br><span class="line"></span><br><span class="line">for (var i &#x3D; 0; i &lt; 3; i++) &#123;</span><br><span class="line">  funcs[i] &#x3D; function () &#123; return i; &#125;; &#x2F;&#x2F; ①</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">for (var j &#x3D; 0; j &lt; funcs.length; j++) &#123;</span><br><span class="line">  console.log(funcs[j]()); &#x2F;&#x2F; ②</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-<li>함수 레벨 스코프 특성으로 인해 for 문의 초기화 문에서 var 키워드로 선언한 변수가 전역 변수가 되기 때문에 발생하는 현상.</li>
-<li>아래처럼 수정할 수 있는데,<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">var funcs &#x3D; [];</span><br><span class="line"></span><br><span class="line">for (var i &#x3D; 0; i &lt; 3; i++)&#123;</span><br><span class="line">  funcs[i] &#x3D; (function (id) &#123; &#x2F;&#x2F; ①</span><br><span class="line">    return function () &#123;</span><br><span class="line">      return id;</span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;(i));</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">for (var j &#x3D; 0; j &lt; funcs.length; j++) &#123;</span><br><span class="line">  console.log(funcs[j]());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-<li>let을 사용하면 깔금하게 해결.<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">const funcs &#x3D; [];</span><br><span class="line"></span><br><span class="line">for (let i &#x3D; 0; i &lt; 3; i++) &#123;</span><br><span class="line">  funcs[i] &#x3D; function () &#123; return i; &#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">for (let i &#x3D; 0; i &lt; funcs.length; i++) &#123;</span><br><span class="line">  console.log(funcs[i]()); &#x2F;&#x2F; 0 1 2</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-<li>let/const 선언을 사용하면, 블록 레벨 스코프가 적용 되어, for문의 코드 블록이 실행될 때마다 새로운 렉시컬 환경이 만들어진다.</li>
-<li>이 때 코드 블록 내에 정의한 함수가 있다면, 이 함수의 상위 스코프는 새로운 렉시컬 환경이 된다.</li>
-<li>독립적인 렉시컬 환경을 각각 갖으므로, 식별자의 값을 유지할 수 있다.</li>
-<li>단, 이는 반복문의 코드 블록 내부에서 함수를 정의할 때 의미가 있다. 반복문의 코드 블록 내부에 함수 정의가 없는 반복문이 생성하는 새로운 렉시컬 환경은 반복 직후, 아무도 참조하지 않기 때문에 가비지 컬렉션의 대상이 된다.</li>
-<li>고차 함수를 사용하는 방법도 있는데, 나중에 다시 배움.</li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1432,12 +1303,12 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">34</span>
+          <span class="site-state-item-count">35</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
-        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-count">5</span>
         <span class="site-state-item-name">categories</span>
       </div>
   </nav>
@@ -1464,7 +1335,7 @@
 <div class="copyright">
   
   &copy; 
-  <span itemprop="copyrightYear">2020</span>
+  <span itemprop="copyrightYear">2021</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
