@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"bg-shorthand.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="Ajax 자바스크립트를 사용하여 브라우저가 서버에게 비동기 방식으로 데이터를 요청하고, 서버가 응답한 데이터를 수신하여 웹페이지를 동적으로 갱신하는 프로그래밍 방식. XMLHttpRequest 객체를 기반으로 동작.1const xhr &#x3D; new XMLHttpRequest(); Ajax 이전의 통신 방식의 단점 완전한 html을 서버로부터 매번 다시">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Ajax">
+<meta property="og:url" content="http://bg-shorthand.github.io/2021/01/05/Ajax/index.html">
+<meta property="og:site_name" content="bg-shorthand-blog">
+<meta property="og:description" content="Ajax 자바스크립트를 사용하여 브라우저가 서버에게 비동기 방식으로 데이터를 요청하고, 서버가 응답한 데이터를 수신하여 웹페이지를 동적으로 갱신하는 프로그래밍 방식. XMLHttpRequest 객체를 기반으로 동작.1const xhr &#x3D; new XMLHttpRequest(); Ajax 이전의 통신 방식의 단점 완전한 html을 서버로부터 매번 다시">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-01-05T06:16:59.000Z">
+<meta property="article:modified_time" content="2021-01-05T06:17:26.378Z">
+<meta property="article:author" content="bg-shorthand">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://bg-shorthand.github.io/2021/01/05/Ajax/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>Ajax | bg-shorthand-blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">bg-shorthand-blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://bg-shorthand.github.io/2021/01/05/Ajax/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="bg-shorthand">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="bg-shorthand-blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Ajax
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2021-01-05 15:16:59 / Modified: 15:17:26" itemprop="dateCreated datePublished" datetime="2021-01-05T15:16:59+09:00">2021-01-05</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/javascript/" itemprop="url" rel="index"><span itemprop="name">javascript</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="Ajax"><a href="#Ajax" class="headerlink" title="Ajax"></a>Ajax</h1><ul>
+<li>자바스크립트를 사용하여 브라우저가 서버에게 비동기 방식으로 데이터를 요청하고,</li>
+<li>서버가 응답한 데이터를 수신하여 웹페이지를 동적으로 갱신하는 프로그래밍 방식.</li>
+<li>XMLHttpRequest 객체를 기반으로 동작.<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">const xhr &#x3D; new XMLHttpRequest();</span><br></pre></td></tr></table></figure></li>
+<li>Ajax 이전의 통신 방식의 단점<ol>
+<li>완전한 html을 서버로부터 매번 다시 전송받기 때문에 불필요한 통신이 발생.</li>
+<li>변경할 필요가 없는 부분까지 처음부터 다시 렌더링.(화면 전환 때마다 순간적으로 깜빡이는 현상.)</li>
+<li>통신이 동기 방식으로 동작해 서버로부터 응답이 있을 때까지 다음 처리는 블로킹.</li>
+</ol>
+</li>
+<li>Ajax의 장점<ol>
+<li>변경할 부분을 갱신하는 데 필요한 데이터만 요청, 전송 받기 때문에 불필요한 데이터 통신이 발생하지 않는다.</li>
+<li>변경할 필요가 없는 부분은 다시 렌더링하지 않는다.</li>
+<li>비동기 방식으로 동작해 블로킹이 발생하지 않는다.<h1 id="JSON"><a href="#JSON" class="headerlink" title="JSON"></a>JSON</h1></li>
+</ol>
+</li>
+<li>클라이언트와 서버 간의 HTTP 통신을 위한 텍스트 데이터 포맷.</li>
+<li>대부분의 프로그래밍 언어에서 사용 가능.</li>
+<li>자바스크립트의 객체 리터럴과 유사하게 키와 값으로 구성된 순수한 텍스트다.<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;name&quot;: &quot;Lee&quot;,</span><br><span class="line">  &quot;age&quot;: 20,</span><br><span class="line">  &quot;alive&quot;: true,</span><br><span class="line">  &quot;hobby&quot;: [&quot;traveling&quot;, &quot;tennis&quot;]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li>키, 문자열은 반드시 큰따옴표 사용.</li>
+<li>값은 객체 리터럴고 같은 표기법을 사용.<h1 id="JSON-stringify"><a href="#JSON-stringify" class="headerlink" title="JSON.stringify"></a>JSON.stringify</h1></li>
+<li>객체를 JSON 포맷의 문자열로 변환해주는 메서드.<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">const json &#x3D; JSON.stringify(객체, 프로퍼티를 필터링하는 함수, 들여쓰기 값);</span><br><span class="line"></span><br><span class="line">function filter(key, value) &#123;</span><br><span class="line">  &#x2F;&#x2F; undefined: 반환하지 않음</span><br><span class="line">  return typeof value &#x3D;&#x3D;&#x3D; &#39;number&#39; ? undefined : value;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; JSON.stringify 메서드에 두 번째 인수로 replacer 함수를 전달한다.</span><br><span class="line">const strFilteredObject &#x3D; JSON.stringify(obj, filter, 2);</span><br></pre></td></tr></table></figure></li>
+<li>같은 방식으로, 배열도 변환할 수 있다.<h1 id="JSON-parse"><a href="#JSON-parse" class="headerlink" title="JSON.parse"></a>JSON.parse</h1></li>
+<li>JSON 포맷의 문자열을 객체로 변환해주는 메서드.<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">const parsed &#x3D; JSON.parse(json);</span><br></pre></td></tr></table></figure></li>
+<li>배열도 같은 방식으로 변환한다.<h1 id="XMLHttpRequest-객체"><a href="#XMLHttpRequest-객체" class="headerlink" title="XMLHttpRequest 객체"></a>XMLHttpRequest 객체</h1></li>
+<li>http 요청 전송과 응답 수신을 위한 다양한 메서드와 프로퍼티 제공.<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">const xhr &#x3D; new XMLHttpRequest();</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 프로토타입 프로퍼티</span><br><span class="line">xhr.readyState &#x2F;&#x2F; http 요청의 현재 상태를 나타내는 정수.</span><br><span class="line">xhr.status &#x2F;&#x2F; http 요청에 대한 &#39;응답&#39; 상태를 나타내는 정수.</span><br><span class="line">xhr.statusText &#x2F;&#x2F; 요청에 대한 응답 &#39;메시지&#39;.</span><br><span class="line">xhr.responseType &#x2F;&#x2F; http 응답 타입.</span><br><span class="line">xhr.response &#x2F;&#x2F; 응답 몸체.</span><br><span class="line">xhr.responseText &#x2F;&#x2F; 응답 문자열.</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; on이벤트 핸들러</span><br><span class="line">xhr.onreadystatechange &#x2F;&#x2F; readyState 프로퍼티 값이 변경된 경우.</span><br><span class="line">xhr.onerror &#x2F;&#x2F; 요청에 에러가 발생한 경우.</span><br><span class="line">xhr.onload &#x2F;&#x2F; 요청이 성공적으로 완료된 경우.</span><br><span class="line">xhr.onloadstart &#x2F;&#x2F; 요청에 대한 응답을 받기 시작한 경우.</span><br><span class="line">xhr.onprogress &#x2F;&#x2F; 요청에 대한 응답을 받는 도중 주기적으로 발생.</span><br><span class="line">xhr.onabort &#x2F;&#x2F; abort 메서드에 의해 요청이 중단된 경우.</span><br><span class="line">xhr.ontimeout &#x2F;&#x2F; 요청 시간이 초과한 경우</span><br><span class="line">xhr.onloadend &#x2F;&#x2F; 요청이 완료된 경우. 성공 또는 실패했을 때 모두 발생.</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 메서드</span><br><span class="line">xhr.open(); &#x2F;&#x2F; 요청 초기화.</span><br><span class="line">xhr.send(); &#x2F;&#x2F; 요청 전송.</span><br><span class="line">xhr.abort(); &#x2F;&#x2F; 이미 전송된 요청 중단.</span><br><span class="line">xhr.setRequestHeader(); &#x2F;&#x2F; 요청 헤더의 값을 설정.</span><br><span class="line">xhr.getRequestHaader(); &#x2F;&#x2F; 요청 헤더의 값을 문자열로 반환.</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 정적 프로퍼티</span><br><span class="line">UNSENT &#x2F;&#x2F; 값 0. open 메서드 호출 이전.</span><br><span class="line">OPENED &#x2F;&#x2F; 값 1. open 메서드 호출 이후.</span><br><span class="line">HEADERS_RECEIVED &#x2F;&#x2F; 값 2. send 메서드 호출 이후.</span><br><span class="line">LOADING &#x2F;&#x2F; 값 3. 서버 응답 중.</span><br><span class="line">DON &#x2F;&#x2F; 값 4. 서버 응답 완료.</span><br></pre></td></tr></table></figure>
+<h1 id="http-요청-전송"><a href="#http-요청-전송" class="headerlink" title="http 요청 전송"></a>http 요청 전송</h1></li>
+</ul>
+<ol>
+<li>open 메서드로 요청을 초기화.<ul>
+<li>매개변수로는 open(메소드, url[, async]) 를 갖는다.</li>
+<li>메소드: GET, POST, PUT, PATCH, DELETE 등.</li>
+</ul>
+</li>
+<li>send 메서드로 요청을 전송.<ul>
+<li>요청 몸체에 담을 페이로드를 인수로 전달할 수 있다.</li>
+<li>페이로드가 객체인 경우, 반드시 JSON.stringify 메서드를 사용하여 직렬화한 다음 전달.</li>
+</ul>
+</li>
+<li>(선택) setRequestHeader 메서드로 헤더 값을 설정.<ul>
+<li>요청의 데이터 타입을 설정하는 content-type과,</li>
+<li>응답의 데이터 타입을 설정하는 accept.<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">xhr.setRequestHeader(&#39;content-type&#39;, &#39;application&#x2F;json&#39;);</span><br><span class="line">xhr.setRequestHeader(&#39;accept&#39;, &#39;application&#x2F;json&#39;);</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li>응답 처리.<ul>
+<li>요청에 대한 응답을 전송받으면,</li>
+<li>XMLHttpRequest 객체의 이벤트를 이용해 처리할 수 있다.</li>
+<li>ex) onreadystatechange를 사용해 현재 응답 상태를 확인한 후, 응답 상태가 done이면 작업을 수행.</li>
+<li>onload를 사용하면 응답 상태를 확인할 필요가 없다.</li>
+</ul>
+</li>
+</ol>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/01/05/%EB%B9%84%EB%8F%99%EA%B8%B0-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/" rel="prev" title="비동기 프로그래밍">
+      <i class="fa fa-chevron-left"></i> 비동기 프로그래밍
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Ajax"><span class="nav-number">1.</span> <span class="nav-text">Ajax</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#JSON"><span class="nav-number">2.</span> <span class="nav-text">JSON</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#JSON-stringify"><span class="nav-number">3.</span> <span class="nav-text">JSON.stringify</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#JSON-parse"><span class="nav-number">4.</span> <span class="nav-text">JSON.parse</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#XMLHttpRequest-%EA%B0%9D%EC%B2%B4"><span class="nav-number">5.</span> <span class="nav-text">XMLHttpRequest 객체</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#http-%EC%9A%94%EC%B2%AD-%EC%A0%84%EC%86%A1"><span class="nav-number">6.</span> <span class="nav-text">http 요청 전송</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">bg-shorthand</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">38</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">categories</span>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">bg-shorthand</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
