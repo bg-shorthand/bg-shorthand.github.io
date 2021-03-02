@@ -170,7 +170,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2021-03-02 14:09:00 / Modified: 14:48:28" itemprop="dateCreated datePublished" datetime="2021-03-02T14:09:00+09:00">2021-03-02</time>
+              <time title="Created: 2021-03-02 14:09:00 / Modified: 15:00:46" itemprop="dateCreated datePublished" datetime="2021-03-02T14:09:00+09:00">2021-03-02</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -222,21 +222,29 @@
 <li><a target="_blank" rel="noopener" href="https://code.visualstudio.com/Download">https://code.visualstudio.com/Download</a></li>
 </ul>
 <h1 id="commit-50-72-규칙"><a href="#commit-50-72-규칙" class="headerlink" title="commit 50/72 규칙"></a>commit 50/72 규칙</h1><ul>
-<li><p>제목은 50자 내외 ( 마침표(.) 사용 ✘ )</p>
-</li>
-<li><p>제목과 본문은 빈 줄로 구분</p>
-</li>
-<li><p>본문은 한 줄에 72자 안으로 작성 </p>
-</li>
-<li><p>본문은 “무엇”을, “왜”, “어떻게” 작성했는 지 기술</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&quot;[git-commit]&quot;: &#123;</span><br><span class="line">&quot;editor.fontFamily&quot;: &quot;D2Coding&quot;,</span><br><span class="line">&quot;editor.rulers&quot;: [50, 72]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-<li><p>커밋 플래그<br>추가 (Added) - 새로운 내용이 추가된 경우<br>변경 (Changed) - 기존 기능이 변경된 경우<br>중단 예정 (Deprecated) - 더 이상 지원 예정이 없어 제거될 경우<br>수정 (Fixed) - 버그가 발견되어 수정된 경우<br>취약점 (Security) - 취약점이 발견된 경우</p>
-</li>
+<li>제목은 50자 내외 ( 마침표(.) 사용 ✘ )</li>
+<li>제목과 본문은 빈 줄로 구분</li>
+<li>본문은 한 줄에 72자 안으로 작성 </li>
+<li>본문은 “무엇”을, “왜”, “어떻게” 작성했는 지 기술</li>
+<li>setting.json 에서,<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&quot;[git-commit]&quot;: &#123;</span><br><span class="line">&quot;editor.rulers&quot;: [50, 72]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li>커밋 플래그<br>추가 (Added) - 새로운 내용이 추가된 경우<br>변경 (Changed) - 기존 기능이 변경된 경우<br>중단 예정 (Deprecated) - 더 이상 지원 예정이 없어 제거될 경우<br>수정 (Fixed) - 버그가 발견되어 수정된 경우<br>취약점 (Security) - 취약점이 발견된 경우</li>
 </ul>
 <h1 id="alias"><a href="#alias" class="headerlink" title="alias"></a>alias</h1><ul>
 <li><a target="_blank" rel="noopener" href="https://git-scm.com/book/ko/v2/Git%EC%9D%98-%EA%B8%B0%EC%B4%88-Git-Alias">https://git-scm.com/book/ko/v2/Git%EC%9D%98-%EA%B8%B0%EC%B4%88-Git-Alias</a></li>
 <li>Git의 명령을 전부 입력하는 것이 귀찮다면 git config 를 사용하여 각 명령의 Alias을 쉽게 만들 수 있다.<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ git config --global alias.unstage &#39;reset HEAD --&#39;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;아래 두 명령어가 같은 명령어가 됨.</span><br><span class="line">$ git unstage fileA</span><br><span class="line">$ git reset HEAD -- fileA</span><br></pre></td></tr></table></figure></li>
-<li>git 글로벌 설정 파일에서 수정할 수도 있다.<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">[user]</span><br><span class="line">  name  &#x3D; 사용자 이름</span><br><span class="line">  email &#x3D; 사용자 이메일</span><br><span class="line"></span><br><span class="line">[core]</span><br><span class="line">  precomposeunicode &#x3D; true</span><br><span class="line">  quotepath         &#x3D; false</span><br><span class="line">  editor            &#x3D; code --wait</span><br><span class="line"></span><br><span class="line">[filter &quot;lfs&quot;]</span><br><span class="line">  clean    &#x3D; git-lfs clean -- %f</span><br><span class="line">  smudge   &#x3D; git-lfs smudge -- %f</span><br><span class="line">  process  &#x3D; git-lfs filter-process</span><br><span class="line">  required &#x3D; true</span><br><span class="line"></span><br><span class="line">[init]</span><br><span class="line">  defaultBranch &#x3D; main</span><br><span class="line">  </span><br><span class="line">[alias]</span><br><span class="line">  l &#x3D; log --all --graph --oneline --decorate</span><br><span class="line">  unstage &#x3D; reset HEAD --</span><br><span class="line">  last &#x3D; log -1 HEAD</span><br></pre></td></tr></table></figure></li>
+<li>git 글로벌 설정 파일에서 수정할 수도 있다.<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">[user]</span><br><span class="line">  name  &#x3D; 사용자 이름</span><br><span class="line">  email &#x3D; 사용자 이메일</span><br><span class="line"></span><br><span class="line">[core]</span><br><span class="line">  precomposeunicode &#x3D; true</span><br><span class="line">  quotepath         &#x3D; false</span><br><span class="line">  editor            &#x3D; code --wait</span><br><span class="line"></span><br><span class="line">[filter &quot;lfs&quot;]</span><br><span class="line">  clean    &#x3D; git-lfs clean -- %f</span><br><span class="line">  smudge   &#x3D; git-lfs smudge -- %f</span><br><span class="line">  process  &#x3D; git-lfs filter-process</span><br><span class="line">  required &#x3D; true</span><br><span class="line"></span><br><span class="line">[init]</span><br><span class="line">  defaultBranch &#x3D; main</span><br><span class="line">  </span><br><span class="line">[alias]</span><br><span class="line">  l &#x3D; log --all --graph --oneline --decorate</span><br><span class="line">  unstage &#x3D; reset HEAD --</span><br><span class="line">  last &#x3D; log -1 HEAD</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h1 id="스니펫"><a href="#스니펫" class="headerlink" title="스니펫"></a>스니펫</h1><ul>
+<li>재사용 가능한 코드 조각을 간단한 단축키로 저장.</li>
+<li><a target="_blank" rel="noopener" href="https://snippet-generator.app/">https://snippet-generator.app/</a> 에서 작성 후,</li>
+<li>설정 -&gt; 사용자 코드 조각 -&gt; 원하는 파일 검색후 복붙.</li>
+</ul>
+<h1 id="files-associations"><a href="#files-associations" class="headerlink" title="files.associations"></a>files.associations</h1><ul>
+<li>settings.json 에서,<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&quot;files.associations&quot;: &#123;</span><br><span class="line">  &quot;*.js&quot;: &quot;javascriptreact&quot;,</span><br><span class="line">  &quot;*rc&quot;: &quot;json&quot;</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure></li>
+<li>js파일을 전부 리액트 전용으로</li>
+<li>rc 파일을 전부 json으로</li>
 </ul>
 
       
